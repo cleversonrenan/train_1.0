@@ -1,0 +1,1647 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bacia do Corvo — protótipo interativo</title>
+<style>
+:root{
+  --paper:#f1ebdf; --card:#fffdf8; --ink:#1f2328; --muted:#6f675a;
+  --line:#d9d0bf; --line2:#ece4d4; --accent:#a8752a; --green:#2f7d4f;
+  --p1:#b3261e; --p2:#1f4e9c;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; color:var(--ink); overflow:hidden;
+  font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+  background:
+    radial-gradient(1100px 560px at 16% -12%, #fffdf8 0%, rgba(255,253,248,0) 62%),
+    radial-gradient(900px 500px at 110% 110%, #e7dfcf 0%, rgba(231,223,207,0) 60%),
+    var(--paper);
+}
+button{font-family:inherit}
+#topbar{
+  height:52px; display:flex; align-items:center; gap:18px; padding:0 18px;
+  border-bottom:1px solid var(--line); background:rgba(255,253,248,.86);
+  backdrop-filter:blur(7px); position:relative; z-index:5;
+}
+.brand{font-family:Georgia,"Times New Roman",serif; font-size:17px; letter-spacing:.17em; white-space:nowrap}
+.brand b{font-weight:700}
+.brand span{font-size:10.5px; letter-spacing:.13em; color:var(--muted); margin-left:10px; text-transform:uppercase}
+#turnInfo{display:flex; align-items:center; gap:8px; font-size:12px; color:var(--muted); min-width:0; overflow:hidden}
+.pill{border:1px solid var(--line); background:#fffaf0; border-radius:20px; padding:4px 10px; font-size:11px; font-weight:600; color:var(--ink); white-space:nowrap}
+.pill.ink{background:var(--ink); color:#fff; border-color:var(--ink)}
+.spacer{flex:1}
+main{
+  display:grid; grid-template-columns:minmax(0,1fr) 392px; gap:13px;
+  padding:13px 15px 15px; height:calc(100vh - 52px);
+}
+#boardCol{display:flex; flex-direction:column; min-width:0; min-height:0; gap:10px}
+#boardCard{
+  flex:1; min-height:0; background:var(--card); border:1px solid var(--line);
+  border-radius:13px; display:flex; flex-direction:column; overflow:hidden;
+  box-shadow:0 18px 40px -32px rgba(50,38,18,.55);
+}
+#boardHead{
+  display:flex; align-items:center; gap:12px; justify-content:space-between;
+  padding:8px 13px; border-bottom:1px solid var(--line2); font-size:11.5px; color:var(--muted);
+}
+#sheetLabel{font-size:12px; color:var(--ink); font-weight:600; white-space:nowrap}
+#sheetLabel .inkDot{display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:7px; vertical-align:-1px}
+#legend{display:flex; align-items:center; gap:11px; flex-wrap:wrap; justify-content:flex-end}
+#legend .lg{display:inline-flex; align-items:center; gap:4px; white-space:nowrap}
+#legend .sw{width:9px; height:9px; border-radius:2px; border:1px solid rgba(0,0,0,.2); display:inline-block}
+#boardWrap{flex:1; min-height:0; padding:3px 5px 1px}
+svg#board{width:100%; height:100%; display:block; touch-action:manipulation}
+#actionBar{
+  min-height:62px; border-top:1px solid var(--line2); background:#fffcf5;
+  padding:8px 12px; display:flex; align-items:center; gap:12px;
+}
+#actionBar .abMain{flex:1; min-width:0}
+#actionBar .abTitle{font-size:12.5px; font-weight:700; letter-spacing:.03em}
+#actionBar .abSub{font-size:11.5px; color:var(--muted); margin-top:2px; line-height:1.35}
+#actionBar .abBtns{display:flex; gap:7px; flex-wrap:wrap; justify-content:flex-end}
+.tagOk{color:var(--green); font-weight:600}
+.tagBad{color:#a3261e; font-weight:600}
+
+#side{min-height:0; overflow-y:auto; display:flex; flex-direction:column; gap:9px; padding-right:3px; scrollbar-width:thin}
+#side::-webkit-scrollbar{width:8px}
+#side::-webkit-scrollbar-thumb{background:#d6ccba; border-radius:8px}
+.card{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px 11px; box-shadow:0 12px 26px -30px rgba(50,38,18,.6)}
+.cardT{display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:8px}
+.cardT .k{font-size:9.5px; letter-spacing:.16em; font-weight:700; color:var(--muted)}
+.ptabs{display:flex; gap:5px}
+.ptab{
+  border:1px solid var(--line); background:#fffaf0; border-radius:7px; padding:4px 8px;
+  font-size:11px; font-weight:700; cursor:pointer; color:var(--muted);
+}
+.ptab.on{color:#fff; border-color:var(--ink); background:var(--ink)}
+.ptab:disabled{opacity:.35; cursor:default}
+.stats{display:grid; grid-template-columns:1fr 1fr; gap:6px}
+.stat{border:1px solid var(--line2); background:#fffaf0; border-radius:8px; padding:5px 8px; min-width:0}
+.stat .sk{font-size:9px; letter-spacing:.12em; color:var(--muted); font-weight:700; text-transform:uppercase}
+.stat .sv{font-family:Georgia,serif; font-size:19px; font-weight:700; line-height:1.15; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.stat .sx{font-size:10px; color:var(--muted); margin-top:-1px}
+.moneyRow{display:flex; gap:6px; margin-top:7px}
+.moneyRow .btn{flex:1}
+.btn{
+  border:1px solid var(--ink); background:transparent; color:var(--ink); border-radius:7px;
+  padding:7px 9px; font-size:11.5px; font-weight:650; cursor:pointer; white-space:nowrap;
+  transition:background .12s, color .12s, border-color .12s, transform .05s;
+}
+.btn:hover:not(:disabled){background:#f1e9d9}
+.btn:active:not(:disabled){transform:translateY(1px)}
+.btn:disabled{opacity:.34; cursor:not-allowed}
+.btn.primary{background:var(--ink); border-color:var(--ink); color:#fff}
+.btn.primary:hover:not(:disabled){background:#000}
+.btn.gold{background:var(--accent); border-color:var(--accent); color:#fff}
+.btn.gold:hover:not(:disabled){background:#8f611f}
+.btn.ghost{border-color:var(--line); color:var(--muted)}
+.btn.ghost:hover:not(:disabled){background:#f6efe2; color:var(--ink)}
+.btn.sm{padding:4px 7px; font-size:10.5px; border-radius:6px}
+.btn.wide{width:100%}
+
+/* trilha de renda */
+.trackHead{display:flex; justify-content:space-between; align-items:baseline; font-size:11px; color:var(--muted)}
+.trackHead b{font-family:Georgia,serif; font-size:16px; color:var(--ink)}
+.trackBar{display:flex; gap:1px; align-items:flex-end; height:30px; margin:6px 0 3px; border-bottom:1px solid #bfb4a0}
+.tick{flex:1; background:#eee6d6; border-radius:1px 1px 0 0; height:42%}
+.tick.major{height:100%; background:#ddd2bd}
+.tick.on{background:var(--ink)}
+.tick.cur{background:var(--accent); box-shadow:0 0 0 1px var(--accent)}
+.trackFoot{display:flex; justify-content:space-between; font-size:10.5px; color:var(--muted)}
+.trackFoot b{color:var(--ink)}
+
+/* dados */
+.dice{display:flex; gap:7px; align-items:center}
+.die{
+  width:48px; height:48px; border:1px solid #cfc5b2; border-radius:10px; background:#fff;
+  display:grid; place-items:center; cursor:pointer; position:relative; transition:box-shadow .12s, border-color .12s, transform .08s;
+}
+.die:hover{border-color:#b9a98c}
+.die.sel{border-color:var(--accent); box-shadow:0 0 0 3px rgba(168,117,42,.2)}
+.die.locked{cursor:default}
+.die .rr{position:absolute; top:-6px; right:-6px; background:var(--accent); color:#fff; border-radius:50%; width:15px; height:15px; font-size:9px; display:grid; place-items:center; font-weight:700}
+.diceCol{flex:1; min-width:0}
+.diceBtns{display:flex; flex-direction:column; gap:5px}
+.kit{display:flex; flex-wrap:wrap; gap:4px; margin-top:7px; min-height:22px}
+.chip{font-size:10px; font-weight:700; letter-spacing:.03em; padding:3px 7px; border-radius:20px; background:#efe7d6; border:1px solid #ddd2bd; white-space:nowrap}
+.chip.livre{background:#e9f1e5; border-color:#c6dabf}
+.chip.zero{opacity:.32; text-decoration:line-through}
+.micro{font-size:10.5px; color:var(--muted)}
+.actionsLeft{display:flex; align-items:center; gap:6px}
+.dots{letter-spacing:.12em; font-size:17px; line-height:1}
+.dots i{font-style:normal; color:#d4c8b2}
+.dots i.on{color:var(--ink)}
+.actionGrid{display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-top:7px}
+.hintLine{font-size:10.5px; color:var(--muted); line-height:1.4; margin-top:7px}
+
+/* log */
+#logCard{display:flex; flex-direction:column; min-height:112px}
+#log{overflow-y:auto; flex:1; max-height:190px; font-size:11px; line-height:1.42; scrollbar-width:thin}
+#log::-webkit-scrollbar{width:7px}
+#log::-webkit-scrollbar-thumb{background:#ddd2bd; border-radius:8px}
+.le{display:flex; gap:6px; padding:3px 0; border-bottom:1px dotted #eee5d4}
+.le:last-child{border-bottom:0}
+.le .tn{min-width:25px; color:#a99a7f; font-size:9px; padding-top:2px; font-variant-numeric:tabular-nums}
+.le .who{font-weight:700}
+.le.p0 .who{color:var(--p1)}
+.le.p1 .who{color:var(--p2)}
+
+/* modal */
+#overlay{position:fixed; inset:0; background:rgba(28,24,18,.52); display:flex; align-items:center; justify-content:center; padding:22px; z-index:50}
+#overlay.hidden{display:none}
+.modal{
+  background:var(--card); border-radius:15px; width:100%; max-width:600px; max-height:88vh; overflow-y:auto;
+  padding:20px 22px; box-shadow:0 40px 100px -35px #000; border:1px solid #e3dac8;
+}
+.modal.start{max-width:520px; text-align:center; padding:28px 30px}
+.modal h2{font-family:Georgia,serif; font-size:24px; margin:0 0 3px; letter-spacing:-.01em}
+.modal h3{font-family:Georgia,serif; font-size:17px; margin:16px 0 6px}
+.modal p{font-size:12.5px; line-height:1.55; color:#413b33; margin:6px 0}
+.modal .kicker{font-size:9.5px; letter-spacing:.18em; font-weight:700; color:var(--accent); margin-bottom:5px}
+.modal .muted{color:var(--muted)}
+.modal .closeRow{display:flex; justify-content:flex-end; gap:7px; margin-top:16px; flex-wrap:wrap}
+.ruleList{text-align:left; font-size:12px; line-height:1.55; padding-left:18px; margin:6px 0}
+.ruleList li{margin:3px 0}
+.sw{display:inline-grid; place-items:center; width:17px; height:17px; border-radius:3px; font-size:10px; font-weight:800; vertical-align:-3px; border:1px solid rgba(0,0,0,.18)}
+.seg{display:flex; gap:6px; flex-wrap:wrap}
+.seg .btn{flex:1; min-width:96px}
+.startLogos{font-family:Georgia,serif; letter-spacing:.22em; font-size:11px; color:var(--muted); margin-bottom:8px}
+.bigChoice{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:18px 0 10px}
+.bigChoice .btn{padding:16px 10px; font-size:14px}
+.startOpts{display:flex; align-items:center; justify-content:center; gap:8px; font-size:11.5px; color:var(--muted); margin:6px 0 4px}
+.startOpts input{width:58px; border:1px solid var(--line); border-radius:6px; padding:5px 6px; font-size:12px; text-align:center; background:#fff}
+.note{font-size:10.5px; color:var(--muted); line-height:1.45; margin-top:8px}
+
+/* entrega */
+.delivCor{margin-top:13px; border-top:1px solid var(--line2); padding-top:9px}
+.delivCor:first-of-type{border-top:0; padding-top:0}
+.delivCorHead{display:flex; align-items:center; gap:7px; font-size:11px; font-weight:700; letter-spacing:.08em; color:var(--muted); margin-bottom:6px}
+.dopt{
+  display:flex; align-items:center; gap:10px; border:1px solid var(--line2); background:#fffaf0;
+  border-radius:9px; padding:7px 9px; margin-bottom:5px;
+}
+.dopt .dmain{flex:1; min-width:0}
+.dopt .dn{font-weight:700; font-size:12.5px}
+.dopt .ds{font-size:11px; color:var(--muted)}
+.dopt .dval{font-size:11px; font-weight:700; color:var(--green); white-space:nowrap}
+.dopt .dval.zero{color:var(--muted)}
+.dopt .dbonus{font-size:10px; background:#e9f1e5; border:1px solid #c6dabf; color:#2c5e3e; border-radius:20px; padding:2px 6px; font-weight:700; white-space:nowrap}
+.dopt.disabled{opacity:.55}
+.empty{font-size:11.5px; color:var(--muted); padding:6px 2px}
+.scoreTable{width:100%; border-collapse:collapse; margin-top:10px; font-size:12px}
+.scoreTable th,.scoreTable td{border-bottom:1px solid var(--line2); padding:6px 7px; text-align:left}
+.scoreTable th{font-size:9.5px; letter-spacing:.11em; color:var(--muted); text-transform:uppercase}
+.scoreTable td.n{text-align:right; font-variant-numeric:tabular-nums}
+.winner{background:#fff6dd}
+
+#toast{
+  position:fixed; left:50%; bottom:22px; transform:translate(-50%,20px); opacity:0; pointer-events:none;
+  background:var(--ink); color:#fff; padding:9px 15px; border-radius:9px; font-size:12px; font-weight:600;
+  box-shadow:0 14px 40px -14px rgba(0,0,0,.6); transition:opacity .16s, transform .16s; z-index:80; max-width:70vw;
+}
+#toast.show{opacity:1; transform:translate(-50%,0)}
+#toast.bad{background:#8f241d}
+
+/* svg */
+#board text{font-family:"Segoe UI",Arial,sans-serif; pointer-events:none; user-select:none}
+#board .hexhit{fill:transparent; cursor:pointer}
+#board .hexhit:hover{fill:rgba(168,117,42,.055)}
+#board .portalhit{cursor:pointer}
+#board .lbl{ paint-order:stroke; stroke:#fffdf8; stroke-width:.38px; stroke-linejoin:round }
+
+@media (max-width:1060px){
+  body{overflow:auto}
+  main{grid-template-columns:1fr; height:auto}
+  #boardCard{min-height:62vh}
+  #side{max-height:none; overflow:visible}
+  #log{max-height:220px}
+}
+</style>
+</head>
+<body>
+<header id="topbar">
+  <div class="brand"><b>BACIA DO CORVO</b><span>protótipo interativo · v0.5</span></div>
+  <div id="turnInfo"></div>
+  <div class="spacer"></div>
+  <button class="btn sm ghost" data-action="help">Regras</button>
+  <button class="btn sm ghost" data-action="newgame">Novo jogo</button>
+</header>
+
+<main>
+  <section id="boardCol">
+    <div id="boardCard">
+      <div id="boardHead">
+        <div id="sheetLabel"></div>
+        <div id="legend"></div>
+      </div>
+      <div id="boardWrap"><svg id="board" preserveAspectRatio="xMidYMid meet"></svg></div>
+      <div id="actionBar"></div>
+    </div>
+  </section>
+  <aside id="side">
+    <div class="card" id="playerCard"></div>
+    <div class="card" id="diceCard"></div>
+    <div class="card" id="actionsCard"></div>
+    <div class="card" id="logCard"><div class="cardT"><span class="k">DIÁRIO</span><span class="micro" id="logTurn"></span></div><div id="log"></div></div>
+  </aside>
+</main>
+
+<div id="overlay" class="hidden"></div>
+<div id="toast"></div>
+
+<script>
+/* =====================================================================
+   BACIA DO CORVO — protótipo interativo
+   ===================================================================== */
+'use strict';
+const $ = s => document.querySelector(s);
+const clamp = (v,a,b) => Math.max(a, Math.min(b, v));
+const key = (c,r) => c + ',' + r;
+const parseKey = k => { const [c,r] = k.split(',').map(Number); return {c,r}; };
+const r2 = n => (Math.round(n*100)/100).toString();
+
+/* ---------------- geometria ---------------- */
+const R = 12, HEXH = Math.sqrt(3) * R, COLS = 9, ROWS = 6, PAD = 2;
+const VIEW_W = 172, VIEW_H = 141;
+const MAP_X = PAD, MAP_Y = PAD;
+
+function centro(c, r){
+  return { x: MAP_X + R + 1.5 * R * c, y: MAP_Y + HEXH/2 + HEXH * r + (c % 2 ? HEXH/2 : 0) };
+}
+function vertice(cx, cy, k){
+  const a = Math.PI/180 * 60 * k;
+  return { x: cx + R * Math.cos(a), y: cy - R * Math.sin(a) };
+}
+function hexPath(cx, cy, raio){
+  const rr = raio || R, pts = [];
+  for (let k = 0; k < 6; k++){
+    const a = Math.PI/180 * 60 * k;
+    pts.push([cx + rr*Math.cos(a), cy - rr*Math.sin(a)]);
+  }
+  return 'M ' + pts.map(p => r2(p[0]) + ',' + r2(p[1])).join(' L ') + ' Z';
+}
+function portalPt(cx, cy, k){
+  const a = Math.PI/180 * (30 + 60*k), ap = R * Math.sqrt(3)/2;
+  const nx = Math.cos(a), ny = -Math.sin(a);
+  return { x: cx + ap*nx, y: cy + ap*ny, nx, ny };
+}
+// vizinho atraves do portal k. odd-q: colunas impares deslocadas para baixo.
+function vizinho(c, r, k){
+  let nc = c, nr = r;
+  if (k === 1) nr = r - 1;
+  else if (k === 4) nr = r + 1;
+  else if (k === 0){ nc = c + 1; nr = r - (c % 2 === 0 ? 1 : 0); }
+  else if (k === 5){ nc = c + 1; nr = r + (c % 2 === 1 ? 1 : 0); }
+  else if (k === 2){ nc = c - 1; nr = r - (c % 2 === 0 ? 1 : 0); }
+  else if (k === 3){ nc = c - 1; nr = r + (c % 2 === 1 ? 1 : 0); }
+  if (nc < 0 || nc >= COLS || nr < 0 || nr >= ROWS) return null;
+  return { c: nc, r: nr };
+}
+
+/* ---------------- mapa ---------------- */
+const MAPA = [
+  ['.','4','10','.','~','.','.','11','^'],
+  ['.','1','.','.','~','.','.','^','^'],
+  ['.','.','.','.','~','.','.','3','^'],
+  ['.','.','^','^','12','^','^','.','5'],
+  ['.','6','.','.','~','.','7','.','.'],
+  ['~','.','.','8','~','2','.','9','.']
+];
+
+const CIDADES = {
+  1:  { nome:'PORTO NORTE',  cor:'A', cubos:['P','M'], cinza:false },
+  2:  { nome:'FOZ DO CORVO', cor:'A', cubos:['V','X'], cinza:false },
+  3:  { nome:'PASSO ALTO',   cor:'?', cubos:[],        cinza:true  },
+  4:  { nome:'SERRA NEGRA',  cor:'M', cubos:['A','V'], cinza:false },
+  5:  { nome:'ESTANCIA SUL', cor:'V', cubos:['P','X'], cinza:false },
+  6:  { nome:'PONTE VELHA',  cor:'X', cubos:['A','M'], cinza:false },
+  7:  { nome:'CURRAL',       cor:'P', cubos:['V','M'], cinza:false },
+  8:  { nome:'BARRA FUNDA',  cor:'V', cubos:['P','A'], cinza:false },
+  9:  { nome:'COSTA VERDE',  cor:'X', cubos:['M','P'], cinza:false },
+  10: { nome:'VILA FERRO',   cor:'P', cubos:['A','X'], cinza:false },
+  11: { nome:'BOCA DO MATO', cor:'M', cubos:['P','V'], cinza:false },
+  12: { nome:'VAU DO CORVO', cor:'?', cubos:[],        cinza:true  }
+};
+const CIDADE_EM = {};   // "c,r" -> indice
+for (let r = 0; r < ROWS; r++) for (let c = 0; c < COLS; c++){
+  const cell = MAPA[r][c];
+  if (cell >= '1' && cell <= '9' || cell === '10' || cell === '11' || cell === '12'){
+    const idx = parseInt(cell, 10);
+    CIDADES[idx].c = c; CIDADES[idx].r = r;
+    CIDADE_EM[key(c,r)] = idx;
+  }
+}
+const CIDADES_POR_COR = {};
+for (const idx in CIDADES){
+  const cor = CIDADES[idx].cor;
+  if (!CIDADES_POR_COR[cor]) CIDADES_POR_COR[cor] = [];
+  CIDADES_POR_COR[cor].push(Number(idx));
+}
+
+const COR = {
+  A:{ nome:'azul',      hex:'#2f6fb3', txt:'#fff' },
+  M:{ nome:'amarelo',   hex:'#d9a300', txt:'#3a2a00' },
+  V:{ nome:'vermelho',  hex:'#c0392b', txt:'#fff' },
+  X:{ nome:'preto',     hex:'#313131', txt:'#fff' },
+  P:{ nome:'roxo',      hex:'#7d3c98', txt:'#fff' },
+  '?':{ nome:'cinza',   hex:'#9b9b9b', txt:'#fff' }
+};
+const FORMA_NOME = { reta:'RETA', c60:'CURVA 60°', c120:'CURVA 120°', livre:'LIVRE' };
+const TIPO_NOME  = { reta:'RETA', c60:'CURVA 60°', c120:'CURVA 120°', garfo:'GARFO' };
+const FACE_FORMA = { 1:'reta', 2:'reta', 3:'c60', 4:'c60', 5:'c120', 6:'livre' };
+const CUSTO_MOTOR = { 2:8, 3:12, 4:16, 5:20 };
+const RENDA_POS = { 1:3, 2:4, 4:6, 6:8, 8:10, 10:12, 13:14, 16:16, 20:18, 24:20, 28:22, 32:20, 36:15, 40:10 };
+const RENDA_KEYS = Object.keys(RENDA_POS).map(Number).sort((a,b)=>a-b);
+const LIMITE_SOLO = 5, LIMITE_MULTI = 6;
+
+function pagamento(pos){
+  let v = 0;
+  for (const k of RENDA_KEYS){ if (pos >= k) v = RENDA_POS[k]; else break; }
+  return v;
+}
+function terreno(c,r){
+  const cell = MAPA[r][c];
+  return cell === '~' ? 'agua' : cell === '^' ? 'serra' : 'planicie';
+}
+function custoTerreno(c,r){
+  const t = terreno(c,r);
+  return t === 'agua' ? 2 : t === 'serra' ? 3 : 1;
+}
+function tipoPeca(gates){
+  if (gates.length >= 3) return 'garfo';
+  const d = (gates[1] - gates[0] + 6) % 6;
+  if (d === 3) return 'reta';
+  if (d === 1 || d === 5) return 'c60';
+  return 'c120';
+}
+function corCidade(p, idx){
+  if (!p) return CIDADES[idx].cor;
+  if (p.urbanized[idx]) return p.urbanized[idx];
+  return CIDADES[idx].cor;
+}
+function bonusCidade(idx){ return CIDADES[idx].cinza ? 3 : 4; }
+
+/* ---------------- estado ---------------- */
+let state = null;
+const ui = { selHex:null, selGates:[], modal:null, start:true, rerollSel:[], urb:{cidade:null,cor:null}, deliveryCity:null, view:null };
+let toastTimer = null;
+
+const SAVE_KEY = 'bacia-do-corvo-v1';
+
+function cloneCubes(){
+  const o = {};
+  for (const idx in CIDADES) o[idx] = CIDADES[idx].cubos.slice();
+  return o;
+}
+function novoJogador(i, caixa){
+  return {
+    nome: 'Jogador ' + (i+1),
+    ink: i === 0 ? '#b3261e' : '#1f4e9c',
+    money: caixa, income: 0, engine: 1, titles: 0,
+    bridges: 2, tunnels: 2,
+    pieces: {}, cubes: cloneCubes(), urbanized: {}, abandoned: {}, delivered: 0,
+    dice: null, kit: [], rerolled: false, acted: false
+  };
+}
+function novoJogo(numPlayers, caixa){
+  const players = [];
+  for (let i = 0; i < numPlayers; i++) players.push(novoJogador(i, caixa));
+  state = {
+    version: 1, numPlayers, players, active: 0, round: 1, turnNo: 1,
+    phase: 'roll', actionsLeft: 3,
+    firstDelivery: {},
+    endTriggered: false, turnsLeftAfter: null,
+    log: []
+  };
+  ui.modal = null; ui.start = false; ui.selHex = null; ui.selGates = [];
+  ui.rerollSel = []; ui.deliveryCity = null; ui.urb = {cidade:null,cor:null}; ui.view = null;
+  logMsg('Novo jogo: ' + numPlayers + (numPlayers === 1 ? ' barão.' : ' barões.') + ' Caixa inicial ' + caixa + ' mil.');
+  salvar(); render();
+}
+
+function ativo(){ return state.players[state.active]; }
+function visto(){ return (ui.view !== null && state.players[ui.view]) ? state.players[ui.view] : ativo(); }
+function peca(p,c,r){ return p.pieces[key(c,r)] || null; }
+function qtdPecas(p){ return Object.keys(p.pieces).length; }
+function cidadesComTrilho(p){
+  let n = 0;
+  for (const idx in CIDADES) if (p.pieces[key(CIDADES[idx].c, CIDADES[idx].r)]) n++;
+  return n;
+}
+function abandonadas(p){ return Object.keys(p.abandoned).length; }
+function limiteFim(){ return state.numPlayers === 1 ? LIMITE_SOLO : LIMITE_MULTI; }
+
+/* ---------------- log / persistencia ---------------- */
+function logMsg(msg, playerIdx){
+  if (!state) return;
+  state.log.push({ t: state.turnNo, p: playerIdx === undefined ? state.active : playerIdx, msg });
+  if (state.log.length > 80) state.log.shift();
+}
+function salvar(){
+  try { localStorage.setItem(SAVE_KEY, JSON.stringify(state)); } catch(e){}
+}
+function carregar(){
+  try {
+    const raw = localStorage.getItem(SAVE_KEY);
+    if (!raw) return false;
+    const s = JSON.parse(raw);
+    if (!s || s.version !== 1 || !s.players || !s.players.length) return false;
+    state = s;
+    ui.start = false;
+    return true;
+  } catch(e){ return false; }
+}
+function commit(){ salvar(); render(); }
+
+/* ---------------- rede e peças ---------------- */
+function ancoras(p, c, r){
+  const out = [];
+  for (let k = 0; k < 6; k++){
+    const n = vizinho(c, r, k);
+    if (!n) continue;
+    const pc = p.pieces[key(n.c, n.r)];
+    if (pc && pc.gates.indexOf((k + 3) % 6) >= 0) out.push(k);
+  }
+  return out;
+}
+function temForma(p, tipo){
+  if (tipo === 'garfo') return p.kit.length >= 2;
+  return p.kit.indexOf(tipo) >= 0 || p.kit.indexOf('livre') >= 0;
+}
+/* Portais que ainda apontam para um hexagono vazio: as saidas da rede.
+   Sem nenhuma saida a rede nao cresce mais (loop fechado). */
+function saidasLivres(p, extra){
+  const ocupado = {};
+  for (const kk in p.pieces) ocupado[kk] = p.pieces[kk];
+  if (extra) ocupado[key(extra.c, extra.r)] = { gates: extra.gates };
+  let n = 0;
+  for (const kk in ocupado){
+    const h = parseKey(kk);
+    for (const g of ocupado[kk].gates){
+      const v = vizinho(h.c, h.r, g);
+      if (v && !ocupado[key(v.c, v.r)]) n++;
+    }
+  }
+  return n;
+}
+function gastaForma(p, tipo){
+  if (tipo === 'garfo'){
+    const ordem = p.kit.map((f,i)=>({f,i})).sort((a,b)=>(a.f==='livre'?1:0)-(b.f==='livre'?1:0));
+    const tirar = ordem.slice(0,2).map(o=>o.i);
+    p.kit = p.kit.filter((_,i)=>tirar.indexOf(i) < 0);
+  } else {
+    let i = p.kit.indexOf(tipo);
+    if (i < 0) i = p.kit.indexOf('livre');
+    if (i >= 0) p.kit.splice(i, 1);
+  }
+}
+function validarConstrucao(p, c, r, gates){
+  if (!state || state.phase !== 'actions') return { ok:false, motivo:'Role os dados primeiro.' };
+  if (state.actionsLeft <= 0) return { ok:false, motivo:'Sem ações restantes.' };
+  if (c < 0 || c >= COLS || r < 0 || r >= ROWS) return { ok:false, motivo:'Fora do mapa.' };
+  if (peca(p, c, r)) return { ok:false, motivo:'Este hexágono já tem peça.' };
+  if (!gates || gates.length < 2) return { ok:false, motivo:'Escolha 2 portais (3 para garfo).' };
+  if (gates.length > 3) return { ok:false, motivo:'Máximo de 3 portais.' };
+  const fora = gates.filter(g => !vizinho(c, r, g));
+  if (fora.length) return { ok:false, motivo:'O portal ' + fora[0] + ' aponta para fora do mapa.' };
+  const tipo = tipoPeca(gates);
+  const custo = custoTerreno(c, r);
+  const t = terreno(c, r);
+  const cidade = !!CIDADE_EM[key(c, r)];
+  if (qtdPecas(p) === 0 && !cidade)
+    return { ok:false, motivo:'A primeira peça da rede tem de ficar num hexágono de cidade.' };
+  if (qtdPecas(p) > 0){
+    const anc = ancoras(p, c, r);
+    if (!gates.some(g => anc.indexOf(g) >= 0))
+      return { ok:false, motivo:'A peça precisa tocar a sua rede por um portal (veja os anéis verdes).' };
+    if (saidasLivres(p, { c, r, gates }) === 0)
+      return { ok:false, motivo:'Essa peça fecharia a rede: sem portal livre, você não poderia mais expandir.' };
+  }
+  if (!temForma(p, tipo))
+    return { ok:false, motivo:'O kit não tem ' + (tipo==='garfo'?'2 formas':TIPO_NOME[tipo]) + '.' };
+  if (p.money < custo)
+    return { ok:false, motivo:'Faltam ' + (custo - p.money) + ' mil. Emita um título.' };
+  if (t === 'agua' && p.bridges <= 0) return { ok:false, motivo:'Sem pontes: você já usou as 2.' };
+  if (t === 'serra' && p.tunnels <= 0) return { ok:false, motivo:'Sem túneis: você já usou os 2.' };
+  return { ok:true, tipo, custo, terreno:t, cidade };
+}
+function construir(c, r, gates){
+  const p = ativo();
+  const v = validarConstrucao(p, c, r, gates);
+  if (!v.ok){ toast(v.motivo, true); return false; }
+  p.money -= v.custo;
+  if (v.terreno === 'agua') p.bridges--;
+  if (v.terreno === 'serra') p.tunnels--;
+  gastaForma(p, v.tipo);
+  p.pieces[key(c,r)] = { gates: gates.slice().sort((a,b)=>a-b), tipo: v.tipo, custo: v.custo, t: state.turnNo };
+  state.actionsLeft--;
+  p.acted = true;
+  logMsg('Construiu ' + TIPO_NOME[v.tipo] + ' em ' + nomeTerreno(v.terreno) + ' por ' + v.custo + ' mil' + (v.terreno==='agua'?' (ponte)':v.terreno==='serra'?' (túnel)':'') + '.');
+  ui.selHex = null; ui.selGates = [];
+  toast('Peça construída: ' + TIPO_NOME[v.tipo] + ' (' + v.custo + ' mil).');
+  commit();
+  return true;
+}
+function nomeTerreno(t){ return t === 'agua' ? 'água' : t === 'serra' ? 'montanha' : t === 'cidade' ? 'cidade' : 'planície'; }
+
+/* Caminho mais curto pela rede. Retorna cidades alcancadas.
+   hops = hexagonos ENTRADOS depois da cidade de origem.
+   rota  = hops - 1 (hexagonos intermediarios) = alcance necessario. */
+function rotasDe(p, srcIdx, limite){
+  const res = {};
+  const src = CIDADES[srcIdx];
+  const origem = p.pieces[key(src.c, src.r)];
+  if (!origem) return res;
+  const fila = [];
+  const visto = new Set();
+  const maxHops = limite + 1;
+
+  function entrar(nc, nr, ng, hops, caminho){
+    if (hops > maxHops) return;
+    const cidade = CIDADE_EM[key(nc, nr)];
+    const novoCaminho = caminho.concat([{c:nc, r:nr}]);
+    if (cidade !== undefined && cidade !== srcIdx && res[cidade] === undefined){
+      res[cidade] = { hops, rota: Math.max(0, hops - 1), caminho: novoCaminho };
+    }
+    if (hops <= limite){
+      const k = key(nc,nr) + ':' + ng;
+      if (!visto.has(k)){
+        visto.add(k);
+        fila.push({ c:nc, r:nr, g:ng, hops, caminho:novoCaminho });
+      }
+    }
+  }
+
+  for (const g of origem.gates){
+    const n = vizinho(src.c, src.r, g);
+    if (!n) continue;
+    const ng = (g + 3) % 6;
+    const np = p.pieces[key(n.c, n.r)];
+    if (!np || np.gates.indexOf(ng) < 0) continue;
+    entrar(n.c, n.r, ng, 1, [{c:src.c, r:src.r}]);
+  }
+  while (fila.length){
+    const st = fila.shift();
+    const pc = p.pieces[key(st.c, st.r)];
+    if (!pc) continue;
+    for (const g of pc.gates){
+      if (g === st.g) continue;
+      const n = vizinho(st.c, st.r, g);
+      if (!n) continue;
+      const ng = (g + 3) % 6;
+      const np = p.pieces[key(n.c, n.r)];
+      if (!np || np.gates.indexOf(ng) < 0) continue;
+      entrar(n.c, n.r, ng, st.hops + 1, st.caminho);
+    }
+  }
+  return res;
+}
+
+function opcoesEntrega(p, srcIdx){
+  const rotas = rotasDe(p, srcIdx, p.engine);
+  const out = {};
+  const cubos = p.cubes[srcIdx] || [];
+  for (const cor of cubos){
+    if (out[cor]) continue;
+    const lista = [];
+    for (const idxS in CIDADES){
+      const idx = Number(idxS);
+      if (idx === srcIdx) continue;
+      if (corCidade(p, idx) !== cor) continue;
+      const info = rotas[idx];
+      if (!info) continue;
+      lista.push({ idx, hops:info.hops, rota:info.rota, caminho:info.caminho, bonus: state.firstDelivery[idx] === undefined ? bonusCidade(idx) : 0 });
+    }
+    lista.sort((a,b)=>a.hops - b.hops);
+    out[cor] = lista;
+  }
+  return out;
+}
+function entregar(srcIdx, cor, dstIdx){
+  const p = ativo();
+  if (state.phase !== 'actions' || state.actionsLeft <= 0) return false;
+  const rotas = rotasDe(p, srcIdx, p.engine);
+  const info = rotas[dstIdx];
+  if (!info){ toast('Destino fora do alcance do motor.', true); return false; }
+  if (corCidade(p, dstIdx) !== cor){ toast('A cidade não aceita essa cor.', true); return false; }
+  const pos = (p.cubes[srcIdx] || []).indexOf(cor);
+  if (pos < 0) return false;
+  p.cubes[srcIdx].splice(pos, 1);
+  let bonus = 0;
+  if (state.firstDelivery[dstIdx] === undefined){
+    bonus = bonusCidade(dstIdx);
+    state.firstDelivery[dstIdx] = state.active;
+  }
+  const ganho = info.rota + bonus;
+  p.income = clamp(p.income + ganho, 0, 40);
+  p.delivered++;
+  state.actionsLeft--;
+  p.acted = true;
+  let extra = ' (+' + info.rota + ' rota' + (bonus ? ' +' + bonus + ' 1ª entrega' : '') + ')';
+  logMsg('Entregou cubo ' + cor + ' de ' + CIDADES[srcIdx].nome + ' em ' + CIDADES[dstIdx].nome + ': renda +' + ganho + extra + '.');
+  if (p.cubes[srcIdx].length === 0 && !p.abandoned[srcIdx]){
+    p.abandoned[srcIdx] = true;
+    logMsg(CIDADES[srcIdx].nome + ' ficou abandonada (último cubo entregue).');
+    toast(CIDADES[srcIdx].nome + ' abandonada.');
+  } else {
+    toast('Entrega feita: renda +' + ganho + '.');
+  }
+  ui.deliveryCity = (state.actionsLeft > 0 && p.cubes[srcIdx].length > 0) ? srcIdx : null;
+  if (!ui.deliveryCity) ui.modal = null;
+  commit();
+  return true;
+}
+
+/* ---------------- outras ações ---------------- */
+function emitirTitulo(qtd){
+  const p = ativo();
+  if (state.phase === 'over') return;
+  const n = qtd || 1;
+  p.money += 5 * n; p.titles += n;
+  logMsg('Emitiu ' + n + ' título' + (n>1?'s':'') + ' (+' + (5*n) + ' mil).');
+  commit();
+}
+function melhorarMotor(){
+  const p = ativo();
+  if (state.phase !== 'actions') return toast('Role os dados primeiro.', true);
+  if (state.actionsLeft <= 0) return toast('Sem ações restantes.', true);
+  if (p.engine >= 5) return toast('O motor já está no nível 5.', true);
+  const custo = CUSTO_MOTOR[p.engine + 1];
+  if (p.money < custo) return toast('Faltam ' + (custo - p.money) + ' mil.', true);
+  p.money -= custo;
+  p.engine++;
+  state.actionsLeft--;
+  p.acted = true;
+  logMsg('Melhorou o motor para ' + p.engine + ' (−' + custo + ' mil).');
+  toast('Motor nível ' + p.engine + ' · alcance ' + p.engine + '.');
+  ui.modal = null;
+  commit();
+}
+function urbanizar(idx, cor){
+  const p = ativo();
+  if (state.phase !== 'actions') return toast('Role os dados primeiro.', true);
+  if (state.actionsLeft <= 0) return toast('Sem ações restantes.', true);
+  if (!CIDADES[idx] || !CIDADES[idx].cinza) return toast('Só cidades cinzas podem ser urbanizadas.', true);
+  if (p.urbanized[idx]) return toast('Essa cidade já foi urbanizada.', true);
+  if (!COR[cor] || cor === '?') return toast('Escolha uma cor.', true);
+  if (p.money < 10) return toast('Urbanizar custa 10 mil.', true);
+  p.money -= 10;
+  p.urbanized[idx] = cor;
+  p.cubes[idx] = [cor, cor];
+  state.actionsLeft--;
+  p.acted = true;
+  logMsg('Urbanizou ' + CIDADES[idx].nome + ' como ' + COR[cor].nome + ' (−10 mil, 2 cubos).');
+  toast(CIDADES[idx].nome + ' agora é ' + COR[cor].nome + '.');
+  ui.modal = null;
+  commit();
+}
+
+function limparIncompletas(p){
+  const ks = Object.keys(p.pieces);
+  if (!ks.length) return;
+  const adj = {};
+  for (const k of ks) adj[k] = [];
+  for (const k of ks){
+    const {c,r} = parseKey(k);
+    const pc = p.pieces[k];
+    for (const g of pc.gates){
+      const n = vizinho(c, r, g);
+      if (!n) continue;
+      const nk = key(n.c, n.r);
+      const np = p.pieces[nk];
+      if (np && np.gates.indexOf((g+3)%6) >= 0) adj[k].push(nk);
+    }
+  }
+  const fila = [];
+  const manter = new Set();
+  for (const k of ks){
+    const {c,r} = parseKey(k);
+    if (CIDADE_EM[key(c,r)] !== undefined){ fila.push(k); manter.add(k); }
+  }
+  while (fila.length){
+    const k = fila.shift();
+    for (const nk of adj[k] || []){
+      if (!manter.has(nk)){ manter.add(nk); fila.push(nk); }
+    }
+  }
+  let apagadas = 0;
+  for (const k of ks){
+    if (!manter.has(k)){
+      delete p.pieces[k];
+      apagadas++;
+    }
+  }
+  if (apagadas) logMsg('Apagou ' + apagadas + ' conexão(ões) incompleta(s).');
+}
+
+/* ---------------- fim de turno ---------------- */
+function resumoFimTurno(){
+  const p = ativo();
+  const pag = pagamento(p.income);
+  const div = p.titles;
+  let auto = 0;
+  if (p.money + pag < div) auto = Math.ceil((div - p.money - pag) / 5);
+  return { pag, div, auto, saldo: pag - div, caixa: p.money + pag + auto*5 - div };
+}
+function fazerEncerrarTurno(){
+  const p = ativo();
+  const r = resumoFimTurno();
+  const wasTriggered = state.endTriggered;
+  p.money += r.pag;
+  if (r.auto > 0){
+    p.money += r.auto * 5;
+    p.titles += r.auto;
+    logMsg('Emitiu ' + r.auto + ' título(s) para pagar os dividendos (+' + (r.auto*5) + ' mil).');
+  }
+  p.money -= r.div;
+  logMsg('Fim do turno: +' + r.pag + ' de renda, −' + r.div + ' de dividendos.');
+  limparIncompletas(p);
+
+  // proximo jogador
+  state.turnNo++;
+  const prox = (state.active + 1) % state.numPlayers;
+  if (prox === 0) state.round++;
+  state.active = prox;
+  state.actionsLeft = 3;
+  state.phase = 'roll';
+  ui.selHex = null; ui.selGates = []; ui.deliveryCity = null; ui.urb = {cidade:null,cor:null}; ui.view = null;
+  const np = ativo();
+  np.dice = null; np.kit = []; np.rerolled = false; np.acted = false;
+  ui.modal = null;
+
+  if (wasTriggered){
+    state.turnsLeftAfter--;
+    if (state.turnsLeftAfter <= 0){ finalizarJogo(); return; }
+  }
+  if (!state.endTriggered){
+    const alguem = state.players.some(pl => abandonadas(pl) >= limiteFim());
+    if (alguem){
+      state.endTriggered = true;
+      state.turnsLeftAfter = state.numPlayers;
+      logMsg('Limite de cidades abandonadas atingido: mais ' + state.numPlayers + ' turno(s) e o jogo acaba.', 0);
+      toast('Última volta! O jogo termina em ' + state.numPlayers + ' turno(s).', true);
+    }
+  }
+  toast('Vez de ' + np.nome + '.');
+  commit();
+}
+function finalizarJogo(){
+  state.phase = 'over';
+  ui.modal = { type:'over' };
+  logMsg('FIM DE JOGO.');
+  commit();
+}
+
+/* =====================================================================
+   RENDER
+   ===================================================================== */
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function toast(msg, bad){
+  const el = $('#toast');
+  el.textContent = msg;
+  el.className = 'show' + (bad ? ' bad' : '');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { el.className = ''; }, 2600);
+}
+function svgTxt(x,y,s,size,fill,weight,anchor){
+  return '<text x="' + r2(x) + '" y="' + r2(y) + '" font-size="' + size + '" fill="' + (fill||'#1f2328') +
+    '" font-weight="' + (weight||'400') + '" text-anchor="' + (anchor||'middle') + '" class="lbl">' + esc(s) + '</text>';
+}
+
+function render(){
+  if (!state){ renderStart(); return; }
+  renderTop();
+  renderBoard();
+  renderPlayerCard();
+  renderDice();
+  renderActions();
+  renderActionBar();
+  renderLog();
+  renderModal();
+}
+
+function renderTop(){
+  const p = ativo();
+  const v = visto();
+  $('#turnInfo').innerHTML =
+    '<span class="pill ink">Rodada ' + state.round + '</span>' +
+    '<span class="pill">Turno ' + state.turnNo + '</span>' +
+    '<span class="pill" style="border-color:' + p.ink + '55;color:' + p.ink + '">● ' + esc(p.nome) + '</span>' +
+    (state.endTriggered ? '<span class="pill" style="background:#8f241d;color:#fff;border-color:#8f241d">ÚLTIMA VOLTA</span>' : '') +
+    (state.numPlayers > 1 ? state.players.map((pl,i)=>{
+      const pv = pl.income - pl.titles;
+      return '<span class="pill" style="border-color:' + pl.ink + '44;color:' + pl.ink + '">J' + (i+1) + ' · ' +
+        pv + ' PV · ' + pl.money + ' mil</span>';
+    }).join('') : '');
+  $('#sheetLabel').innerHTML = '<span class="inkDot" style="background:' + v.ink + '"></span>Folha de <b>' + esc(v.nome) + '</b> · ' +
+    (state.numPlayers === 1 ? 'solo' : (v === p ? 'rede própria' : 'espiando'));
+  let lg = '<span class="lg"><b style="font-weight:700">CUBOS</b></span>';
+  for (const l of ['A','M','V','X','P']){
+    lg += '<span class="lg"><i class="sw" style="background:' + COR[l].hex + '"></i>' + COR[l].nome + '</span>';
+  }
+  lg += '<span class="lg" style="margin-left:4px;color:#8a8172">anel verde = portal ancorado</span>';
+  $('#legend').innerHTML = lg;
+}
+
+/* ---------- tabuleiro ---------- */
+function renderBoard(){
+  const p = visto();
+  const b = $('#board');
+  b.setAttribute('viewBox', '0 0 ' + VIEW_W + ' ' + VIEW_H);
+  const out = [];
+  out.push('<defs><pattern id="hatch" width="1.8" height="1.8" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">' +
+    '<line x1="0" y1="0" x2="0" y2="1.8" stroke="#8f8f8f" stroke-width="0.4"/></pattern></defs>');
+
+  // 1. terrenos
+  out.push('<g>');
+  for (let r = 0; r < ROWS; r++){
+    for (let c = 0; c < COLS; c++){
+      const {x,y} = centro(c,r);
+      const t = terreno(c,r);
+      const cidade = CIDADE_EM[key(c,r)] !== undefined;
+      const fill = cidade ? '#fdf7e8' : t === 'agua' ? '#dbe8f2' : t === 'serra' ? '#ece6d9' : '#fffdf8';
+      out.push('<path d="' + hexPath(x,y) + '" fill="' + fill + '" stroke="#b7ad9c" stroke-width="0.28"/>');
+      if (t === 'agua'){
+        for (const dy of [-4.2, 0, 4.2]){
+          out.push('<path d="M ' + r2(x-6.2) + ',' + r2(y+dy) + ' q 2,-1.3 3.1,0 q 1,1.3 3.1,0 q 2,-1.3 3.1,0" fill="none" stroke="#8db0c4" stroke-width="0.32"/>');
+        }
+      } else if (t === 'serra'){
+        for (const ox of [-4.8, 0.2, 5.2]){
+          out.push('<path d="M ' + r2(x+ox) + ',' + r2(y+4.8) + ' L ' + r2(x+ox+2.6) + ',' + r2(y-2.4) +
+            ' L ' + r2(x+ox+5.2) + ',' + r2(y+4.8) + ' Z" fill="#fffdf8" fill-opacity=".35" stroke="#75634c" stroke-width="0.38"/>');
+        }
+      }
+      if (cidade && corCidade(p, CIDADE_EM[key(c,r)]) === '?'){
+        out.push('<path d="' + hexPath(x,y) + '" fill="url(#hatch)" opacity=".42" stroke="none"/>');
+      }
+    }
+  }
+  out.push('</g>');
+
+  // 2. portais
+  out.push('<g>');
+  for (let r = 0; r < ROWS; r++) for (let c = 0; c < COLS; c++){
+    const {x,y} = centro(c,r);
+    for (let k = 0; k < 6; k++) out.push(portalSvg(x,y,k));
+  }
+  out.push('</g>');
+
+  // 3. peças
+  out.push('<g>');
+  for (const k of Object.keys(p.pieces)) out.push(pecaSvg(p, parseKey(k), p.pieces[k]));
+  out.push('</g>');
+
+  // 4. cidades
+  out.push('<g>');
+  for (const idxS in CIDADES) out.push(cidadeSvg(p, Number(idxS)));
+  out.push('</g>');
+
+  // 5. seleção
+  if (ui.selHex){
+    const {c,r} = ui.selHex;
+    const {x,y} = centro(c,r);
+    const gates = ui.selGates;
+    const val = gates.length >= 2 ? validarConstrucao(p,c,r,gates) : null;
+    const cor = (val && !val.ok) ? '#a3261e' : '#a8752a';
+    out.push('<path d="' + hexPath(x,y) + '" fill="none" stroke="' + cor + '" stroke-width="0.85"/>');
+    const anc = ancoras(p,c,r);
+    for (let k = 0; k < 6; k++){
+      const pt = portalPt(x,y,k);
+      if (!vizinho(c,r,k)){
+        out.push('<path d="M ' + r2(pt.x-0.9) + ',' + r2(pt.y-0.9) + ' L ' + r2(pt.x+0.9) + ',' + r2(pt.y+0.9) +
+          ' M ' + r2(pt.x+0.9) + ',' + r2(pt.y-0.9) + ' L ' + r2(pt.x-0.9) + ',' + r2(pt.y+0.9) + '" stroke="#a3261e" stroke-width="0.3" opacity=".45"/>');
+        continue;
+      }
+      if (gates.indexOf(k) >= 0){
+        out.push('<circle cx="' + r2(pt.x) + '" cy="' + r2(pt.y) + '" r="1.05" fill="' + cor + '"/>');
+      } else if (anc.indexOf(k) >= 0){
+        out.push('<circle cx="' + r2(pt.x) + '" cy="' + r2(pt.y) + '" r="1.7" fill="none" stroke="#2f7d4f" stroke-width="0.42" opacity=".9"/>');
+      } else {
+        out.push('<circle cx="' + r2(pt.x) + '" cy="' + r2(pt.y) + '" r="1.45" fill="none" stroke="#a8752a" stroke-width="0.28" opacity=".45"/>');
+      }
+    }
+    if (gates.length >= 2){
+      const pts = gates.map(k => portalPt(x,y,k));
+      let d = 'M ' + r2(pts[0].x) + ',' + r2(pts[0].y);
+      for (let i = 1; i < pts.length; i++) d += ' L ' + r2(x) + ',' + r2(y) + ' L ' + r2(pts[i].x) + ',' + r2(pts[i].y);
+      out.push('<path d="' + d + '" fill="none" stroke="#fffdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>');
+      out.push('<path d="' + d + '" fill="none" stroke="' + cor + '" stroke-width="1.25" stroke-dasharray="1.5 1.1" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>');
+    }
+  }
+  out.push('</g>');
+
+  // 6. cliques nos hexagonos
+  out.push('<g>');
+  for (let r = 0; r < ROWS; r++) for (let c = 0; c < COLS; c++){
+    const {x,y} = centro(c,r);
+    out.push('<path class="hexhit" d="' + hexPath(x,y) + '" data-hex="' + c + ',' + r + '"/>');
+  }
+  out.push('</g>');
+
+  // 7. cliques nos portais do hexagono selecionado
+  if (ui.selHex && state.phase === 'actions' && state.actionsLeft > 0){
+    const {c,r} = ui.selHex;
+    if (!peca(p,c,r)){
+      const {x,y} = centro(c,r);
+      out.push('<g>');
+      for (let k = 0; k < 6; k++){
+        if (!vizinho(c, r, k)) continue;
+        const pt = portalPt(x,y,k);
+        out.push('<circle class="portalhit" cx="' + r2(pt.x) + '" cy="' + r2(pt.y) + '" r="2.7" fill="transparent" data-gate="' + k + '"/>');
+      }
+      out.push('</g>');
+    }
+  }
+  b.innerHTML = out.join('');
+}
+
+function portalSvg(cx,cy,k){
+  const pt = portalPt(cx,cy,k);
+  const tx = -pt.ny, ty = pt.nx;
+  const w = 1.15, cap = 1.35;
+  const s = [];
+  s.push('<line x1="' + r2(pt.x-w*tx) + '" y1="' + r2(pt.y-w*ty) + '" x2="' + r2(pt.x+w*tx) + '" y2="' + r2(pt.y+w*ty) + '" stroke="#4b453b" stroke-width="0.52" stroke-linecap="round"/>');
+  for (const sg of [-1,1]){
+    const bx = pt.x + sg*w*tx, by = pt.y + sg*w*ty;
+    s.push('<line x1="' + r2(bx-cap*pt.nx) + '" y1="' + r2(by-cap*pt.ny) + '" x2="' + r2(bx+cap*pt.nx) + '" y2="' + r2(by+cap*pt.ny) + '" stroke="#4b453b" stroke-width="0.3" stroke-linecap="round"/>');
+  }
+  return s.join('');
+}
+
+function pecaSvg(p, h, pc){
+  const {x,y} = centro(h.c,h.r);
+  const pts = pc.gates.map(k => portalPt(x,y,k));
+  const segs = [];
+  if (pts.length === 2){
+    segs.push([pts[0], pts[1], pc.tipo === 'reta']);
+  } else {
+    for (let i = 1; i < pts.length; i++) segs.push([pts[0], pts[i], false]);
+  }
+  let d = '';
+  for (const [a,b,reta] of segs){
+    if (reta) d += 'M ' + r2(a.x) + ',' + r2(a.y) + ' L ' + r2(b.x) + ',' + r2(b.y) + ' ';
+    else d += 'M ' + r2(a.x) + ',' + r2(a.y) + ' L ' + r2(x) + ',' + r2(y) + ' L ' + r2(b.x) + ',' + r2(b.y) + ' ';
+  }
+  let s = '<path d="' + d + '" fill="none" stroke="#fffdf8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>';
+  s += '<path d="' + d + '" fill="none" stroke="' + p.ink + '" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" opacity=".92"/>';
+  for (const pt of pts) s += '<circle cx="' + r2(pt.x) + '" cy="' + r2(pt.y) + '" r="0.5" fill="' + p.ink + '"/>';
+  if (pc.tipo !== 'reta') s += '<circle cx="' + r2(x) + '" cy="' + r2(y) + '" r="0.8" fill="' + p.ink + '" stroke="#fffdf8" stroke-width="0.35"/>';
+  return s;
+}
+
+function cidadeSvg(p, idx){
+  const cid = CIDADES[idx];
+  const {x,y} = centro(cid.c, cid.r);
+  const cor = corCidade(p, idx);
+  const cinza = cor === '?';
+  const cubes = (p && p.cubes[idx]) || [];
+  const aband = !!(p && p.abandoned[idx]);
+  const out = [];
+  const nome = cid.nome.split(' ');
+  const linhas = nome.length === 1 ? [cid.nome] :
+    [nome.slice(0, Math.ceil(nome.length/2)).join(' '), nome.slice(Math.ceil(nome.length/2)).join(' ')];
+  if (!cinza){
+    const cc = COR[cor];
+    out.push('<circle cx="' + r2(x) + '" cy="' + r2(y-6.4) + '" r="1.95" fill="' + cc.hex + '" stroke="#1f2328" stroke-width="0.32"/>');
+    out.push(svgTxt(x, y-5.72, cor, 1.9, cc.txt, '800'));
+  }
+  const y0 = cinza ? y-2.6 : (linhas.length === 1 ? y-0.2 : y-2.0);
+  for (let i = 0; i < linhas.length; i++){
+    const yy = y0 + i*3.0;
+    out.push(svgTxt(x, yy, linhas[i], 2.25, aband ? '#9c8f80' : '#1f2328', '700'));
+    if (aband) out.push('<line x1="' + r2(x-7.6) + '" y1="' + r2(yy-0.7) + '" x2="' + r2(x+7.6) + '" y2="' + r2(yy-0.7) + '" stroke="#a3261e" stroke-width="0.55"/>');
+  }
+  if (cinza){
+    out.push(svgTxt(x, y+4.6, 'cinza', 1.9, '#7c7468', '600'));
+    out.push(svgTxt(x, y+7.0, 'urbanizar', 1.8, '#7c7468', '400'));
+  } else if (cubes.length){
+    const n = cubes.length, passo = 3.25, x0 = x - (n-1)*passo/2;
+    for (let i = 0; i < n; i++){
+      const cc = COR[cubes[i]];
+      const bx = x0 + i*passo;
+      out.push('<rect x="' + r2(bx-1.35) + '" y="' + r2(y+4.1) + '" width="2.7" height="2.7" rx="0.3" fill="' + cc.hex + '" stroke="#1f2328" stroke-width="0.28"/>');
+      out.push(svgTxt(bx, y+6.2, cubes[i], 1.75, cc.txt, '800'));
+    }
+  }
+  if (p && state.firstDelivery[idx] !== undefined){
+    const dono = state.players[state.firstDelivery[idx]];
+    out.push('<circle cx="' + r2(x+8.3) + '" cy="' + r2(y-8.4) + '" r="1.55" fill="' + (dono ? dono.ink : '#555') + '" stroke="#fffdf8" stroke-width="0.45"/>');
+    out.push(svgTxt(x+8.3, y-7.82, String(state.firstDelivery[idx]+1), 1.6, '#fff', '800'));
+  }
+  return out.join('');
+}
+
+/* ---------- painel ---------- */
+function renderPlayerCard(){
+  const p = visto();
+  const activoP = ativo();
+  const olhandoOutro = p !== activoP;
+  const pv = p.income - p.titles;
+  let tabs = '';
+  if (state.numPlayers > 1){
+    tabs = '<div class="ptabs">' + state.players.map((pl,i)=>
+      '<button class="ptab ' + (i===state.active?'on':'') + '" data-action="view" data-idx="' + i + '" ' +
+      (i===state.active?'':(i===ui.view?'style="border-color:'+pl.ink+';color:'+pl.ink+'"':'')) + ' title="' +
+      (i===state.active?'Jogador da vez':'Ver folha de J'+(i+1)) + '">J' + (i+1) + '</button>').join('') + '</div>';
+  }
+  const obras = (p.bridges > 0 ? '●'.repeat(p.bridges) : '') + (p.bridges <= 0 ? '—' : '') + '  ' +
+                (p.tunnels > 0 ? '●'.repeat(p.tunnels) : '—');
+  $('#playerCard').innerHTML =
+    '<div class="cardT"><span class="k">BARÃO · ' + esc(p.nome).toUpperCase() +
+      (olhandoOutro ? ' · <span style="color:#a8752a">espionando</span>' : '') + '</span>' + tabs + '</div>' +
+    '<div class="stats">' +
+      stat('CAIXA', p.money + ' mil', 'livre para gastar') +
+      stat('RENDA', p.income + ' / 40', 'recebe ' + pagamento(p.income) + ' mil/turno') +
+      stat('MOTOR', 'nível ' + p.engine, p.engine < 5 ? 'sobe por ' + CUSTO_MOTOR[p.engine+1] + ' mil' : 'máximo') +
+      stat('TÍTULOS', String(p.titles), 'PV agora: ' + pv) +
+      stat('OBRAS', p.bridges + 'P · ' + p.tunnels + 'T', '2 pontes · 2 túneis no jogo') +
+      stat('ABANDONO', abandonadas(p) + ' / ' + limiteFim(), cidadesComTrilho(p) + ' cidade(s) com trilho') +
+    '</div>' +
+    '<div class="moneyRow">' +
+      '<button class="btn" data-action="title" ' + (olhandoOutro?'disabled':'') + '>+ Título (+5 mil)</button>' +
+      '<button class="btn primary" data-action="endturn" ' + (olhandoOutro?'disabled':'') + '>Encerrar turno</button>' +
+    '</div>' +
+    (olhandoOutro ? '<div class="hintLine">Você está vendo a folha de <b>' + esc(p.nome) + '</b>. As ações continuam sendo de <b>' + esc(activoP.nome) + '</b>: qualquer clique no mapa volta para a folha dele.</div>' : '');
+  renderTrack(p);
+}
+function stat(k,v,x){
+  return '<div class="stat"><div class="sk">' + k + '</div><div class="sv">' + v + '</div><div class="sx">' + x + '</div></div>';
+}
+function renderTrack(p){
+  let ticks = '';
+  for (let i = 1; i <= 40; i++){
+    const major = RENDA_KEYS.indexOf(i) >= 0;
+    let cls = 'tick' + (major ? ' major' : '');
+    if (i < p.income) cls += ' on';
+    if (i === p.income) cls += ' on cur';
+    ticks += '<div class="' + cls + '" title="' + i + (major ? ' → ' + RENDA_POS[i] + ' mil' : '') + '"></div>';
+  }
+  let prox = '';
+  const nextKey = RENDA_KEYS.find(k => k > p.income);
+  if (nextKey !== undefined) prox = '+' + (nextKey - p.income) + ' → ' + RENDA_POS[nextKey] + ' mil';
+  const el = $('#trackCard');
+  const html =
+    '<div class="cardT"><span class="k">TRILHA DE RENDA</span><span class="micro">posição <b>' + p.income + '</b></span></div>' +
+    '<div class="trackHead"><span>recebe por turno</span><b>' + pagamento(p.income) + ' mil</b></div>' +
+    '<div class="trackBar">' + ticks + '</div>' +
+    '<div class="trackFoot"><span>1 · 10 · 20 · 30 · 40</span><span>' + (prox ? 'próximo ' + prox : 'no topo') + '</span></div>';
+  if (el){
+    el.innerHTML = html;
+  } else {
+    // injeta o card da trilha logo depois do card do jogador
+    const card = document.createElement('div');
+    card.className = 'card'; card.id = 'trackCard';
+    card.innerHTML = html;
+    $('#playerCard').insertAdjacentElement('afterend', card);
+  }
+}
+
+/* ---------- dados ---------- */
+const PIPS = {
+  1:[[15,15]], 2:[[9.5,9.5],[20.5,20.5]],
+  3:[[9.5,9.5],[15,15],[20.5,20.5]],
+  4:[[9.5,9.5],[20.5,9.5],[9.5,20.5],[20.5,20.5]],
+  5:[[9.5,9.5],[20.5,9.5],[15,15],[9.5,20.5],[20.5,20.5]],
+  6:[[9.5,9.5],[9.5,15],[9.5,20.5],[20.5,9.5],[20.5,15],[20.5,20.5]]
+};
+function dieSvg(v){
+  let s = '<svg viewBox="0 0 30 30" width="33" height="33" aria-hidden="true">';
+  for (const [x,y] of PIPS[v]) s += '<circle cx="' + x + '" cy="' + y + '" r="2.65" fill="#1f2328"/>';
+  return s + '</svg>';
+}
+function renderDice(){
+  const p = ativo();
+  const podeRerrolar = state.phase === 'actions' && !p.rerolled && !p.acted;
+  let html = '<div class="cardT"><span class="k">KIT DO TURNO</span><span class="micro">' +
+    (p.dice ? 'rolado' + (p.rerolled ? ' · rerrolado' : '') : 'aguardando') + '</span></div>';
+
+  if (!p.dice){
+    html += '<div style="display:flex;align-items:center;gap:10px">' +
+      '<div class="micro" style="flex:1">Role 3d6. Cada face vira uma forma:<br>1–2 reta · 3–4 curva 60° · 5 curva 120° · 6 livre.</div>' +
+      '<button class="btn primary" data-action="roll">Rolar 3d6</button></div>';
+    $('#diceCard').innerHTML = html;
+    return;
+  }
+  const sel = ui.rerollSel || [];
+  const custo = sel.length;
+  html += '<div class="dice">' + p.dice.map((v,i)=>{
+    const s = sel.indexOf(i) >= 0;
+    return '<div class="die ' + (podeRerrolar ? '' : 'locked') + (s ? ' sel' : '') + '" data-die="' + i + '" title="' +
+      (podeRerrolar ? 'clique para marcar e rerrolar' : 'dado travado') + '">' + dieSvg(v) + (s ? '<span class="rr">↻</span>' : '') + '</div>';
+  }).join('') + '<div class="diceBtns">' +
+    (podeRerrolar
+      ? '<button class="btn sm" data-action="reroll" ' + (custo===0 || p.money < custo ? 'disabled' : '') + '>Rerrolar ' + (custo||'') + ' (' + custo + ' mil)</button>'
+      : '<span class="micro" style="max-width:92px">' + (p.rerolled ? 'rerrolada usada' : 'travado após a 1ª ação') + '</span>') +
+    '</div></div>';
+
+  const cont = {};
+  for (const f of p.kit) cont[f] = (cont[f] || 0) + 1;
+  html += '<div class="kit">';
+  for (const f of ['reta','c60','c120','livre']){
+    const n = cont[f] || 0;
+    html += '<span class="chip ' + (f==='livre'?'livre':'') + (n===0?' zero':'') + '">' + FORMA_NOME[f] + ' ×' + n + '</span>';
+  }
+  html += '</div>';
+  html += '<div class="hintLine">Rerrolar custa <b>1 mil por dado</b>, uma vez por turno. Garfo consome <b>2 formas</b> quaisquer.</div>';
+  $('#diceCard').innerHTML = html;
+}
+
+/* ---------- ações ---------- */
+function renderActions(){
+  const p = ativo();
+  const dots = [0,1,2].map(i => '<i class="' + (i < state.actionsLeft ? 'on' : '') + '">●</i>').join('');
+  const proxMotor = p.engine < 5 ? CUSTO_MOTOR[p.engine+1] : null;
+  const cinzas = Object.keys(CIDADES).filter(k => CIDADES[k].cinza && !p.urbanized[k]);
+  let html = '<div class="cardT"><span class="k">AÇÕES DO TURNO</span>' +
+    '<span class="actionsLeft"><span class="dots">' + dots + '</span><span class="micro">' + state.actionsLeft + '/3</span></span></div>';
+  html += '<div class="actionGrid">' +
+    '<button class="btn" data-action="upgrade" ' + (proxMotor === null || state.phase!=='actions' || state.actionsLeft<=0 ? 'disabled' : '') + '>' +
+      (proxMotor === null ? 'Motor no máximo' : 'Motor ' + (p.engine+1) + ' · ' + proxMotor + ' mil') + '</button>' +
+    '<button class="btn" data-action="urbanize" ' + (cinzas.length===0 || state.phase!=='actions' || state.actionsLeft<=0 ? 'disabled' : '') + '>Urbanizar · 10 mil</button>' +
+    '</div>';
+  html += '<div class="hintLine">' +
+    (state.phase === 'roll' ? 'Role os dados para liberar as ações.' :
+     state.actionsLeft <= 0 ? 'Sem ações. Encerre o turno.' :
+     'Clique num hexágono vazio para <b>construir</b> · numa cidade com cubos para <b>entregar</b>.') +
+    '</div>';
+  $('#actionsCard').innerHTML = html;
+}
+
+/* ---------- barra de ação ---------- */
+function renderActionBar(){
+  const p = ativo();
+  const bar = $('#actionBar');
+  if (state.phase === 'over'){
+    bar.innerHTML = '<div class="abMain"><div class="abTitle">Fim de jogo</div><div class="abSub">A última volta terminou. Veja a pontuação final.</div></div>' +
+      '<div class="abBtns"><button class="btn primary" data-action="score">Ver resultado</button></div>';
+    return;
+  }
+  if (state.phase === 'roll'){
+    bar.innerHTML = '<div class="abMain"><div class="abTitle">Comece o turno rolando os dados</div>' +
+      '<div class="abSub">3d6 definem quais formas você pode desenhar. Rerrolar custa 1 mil por dado.</div></div>' +
+      '<div class="abBtns"><button class="btn primary" data-action="roll">Rolar 3d6</button></div>';
+    return;
+  }
+  if (!ui.selHex){
+    bar.innerHTML = '<div class="abMain"><div class="abTitle">O que deseja fazer?</div>' +
+      '<div class="abSub">Clique num <b>hexágono vazio</b> para construir, ou numa <b>cidade com cubos</b> para entregar. ' +
+      'Ações restantes: <b>' + state.actionsLeft + '</b>.</div></div>';
+    return;
+  }
+  const {c,r} = ui.selHex;
+  const {x,y} = centro(c,r);
+  const pc = peca(p,c,r);
+  if (pc){
+    const cid = CIDADE_EM[key(c,r)];
+    let sub = TIPO_NOME[pc.tipo] + ' · custo ' + pc.custo + ' mil · turno ' + pc.t;
+    if (cid !== undefined){
+      const cubes = p.cubes[cid] || [];
+      sub += ' · ' + CIDADES[cid].nome + ' (' + (corCidade(p,cid)==='?' ? 'cinza' : COR[corCidade(p,cid)].nome) +
+        ') · cubos: ' + (cubes.length ? cubes.join(' ') : 'nenhum');
+    }
+    bar.innerHTML = '<div class="abMain"><div class="abTitle">Peça em (' + c + ',' + r + ') · ' + nomeTerreno(terreno(c,r)) + '</div>' +
+      '<div class="abSub">' + sub + '</div></div><div class="abBtns"><button class="btn ghost" data-action="cancel">Fechar</button></div>';
+    return;
+  }
+  const gates = ui.selGates;
+  if (state.actionsLeft <= 0){
+    bar.innerHTML = '<div class="abMain"><div class="abTitle">Sem ações restantes</div><div class="abSub">Encerre o turno para receber renda e pagar dividendos.</div></div>' +
+      '<div class="abBtns"><button class="btn ghost" data-action="cancel">Fechar</button></div>';
+    return;
+  }
+  const t = terreno(c,r);
+  const custo = custoTerreno(c,r);
+  let titulo = 'Construir em (' + c + ',' + r + ') · ' + nomeTerreno(t);
+  if (CIDADE_EM[key(c,r)] !== undefined) titulo += ' · ' + CIDADES[CIDADE_EM[key(c,r)]].nome;
+  let sub = '';
+  let val = null;
+  if (gates.length === 0) sub = 'Escolha 2 portais no hexágono. O trilho entra por um e sai pelo outro. Um 3º portal transforma a peça em GARFO. <span style="color:#8a8172">Portais com × saem do mapa.</span>';
+  else if (gates.length === 1) sub = 'Portal ' + gates[0] + ' marcado. Escolha o segundo portal.';
+  else {
+    val = validarConstrucao(p,c,r,gates);
+    const tipo = tipoPeca(gates);
+    sub = '<b>' + TIPO_NOME[tipo] + '</b> · custo <b>' + custo + ' mil</b>';
+    if (t === 'agua') sub += ' (ponte · restam ' + p.bridges + ')';
+    if (t === 'serra') sub += ' (túnel · restam ' + p.tunnels + ')';
+    if (tipo === 'garfo') sub += ' · consome 2 formas (kit: ' + p.kit.length + ')';
+    else sub += ' · consome ' + TIPO_NOME[tipo] + ' (kit: ' + p.kit.filter(f=>f===tipo||f==='livre').length + ')';
+    if (!val.ok) sub += ' — <span class="tagBad">' + val.motivo + '</span>';
+    else sub += ' — <span class="tagOk">pode construir</span>';
+  }
+  bar.innerHTML = '<div class="abMain"><div class="abTitle">' + titulo + '</div><div class="abSub">' + sub + '</div></div>' +
+    '<div class="abBtns">' +
+      '<button class="btn ghost" data-action="cancel">Cancelar</button>' +
+      '<button class="btn primary" data-action="build-confirm" ' + (val && val.ok ? '' : 'disabled') + '>Construir (1 ação)</button>' +
+    '</div>';
+}
+
+/* ---------- log ---------- */
+function renderLog(){
+  const el = $('#log');
+  const perto = el.scrollHeight - el.scrollTop - el.clientHeight < 40;
+  let html = '';
+  for (const e of state.log){
+    const who = state.numPlayers > 1 ? '<span class="who">J' + (e.p+1) + '</span> ' : '';
+    html += '<div class="le p' + e.p + '"><span class="tn">T' + e.t + '</span><span>' + who + esc(e.msg) + '</span></div>';
+  }
+  el.innerHTML = html;
+  $('#logTurn').textContent = 'rodada ' + state.round;
+  if (perto) el.scrollTop = el.scrollHeight;
+}
+
+/* =====================================================================
+   MODAIS
+   ===================================================================== */
+function abrirModal(html){
+  const ov = $('#overlay');
+  ov.innerHTML = html;
+  ov.classList.remove('hidden');
+}
+function fecharModal(){
+  $('#overlay').classList.add('hidden');
+  $('#overlay').innerHTML = '';
+  ui.modal = null;
+}
+function renderStart(){
+  const tem = !!state;
+  const caixa = tem ? 0 : 0;
+  abrirModal(
+    '<div class="modal start">' +
+      '<div class="startLogos">UM JOGO DE LÁPIS E DADOS</div>' +
+      '<h2>Bacia do Corvo</h2>' +
+      '<p class="muted">Ferrovias desenhadas à mão sobre 54 hexágonos.<br>Protótipo interativo das regras v0.5 — sem impressão.</p>' +
+      '<div class="bigChoice">' +
+        '<button class="btn primary" data-action="start" data-players="1">1 jogador<br><span style="font-size:10px;font-weight:400;opacity:.75">solo · 5 cidades encerram</span></button>' +
+        '<button class="btn" data-action="start" data-players="2">2 jogadores<br><span style="font-size:10px;font-weight:400;opacity:.7">cada um na própria folha</span></button>' +
+      '</div>' +
+      '<div class="startOpts">Caixa inicial: <input id="caixaInicial" type="number" min="0" max="100" step="5" value="' + caixa + '"> mil</div>' +
+      '<p class="note">O jogo como escrito começa com <b>0 mil</b>: emita títulos (+5 cada) para financiar a rede. ' +
+      'Para testar mais rápido, comece com 10–20 mil. Títulos custam 1 mil/turno e −1 PV no fim.</p>' +
+      (tem ? '<div class="closeRow" style="justify-content:center"><button class="btn" data-action="continue">Continuar jogo salvo</button></div>' : '') +
+    '</div>');
+}
+function renderModal(){
+  if (ui.start){ renderStart(); return; }
+  if (!ui.modal){ $('#overlay').classList.add('hidden'); return; }
+  const m = ui.modal;
+  if (m.type === 'delivery') return modalEntrega(m.city);
+  if (m.type === 'endturn') return modalFimTurno();
+  if (m.type === 'upgrade') return modalMotor();
+  if (m.type === 'urbanize') return modalUrbanizar();
+  if (m.type === 'help') return modalAjuda();
+  if (m.type === 'new') return modalNovo();
+  if (m.type === 'over') return modalFim();
+  fecharModal();
+}
+function modalEntrega(cityIdx){
+  const p = ativo();
+  const cid = CIDADES[cityIdx];
+  const cubes = p.cubes[cityIdx] || [];
+  const op = opcoesEntrega(p, cityIdx);
+  let html = '<div class="modal">' +
+    '<div class="kicker">ENTREGAR · 1 AÇÃO</div>' +
+    '<h2>' + esc(cid.nome) + '</h2>' +
+    '<p class="muted">Cubos aqui: ' + (cubes.length ? cubes.map(c=>'<span class="sw" style="background:'+COR[c].hex+';color:'+COR[c].txt+'">'+c+'</span>').join(' ') : 'nenhum') +
+    ' · motor ' + p.engine + ' (alcance ' + p.engine + ' hexágonos intermediários)</p>';
+  if (!cubes.length){
+    html += '<p class="empty">Esta cidade não tem mais cubos.</p>';
+  } else {
+    for (const cor of [...new Set(cubes)]){
+      const lista = op[cor] || [];
+      html += '<div class="delivCor"><div class="delivCorHead"><span class="sw" style="background:' + COR[cor].hex + ';color:' + COR[cor].txt + '">' + cor + '</span>' +
+        'CUBO ' + COR[cor].nome.toUpperCase() + ' · demanda em ' + COR[cor].nome + '</div>';
+      if (!lista.length){
+        html += '<div class="empty">Nenhuma cidade ' + COR[cor].nome + ' ao alcance do motor ' + p.engine + '.</div>';
+      } else {
+        for (const o of lista){
+          html += '<div class="dopt">' +
+            '<div class="dmain"><div class="dn">' + esc(CIDADES[o.idx].nome) + '</div>' +
+            '<div class="ds">rota de ' + o.rota + ' hexágono(s) intermediário(s) · ' + (o.bonus ? '1ª entrega disponível' : 'já tem 1ª entrega') + '</div></div>' +
+            (o.bonus ? '<span class="dbonus">+' + o.bonus + ' 1ª</span>' : '') +
+            '<span class="dval' + (o.rota===0?' zero':'') + '">+' + (o.rota + o.bonus) + ' renda</span>' +
+            '<button class="btn sm primary" data-action="deliver" data-src="' + cityIdx + '" data-cor="' + cor + '" data-dst="' + o.idx + '">Entregar</button>' +
+            '</div>';
+        }
+      }
+      html += '</div>';
+    }
+  }
+  html += '<div class="closeRow"><button class="btn ghost" data-action="close">Fechar</button></div></div>';
+  abrirModal(html);
+}
+function modalFimTurno(){
+  const p = ativo();
+  const r = resumoFimTurno();
+  const ultima = state.endTriggered && state.turnsLeftAfter === 1;
+  abrirModal('<div class="modal">' +
+    '<div class="kicker">FIM DO TURNO</div>' +
+    '<h2>Acertar as contas</h2>' +
+    '<table class="scoreTable"><tbody>' +
+      '<tr><td>Renda (posição ' + p.income + ')</td><td class="n">+' + r.pag + ' mil</td></tr>' +
+      '<tr><td>Dividendos (' + r.div + ' título' + (r.div===1?'':'s') + ')</td><td class="n">−' + r.div + ' mil</td></tr>' +
+      (r.auto ? '<tr><td>Emitir ' + r.auto + ' título(s) para cobrir</td><td class="n">+' + (r.auto*5) + ' mil</td></tr>' : '') +
+      '<tr><td><b>Caixa depois</b></td><td class="n"><b>' + r.caixa + ' mil</b></td></tr>' +
+    '</tbody></table>' +
+    '<p class="note">Conexões incompletas (fora de qualquer caminho para uma cidade) são apagadas agora. ' +
+      (state.endTriggered ? '<b style="color:#8f241d">Última volta: restam ' + state.turnsLeftAfter + ' turno(s) depois deste.</b>' : '') + '</p>' +
+    '<div class="closeRow"><button class="btn ghost" data-action="close">Cancelar</button>' +
+    '<button class="btn primary" data-action="endturn-confirm">Encerrar turno</button></div>' +
+    '</div>');
+}
+function modalMotor(){
+  const p = ativo();
+  const alvo = p.engine + 1;
+  const custo = CUSTO_MOTOR[alvo];
+  abrirModal('<div class="modal">' +
+    '<div class="kicker">MELHORAR MOTOR · 1 AÇÃO</div>' +
+    '<h2>Motor nível ' + alvo + '</h2>' +
+    '<p>Alcance de entrega: <b>' + p.engine + ' → ' + alvo + '</b> hexágonos intermediários.</p>' +
+    '<table class="scoreTable"><tbody><tr><td>Custo</td><td class="n">−' + custo + ' mil</td></tr>' +
+    '<tr><td>Caixa agora</td><td class="n">' + p.money + ' mil</td></tr>' +
+    '<tr><td>Depois</td><td class="n"><b>' + (p.money-custo) + ' mil</b></td></tr></tbody></table>' +
+    '<div class="closeRow"><button class="btn ghost" data-action="close">Cancelar</button>' +
+    '<button class="btn primary" data-action="upgrade-confirm" ' + (p.money<custo?'disabled':'') + '>Pagar ' + custo + ' mil</button></div>' +
+    '</div>');
+}
+function modalUrbanizar(){
+  const p = ativo();
+  const cinzas = Object.keys(CIDADES).filter(k => CIDADES[k].cinza && !p.urbanized[k]).map(Number);
+  let html = '<div class="modal">' +
+    '<div class="kicker">URBANIZAR · 1 AÇÃO · 10 MIL</div>' +
+    '<h2>Trazer uma cidade cinza à vida</h2>' +
+    '<p class="muted">A cidade ganha uma cor de demanda e 2 cubos dessa cor. Custa 10 mil. Os cubos podem ser entregues em qualquer cidade da mesma cor (menos nela mesma).</p>' +
+    '<h3>1. Cidade</h3><div class="seg">';
+  for (const idx of cinzas){
+    const sel = ui.urb.cidade === idx;
+    html += '<button class="btn ' + (sel?'primary':'') + '" data-action="urb-city" data-idx="' + idx + '">' + esc(CIDADES[idx].nome) + '</button>';
+  }
+  if (!cinzas.length) html += '<span class="empty">Nenhuma cidade cinza disponível.</span>';
+  html += '</div><h3>2. Cor</h3><div class="seg">';
+  for (const cor of ['A','M','V','X','P']){
+    const sel = ui.urb.cor === cor;
+    html += '<button class="btn ' + (sel?'primary':'') + '" data-action="urb-cor" data-cor="' + cor + '" style="flex:0 0 auto;min-width:58px">' +
+      '<span class="sw" style="background:' + COR[cor].hex + ';color:' + COR[cor].txt + '">' + cor + '</span> ' + COR[cor].nome + '</button>';
+  }
+  html += '</div><div class="closeRow"><button class="btn ghost" data-action="close">Cancelar</button>' +
+    '<button class="btn primary" data-action="urbanize-confirm" ' + (ui.urb.cidade !== null && ui.urb.cor && p.money>=10 ? '' : 'disabled') + '>Urbanizar (−10 mil)</button></div></div>';
+  abrirModal(html);
+}
+function modalAjuda(){
+  abrirModal('<div class="modal">' +
+    '<div class="kicker">REGRAS v0.5 · RESUMO DE MESA</div>' +
+    '<h2>Como jogar</h2>' +
+    '<h3>O turno</h3>' +
+    '<ol class="ruleList">' +
+      '<li><b>Role 3d6.</b> Cada face vira uma forma: 1–2 RETA · 3–4 CURVA 60° · 5 CURVA 120° · 6 LIVRE (qualquer).</li>' +
+      '<li><b>Rerrole</b> qualquer número de dados, uma vez, antes da primeira ação: 1 mil por dado.</li>' +
+      '<li>Faça <b>3 ações</b>: construir, entregar, melhorar motor, urbanizar.</li>' +
+      '<li>No fim: receba a renda da trilha, pague 1 mil por título e apague conexões incompletas.</li>' +
+    '</ol>' +
+    '<h3>Construir</h3>' +
+    '<p>Clique num hexágono vazio e escolha <b>2 portais</b> (3 para garfo). O trilho cruza a borda sempre em ângulo reto, dentro do portal; a curva é feita no miolo.</p>' +
+    '<ul class="ruleList">' +
+      '<li>A primeira peça da rede precisa estar num hexágono de cidade.</li>' +
+      '<li>As seguintes precisam tocar a rede por um portal ancorado (anel verde). Portais marcados com <b>×</b> apontam para fora do mapa e não servem.</li>' +
+      '<li>Custo por hexágono: <b>planície 1 · ponte 2 · túnel 3</b>. Você tem <b>2 pontes e 2 túneis no jogo inteiro</b>.</li>' +
+      '<li>GARFO: gasta <b>2 formas</b> quaisquer e faz o trilho entrar por 1 portal e sair por 2.</li>' +
+    '</ul>' +
+    '<h3>Entregar</h3>' +
+    '<p>Clique numa cidade com cubos. Um cubo só vai para cidade da <b>mesma cor</b>. O caminho usa a sua rede e pode ter no máximo o <b>nível do motor</b> em hexágonos intermediários. A renda sobe pelo tamanho da rota.</p>' +
+    '<p><b>1ª entrega</b> em cada cidade: +4 (colorida) ou +3 (cinza), só para quem chega primeiro.</p>' +
+    '<p>Quando o último cubo de uma cidade é entregue, ela fica <b>abandonada</b>. Com 6 abandonadas (solo: 5), joga-se mais uma volta e o jogo acaba.</p>' +
+    '<h3>Dinheiro</h3>' +
+    '<p>Título: +5 mil, −1 PV no fim e −1 mil de dividendo por turno. Pode emitir a qualquer momento do seu turno, sem gastar ação.</p>' +
+    '<p><b>PV = posição na trilha de renda − número de títulos.</b></p>' +
+    '<h3>Notas do protótipo</h3>' +
+    '<ul class="ruleList">' +
+      '<li>Rota conta <b>hexágonos intermediários</b> (as duas cidades não contam). É o que faz o motor 5 alcançar todos os pares do mapa — com a contagem incluindo as cidades, quatro pares ficariam inalcançáveis.</li>' +
+      '<li>Metas solo: <b>18 PV</b> maquinista · <b>26</b> chefe de estação · <b>34</b> barão dos trilhos. O jogo acaba com 5 cidades abandonadas (6 em 2 jogadores) e mais 1 turno.</li>' +
+      '<li>No modo 2 jogadores, cada um tem a própria folha (rede e cubos) e os bônus de 1ª entrega são disputados no mapa compartilhado.</li>' +
+    '</ul>' +
+    '<div class="closeRow"><button class="btn primary" data-action="close">Entendi</button></div></div>');
+}
+function modalNovo(){
+  abrirModal('<div class="modal">' +
+    '<div class="kicker">NOVO JOGO</div><h2>Apagar a partida atual?</h2>' +
+    '<p>Todo o progresso salvo neste navegador será perdido.</p>' +
+    '<div class="closeRow"><button class="btn ghost" data-action="close">Cancelar</button>' +
+    '<button class="btn primary" data-action="new-confirm">Começar de novo</button></div></div>');
+}
+function modalFim(){
+  const linhas = state.players.map((p,i)=>{
+    return { p, i, pv: p.income - p.titles, cid: cidadesComTrilho(p) };
+  });
+  linhas.sort((a,b)=> b.pv - a.pv || b.cid - a.cid || b.p.money - a.p.money);
+  let html = '<div class="modal"><div class="kicker">FIM DE JOGO</div><h2>Resultado</h2>';
+  if (state.numPlayers > 1){
+    html += '<p>Vencedor: <b style="color:' + linhas[0].p.ink + '">' + esc(linhas[0].p.nome) + '</b> com ' + linhas[0].pv + ' PV.</p>';
+  } else {
+    const pv = linhas[0].pv;
+    const meta = pv >= 34 ? 'Barão dos Trilhos' : pv >= 26 ? 'Chefe de Estação' : pv >= 18 ? 'maquinista' : 'aprendiz';
+    html += '<p>Solo: <b>' + pv + ' PV</b> — ' + meta + '. Metas: 18 maquinista · 26 chefe de estação · 34 barão.</p>';
+  }
+  html += '<table class="scoreTable"><thead><tr><th>Barão</th><th class="n">Renda</th><th class="n">Títulos</th><th class="n">PV</th><th class="n">Caixa</th><th class="n">Cidades</th><th class="n">Aband.</th></tr></thead><tbody>';
+  for (const l of linhas){
+    html += '<tr class="' + (l === linhas[0] ? 'winner' : '') + '"><td><b style="color:' + l.p.ink + '">' + esc(l.p.nome) + '</b></td>' +
+      '<td class="n">' + l.p.income + '</td><td class="n">' + l.p.titles + '</td><td class="n"><b>' + l.pv + '</b></td>' +
+      '<td class="n">' + l.p.money + ' mil</td><td class="n">' + l.cid + '</td><td class="n">' + abandonadas(l.p) + '</td></tr>';
+  }
+  html += '</tbody></table><div class="closeRow"><button class="btn primary" data-action="new-confirm">Novo jogo</button></div></div>';
+  abrirModal(html);
+}
+
+/* =====================================================================
+   AÇÕES DE INTERFACE
+   ===================================================================== */
+function rolarDados(forced){
+  const p = ativo();
+  if (!p || p.dice) return;
+  const d = forced && forced.length === 3 ? forced.slice() : [0,0,0].map(() => 1 + Math.floor(Math.random()*6));
+  p.dice = d;
+  p.kit = d.map(f => FACE_FORMA[f]);
+  p.rerolled = false;
+  state.phase = 'actions';
+  ui.rerollSel = [];
+  logMsg('Rolou 3d6: ' + d.join(' · ') + '.');
+  commit();
+}
+function rerrolar(){
+  const p = ativo();
+  if (!p || !p.dice || p.rerolled || p.acted) return;
+  const sel = ui.rerollSel || [];
+  if (!sel.length) return;
+  if (p.money < sel.length) return toast('Faltam ' + (sel.length - p.money) + ' mil para rerrolar.', true);
+  p.money -= sel.length;
+  for (const i of sel) p.dice[i] = 1 + Math.floor(Math.random()*6);
+  p.kit = p.dice.map(f => FACE_FORMA[f]);
+  p.rerolled = true;
+  logMsg('Rerrolou ' + sel.length + ' dado(s) por ' + sel.length + ' mil: ' + p.dice.join(' · ') + '.');
+  ui.rerollSel = [];
+  commit();
+}
+function clicarHex(c, r){
+  if (state.phase === 'over') return;
+  if (ui.view !== null){ ui.view = null; render(); }
+  if (ui.selHex && ui.selHex.c === c && ui.selHex.r === r) return;
+  const p = ativo();
+  const pc = peca(p,c,r);
+  const cid = CIDADE_EM[key(c,r)];
+  if (state.phase === 'actions' && state.actionsLeft > 0 && pc && cid !== undefined && (p.cubes[cid]||[]).length > 0){
+    ui.selHex = {c,r}; ui.selGates = [];
+    ui.modal = { type:'delivery', city:cid };
+    ui.deliveryCity = cid;
+    render();
+    return;
+  }
+  ui.selHex = {c,r};
+  ui.selGates = [];
+  render();
+}
+function toggleGate(k){
+  if (!ui.selHex) return;
+  if (!vizinho(ui.selHex.c, ui.selHex.r, k)) { toast('Esse portal aponta para fora do mapa.', true); return; }
+  const i = ui.selGates.indexOf(k);
+  if (i >= 0) ui.selGates.splice(i,1);
+  else if (ui.selGates.length < 3) ui.selGates.push(k);
+  else { ui.selGates[2] = k; }
+  render();
+}
+function confirmarConstrucao(){
+  if (!ui.selHex) return;
+  construir(ui.selHex.c, ui.selHex.r, ui.selGates);
+}
+
+/* ---------------- eventos ---------------- */
+function onBoardClick(e){
+  if (!state) return;
+  const gh = e.target.closest('[data-gate]');
+  if (gh){ toggleGate(Number(gh.getAttribute('data-gate'))); return; }
+  const hh = e.target.closest('[data-hex]');
+  if (!hh) return;
+  const [c,r] = hh.getAttribute('data-hex').split(',').map(Number);
+  clicarHex(c,r);
+}
+function onSideClick(e){
+  const b = e.target.closest('[data-action]');
+  if (!b || !state) return;
+  const a = b.getAttribute('data-action');
+  if (a === 'view'){
+    const i = Number(b.getAttribute('data-idx'));
+    ui.view = (i === state.active) ? null : i;
+    render();
+    return;
+  }
+  if (a === 'title') emitirTitulo(1);
+  else if (a === 'endturn'){ ui.modal = {type:'endturn'}; renderModal(); }
+  else if (a === 'roll') rolarDados();
+  else if (a === 'reroll') rerrolar();
+  else if (a === 'upgrade'){ ui.modal = {type:'upgrade'}; renderModal(); }
+  else if (a === 'urbanize'){ ui.urb = {cidade:null,cor:null}; ui.modal = {type:'urbanize'}; renderModal(); }
+}
+function onDieClick(e){
+  const d = e.target.closest('[data-die]');
+  if (!d || !state) return;
+  const p = ativo();
+  if (state.phase !== 'actions' || p.rerolled || p.acted) return;
+  const i = Number(d.getAttribute('data-die'));
+  const j = ui.rerollSel.indexOf(i);
+  if (j >= 0) ui.rerollSel.splice(j,1); else ui.rerollSel.push(i);
+  renderDice();
+}
+function onOverlayClick(e){
+  const b = e.target.closest('[data-action]');
+  if (b){
+    const a = b.getAttribute('data-action');
+    if (a === 'start'){
+      const n = Number(b.getAttribute('data-players')) || 1;
+      const inp = $('#caixaInicial');
+      const caixa = inp ? clamp(Number(inp.value)||0, 0, 100) : 0;
+      novoJogo(n, caixa);
+      return;
+    }
+    if (a === 'continue'){ ui.start = false; ui.modal = null; render(); return; }
+    if (a === 'close'){ fecharModal(); return; }
+    if (a === 'deliver'){
+      const src = Number(b.getAttribute('data-src'));
+      const cor = b.getAttribute('data-cor');
+      const dst = Number(b.getAttribute('data-dst'));
+      entregar(src, cor, dst);
+      return;
+    }
+    if (a === 'endturn-confirm'){ fazerEncerrarTurno(); return; }
+    if (a === 'upgrade-confirm'){ melhorarMotor(); return; }
+    if (a === 'urb-city'){ ui.urb.cidade = Number(b.getAttribute('data-idx')); modalUrbanizar(); return; }
+    if (a === 'urb-cor'){ ui.urb.cor = b.getAttribute('data-cor'); modalUrbanizar(); return; }
+    if (a === 'urbanize-confirm'){ urbanizar(ui.urb.cidade, ui.urb.cor); return; }
+    if (a === 'new-confirm'){
+      ui.start = true; ui.modal = null; renderStart(); return;
+    }
+    return;
+  }
+  if (e.target.id === 'overlay' && ui.modal && !['over','endturn','upgrade','urbanize','delivery','help','new'].includes(ui.modal.type)){
+    fecharModal();
+  } else if (e.target.id === 'overlay' && ui.modal && ui.modal.type !== 'over'){
+    fecharModal();
+  }
+}
+function onKey(e){
+  if (e.key === 'Escape'){
+    if (ui.modal && ui.modal.type !== 'over'){ fecharModal(); render(); }
+    else if (ui.selHex){ ui.selHex = null; ui.selGates = []; render(); }
+  }
+}
+function onTopClick(e){
+  const b = e.target.closest('[data-action]');
+  if (!b) return;
+  const a = b.getAttribute('data-action');
+  if (a === 'help'){ ui.modal = {type:'help'}; renderModal(); }
+  else if (a === 'newgame'){
+    if (!state){ ui.start = true; renderStart(); }
+    else { ui.modal = {type:'new'}; renderModal(); }
+  }
+}
+function onActionBarClick(e){
+  const b = e.target.closest('[data-action]');
+  if (!b) return;
+  const a = b.getAttribute('data-action');
+  if (a === 'build-confirm') confirmarConstrucao();
+  else if (a === 'cancel'){ ui.selHex = null; ui.selGates = []; render(); }
+  else if (a === 'roll') rolarDados();
+  else if (a === 'score'){ ui.modal = {type:'over'}; renderModal(); }
+}
+
+/* ---------------- boot / testes ---------------- */
+function boot(){
+  const tem = carregar();
+  if (!tem) ui.start = true;
+  if (state && state.phase === 'over') ui.modal = { type:'over' };
+  render();
+  window.__game = {
+    get state(){ return state; },
+    ui, CIDADES, MAPA, COR, RENDA_POS,
+    centro, vizinho, rotasDe, opcoesEntrega, validarConstrucao, pagamento, saidasLivres,
+    novoJogo, rolarDados, rerrolar, construir, entregar, emitirTitulo,
+    melhorarMotor, urbanizar, fazerEncerrarTurno, limparIncompletas,
+    clicarHex, toggleGate, confirmarConstrucao, salvar, carregar,
+    fecharModal, render
+  };
+}
+$('#board').addEventListener('click', onBoardClick);
+$('#side').addEventListener('click', onSideClick);
+$('#side').addEventListener('click', onDieClick);
+$('#actionBar').addEventListener('click', onActionBarClick);
+$('#topbar').addEventListener('click', onTopClick);
+$('#overlay').addEventListener('click', onOverlayClick);
+document.addEventListener('keydown', onKey);
+boot();
+
+
+
+
+
+</script>
+</body>
+</html>

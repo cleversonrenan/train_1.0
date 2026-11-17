@@ -1,0 +1,207 @@
+﻿===== cartas_p1.png =====
+Crescimento de Cidade
+Sorteie 2 cubos e os posicione
+sobre 1 cidade à sua escolha.
+Sorteie 2 cubos e os posicione
+sobre 1 cidade à sua escolha.
+Sorteie 2 cubos e os posicione
+sobre 1 cidade à sua escolha.
+Crescimento de Cidade
+Sorteie 2 cubos e os posicione
+sobre 1 cidade à sua escolha.
+Posicione de imediato 1 tile de
+"nova cidade" sobre uma
+cidade cinza à sua escolha.
+Posicione de imediato 1 tile de
+"nova cidade" sobre uma
+cidade cinza à sua escolha.
+Industrialtação
+Posicione de imediato 1 tile de
+"nova cidade" sobre uma
+cidade cinza à sua escolha.
+Posicione de imediato 1 tile de
+"nova cidade" sobre uma
+cidade cinza à sua escolha.
+===== cartas_p2.png =====
+Concessão de Terras
+Todo segmento de trilho
+construído em terreno plano em
+1 ação futura possui custo zero.
+Concessão de Terras
+Todo segmento de trilho
+construído em terreno plano em
+1 ação futura possui custo zero.
+Concessão de Terras
+Todo segmento de trilho
+construído em terreno plano em
+1 ação futura possui custo zero.
+Concessão de Terras
+Todo segmento de trilho
+construído em terreno plano em
+1 ação futura possui custo zero.
+Executivo de Ferrovia
+O jogador que tomar esta
+carta pode de imediato
+realizar 2 ações.
+Executivo de Ferrovia
+O jogador que tomar esta
+carta pode de imediato
+realizar 2 ações.
+===== cartas_p3.png =====
+Posicione até 5 segmentos de
+trilhos em um único tramo.
+Utilize 1 vez por turno.
+Posicione até 5 segmentos de
+trilhos em um único tramo.
+Utilize 1 vez por turno.
+O primeiro jogador a efetuar 1
+entrega de 3 tramos recebe 3
+pontos adicionais na triha de
+rendimentos.
+O primeiro jogador a entregar 1
+cubo a Mobile recebe 4 pontos
+adicionais na triha de
+rendimentos.
+O primeiro jogador a entregar 1
+cubo a Toronto recebe 3 pontos
+adicionais na triha de
+rendimentos.
+O primeiro jogador a entregar 1
+cubo a Louisville recebe 3
+pontos adicionais na triha de
+rendimentos.
+O primeiro jogador a entregar 1
+cubo a Raleigh recebe 3 pontos
+adicionais na triha de
+rendimentos.
+O primeiro jogador a entregar 1
+cubo a Jacksonville recebe 4
+pontos adicionais na triha de
+rendimentos.
+O primeiro jogador a entregar 1
+cubo a Duluth recebe 4 pontos
+adicionais na triha de
+rendimentos.
+===== cartas_p4.png =====
+BIILROAD
+DANIEL DREW
+Receba 7 pontos se você
+possuir mais dinheiro.
+Hotel
+. fim
+Receba 1 ponto na trilha de
+rendimentos para cada cubo
+entregue em Chicago
+(independentemente do jogador
+que tiver efetuado a entrega).
+Hotel
+Receba 1 ponto na trilha de
+rendimentos para cada cubo
+entregue em Boston
+(independentemente do jogador
+que tiver efetuado a entrega).
+Hotel
+Receba 1 ponto na trilha de
+rendimentos para cada cubo
+entregue em Nova York
+(independentemente do jogador
+que tiver efetuado a entrega).
+Hotel
+Receba 1 ponto na trilha de
+rendimentos para cada cubo
+entregue em Atlanta
+(independentemente do jogador
+que tiver efetuado a entrega).
+Hotel
+Receba 1 ponto na trilha de
+rendimentos para cada cubo
+entregue em Charleston
+(independentemente do jogador
+que tiver efetuado a entrega).
+Hotel
+Receba 1 ponto na trilha de
+rendimentos para cada cubo
+entregue em Baltimore
+(independentemente do jogador
+que tiver efetuado a entrega).
+Linha de Passageims
+O primeiro jogador que
+entregar 4 cubos de cores
+diferentes recebe 4 pontos na
+trilha de rendimentos.
+Inicio
+da Era
+O
+das Perrovias
+O primeiro jogador que
+entregar 1 cubo recebe 1 ponto
+adicional na trilha de
+rendimentos.
+o
+===== cartas_p5.png =====
+TYCOON
+Receba 8 pontos se você
+possuir a ferrovia mais longa
+(mais tramos consecutivos, sem
+ramificações).
+HENRY FAR.XAM
+Receba 2 pontos para cada
+tramo de ferrovia sua que
+saia de Chicago para
+qualquer outra cidade.
+BIILROAD
+CVRUS HOLLID.W
+Receba 5 pontos se você
+possuir um western link.
+Receba 7 pontos se você
+possuir menos certificados
+de ações.
+GEORGE PULLNIAN
+Receba 6 pontos se você for
+o primeiro jogador a
+possuir uma locomotiva
+nível 6.
+JAV GOULD
+Receba 7 pontos se você
+possuir menos certificados
+de ações.
+Receba 7 pontos se você
+possuir mais dinheiro.
+CORNELIVS VANDERBILT
+Receba 5 pontos se você
+conectar Nova York a
+Chicago.
+TYCOIN
+Receba 6 pontos se você
+possuir a maior rede de
+ferrovia (maior quantidade
+de tramos).
+===== cartas_p6.png =====
+O primeiro jogador a
+conectar Nova York a Kansas
+City .com um western link)
+recebe 20 pontos na trilha de
+rendimentos.
+Linha Importante
+O primeiro jogador a
+conectar Nova York a
+Chicago recebe 10 pontos na
+trilha de rendimentos.
+Linha Importante
+O primeiro jogador a
+conectar Nova Orleans a
+Minneapolis recebe 10 pontos
+na trilha de rendimentos.
+O primeiro jogador a
+conectar Baltimore a Toledo
+recebe 6 pontos na trilha de
+rendimentos.
+Linha Importante
+O primeiro jogador a
+conectar Atlanta a Richmond
+recebe 8 pontos na trilha de
+rendimentos.
+O primeiro jogador a
+conectar Boston a
+Washington recebe 5 pontos
+na trilha de rendimentos.

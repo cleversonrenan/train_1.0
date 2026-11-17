@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297">
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="105.00" y="16.00" font-size="7" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#111">QUAL MARCAÇÃO DE PORTÃO?</text>
+<text x="105.00" y="21.50" font-size="3.4" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#666">as duas funcionam igual; muda só o que o lápis vê</text>
+<text x="14.00" y="36.00" font-size="4.6" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#111">A — RASGO  (o que eu tinha desenhado)</text>
+<text x="14.00" y="41.00" font-size="3.2" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#555">duas marcas PARALELAS à borda. O trilho corre pelo rasgo entre elas.</text>
+<path d="M 94.00,67.05 L 83.00,48.00 L 61.00,48.00 L 50.00,67.05 L 61.00,86.11 L 83.00,86.11 Z" fill="#fff" stroke="#333" stroke-width="0.35"/>
+<path d="M 127.00,86.11 L 116.00,67.05 L 94.00,67.05 L 83.00,86.11 L 94.00,105.16 L 116.00,105.16 Z" fill="#fff" stroke="#333" stroke-width="0.35"/>
+<path d="M 160.00,67.05 L 149.00,48.00 L 127.00,48.00 L 116.00,67.05 L 127.00,86.11 L 149.00,86.11 Z" fill="#fff" stroke="#333" stroke-width="0.35"/>
+<line x1="85.70" y1="52.68" x2="87.90" y2="56.49" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="89.10" y1="58.57" x2="91.30" y2="62.38" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="66.40" y1="48.00" x2="70.80" y2="48.00" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="73.20" y1="48.00" x2="77.60" y2="48.00" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="52.70" y1="62.38" x2="54.90" y2="58.57" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="56.10" y1="56.49" x2="58.30" y2="52.68" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="58.30" y1="81.43" x2="56.10" y2="77.62" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="54.90" y1="75.54" x2="52.70" y2="71.73" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="77.60" y1="86.11" x2="73.20" y2="86.11" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="70.80" y1="86.11" x2="66.40" y2="86.11" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="91.30" y1="71.73" x2="89.10" y2="75.54" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="87.90" y1="77.62" x2="85.70" y2="81.43" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="118.70" y1="71.73" x2="120.90" y2="75.54" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="122.10" y1="77.62" x2="124.30" y2="81.43" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="99.40" y1="67.05" x2="103.80" y2="67.05" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="106.20" y1="67.05" x2="110.60" y2="67.05" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="85.70" y1="81.43" x2="87.90" y2="77.62" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="89.10" y1="75.54" x2="91.30" y2="71.73" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="91.30" y1="100.48" x2="89.10" y2="96.67" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="87.90" y1="94.59" x2="85.70" y2="90.78" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="110.60" y1="105.16" x2="106.20" y2="105.16" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="103.80" y1="105.16" x2="99.40" y2="105.16" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="124.30" y1="90.78" x2="122.10" y2="94.59" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="120.90" y1="96.67" x2="118.70" y2="100.48" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="151.70" y1="52.68" x2="153.90" y2="56.49" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="155.10" y1="58.57" x2="157.30" y2="62.38" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="132.40" y1="48.00" x2="136.80" y2="48.00" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="139.20" y1="48.00" x2="143.60" y2="48.00" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="118.70" y1="62.38" x2="120.90" y2="58.57" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="122.10" y1="56.49" x2="124.30" y2="52.68" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="124.30" y1="81.43" x2="122.10" y2="77.62" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="120.90" y1="75.54" x2="118.70" y2="71.73" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="143.60" y1="86.11" x2="139.20" y2="86.11" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="136.80" y1="86.11" x2="132.40" y2="86.11" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="157.30" y1="71.73" x2="155.10" y2="75.54" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="153.90" y1="77.62" x2="151.70" y2="81.43" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<path d="M 82.50,71.58 L 105.00,86.11 L 127.50,100.63" fill="none" stroke="#b3261e" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 115.50,52.53 L 138.00,67.05" fill="none" stroke="#b3261e" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 138.00,67.05 L 143.00,92.11" fill="none" stroke="#b3261e" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 138.00,67.05 L 159.50,51.53" fill="none" stroke="#b3261e" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="14.00" y="158.00" font-size="4.6" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#111">B — PORTAL  (o que você desenhou)</text>
+<text x="14.00" y="163.00" font-size="3.2" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#555">dois BATENTES perpendiculares + trecho engrossado. O trilho passa entre os batentes.</text>
+<path d="M 94.00,189.05 L 83.00,170.00 L 61.00,170.00 L 50.00,189.05 L 61.00,208.11 L 83.00,208.11 Z" fill="#fff" stroke="#333" stroke-width="0.35"/>
+<path d="M 127.00,208.11 L 116.00,189.05 L 94.00,189.05 L 83.00,208.11 L 94.00,227.16 L 116.00,227.16 Z" fill="#fff" stroke="#333" stroke-width="0.35"/>
+<path d="M 160.00,189.05 L 149.00,170.00 L 127.00,170.00 L 116.00,189.05 L 127.00,208.11 L 149.00,208.11 Z" fill="#fff" stroke="#333" stroke-width="0.35"/>
+<line x1="87.50" y1="177.79" x2="89.50" y2="181.26" stroke="#111" stroke-width="1.3"/>
+<line x1="85.42" y1="178.99" x2="89.58" y2="176.59" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="87.42" y1="182.46" x2="91.58" y2="180.06" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="70.00" y1="170.00" x2="74.00" y2="170.00" stroke="#111" stroke-width="1.3"/>
+<line x1="70.00" y1="172.40" x2="70.00" y2="167.60" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="74.00" y1="172.40" x2="74.00" y2="167.60" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="54.50" y1="181.26" x2="56.50" y2="177.79" stroke="#111" stroke-width="1.3"/>
+<line x1="56.58" y1="182.46" x2="52.42" y2="180.06" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="58.58" y1="178.99" x2="54.42" y2="176.59" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="56.50" y1="200.31" x2="54.50" y2="196.85" stroke="#111" stroke-width="1.3"/>
+<line x1="58.58" y1="199.11" x2="54.42" y2="201.51" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="56.58" y1="195.65" x2="52.42" y2="198.05" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="74.00" y1="208.11" x2="70.00" y2="208.11" stroke="#111" stroke-width="1.3"/>
+<line x1="74.00" y1="205.71" x2="74.00" y2="210.51" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="70.00" y1="205.71" x2="70.00" y2="210.51" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="89.50" y1="196.85" x2="87.50" y2="200.31" stroke="#111" stroke-width="1.3"/>
+<line x1="87.42" y1="195.65" x2="91.58" y2="198.05" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="85.42" y1="199.11" x2="89.58" y2="201.51" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="120.50" y1="196.85" x2="122.50" y2="200.31" stroke="#111" stroke-width="1.3"/>
+<line x1="118.42" y1="198.05" x2="122.58" y2="195.65" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="120.42" y1="201.51" x2="124.58" y2="199.11" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="103.00" y1="189.05" x2="107.00" y2="189.05" stroke="#111" stroke-width="1.3"/>
+<line x1="103.00" y1="191.45" x2="103.00" y2="186.65" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="107.00" y1="191.45" x2="107.00" y2="186.65" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="87.50" y1="200.31" x2="89.50" y2="196.85" stroke="#111" stroke-width="1.3"/>
+<line x1="89.58" y1="201.51" x2="85.42" y2="199.11" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="91.58" y1="198.05" x2="87.42" y2="195.65" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="89.50" y1="219.36" x2="87.50" y2="215.90" stroke="#111" stroke-width="1.3"/>
+<line x1="91.58" y1="218.16" x2="87.42" y2="220.56" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="89.58" y1="214.70" x2="85.42" y2="217.10" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="107.00" y1="227.16" x2="103.00" y2="227.16" stroke="#111" stroke-width="1.3"/>
+<line x1="107.00" y1="224.76" x2="107.00" y2="229.56" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="103.00" y1="224.76" x2="103.00" y2="229.56" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="122.50" y1="215.90" x2="120.50" y2="219.36" stroke="#111" stroke-width="1.3"/>
+<line x1="120.42" y1="214.70" x2="124.58" y2="217.10" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="118.42" y1="218.16" x2="122.58" y2="220.56" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="153.50" y1="177.79" x2="155.50" y2="181.26" stroke="#111" stroke-width="1.3"/>
+<line x1="151.42" y1="178.99" x2="155.58" y2="176.59" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="153.42" y1="182.46" x2="157.58" y2="180.06" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="136.00" y1="170.00" x2="140.00" y2="170.00" stroke="#111" stroke-width="1.3"/>
+<line x1="136.00" y1="172.40" x2="136.00" y2="167.60" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="140.00" y1="172.40" x2="140.00" y2="167.60" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="120.50" y1="181.26" x2="122.50" y2="177.79" stroke="#111" stroke-width="1.3"/>
+<line x1="122.58" y1="182.46" x2="118.42" y2="180.06" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="124.58" y1="178.99" x2="120.42" y2="176.59" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="122.50" y1="200.31" x2="120.50" y2="196.85" stroke="#111" stroke-width="1.3"/>
+<line x1="124.58" y1="199.11" x2="120.42" y2="201.51" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="122.58" y1="195.65" x2="118.42" y2="198.05" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="140.00" y1="208.11" x2="136.00" y2="208.11" stroke="#111" stroke-width="1.3"/>
+<line x1="140.00" y1="205.71" x2="140.00" y2="210.51" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="136.00" y1="205.71" x2="136.00" y2="210.51" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="155.50" y1="196.85" x2="153.50" y2="200.31" stroke="#111" stroke-width="1.3"/>
+<line x1="153.42" y1="195.65" x2="157.58" y2="198.05" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<line x1="151.42" y1="199.11" x2="155.58" y2="201.51" stroke="#111" stroke-width="0.45" stroke-linecap="round"/>
+<path d="M 82.50,193.58 L 105.00,208.11 L 127.50,222.63" fill="none" stroke="#b3261e" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 115.50,174.53 L 138.00,189.05" fill="none" stroke="#b3261e" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 138.00,189.05 L 143.00,214.11" fill="none" stroke="#b3261e" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 138.00,189.05 L 159.50,173.53" fill="none" stroke="#b3261e" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="105.00" y="262.00" font-size="3.2" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#555">no tamanho real de impressão (borda de 12 mm) os dois ficam assim:</text>
+<path d="M 67.00,272.00 L 61.00,261.61 L 49.00,261.61 L 43.00,272.00 L 49.00,282.39 L 61.00,282.39 Z" fill="#fff" stroke="#333" stroke-width="0.3"/>
+<line x1="62.05" y1="263.43" x2="63.55" y2="266.02" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="64.45" y1="267.58" x2="65.95" y2="270.18" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="51.10" y1="261.61" x2="54.10" y2="261.61" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="55.90" y1="261.61" x2="58.90" y2="261.61" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="44.05" y1="270.18" x2="45.55" y2="267.58" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="46.45" y1="266.02" x2="47.95" y2="263.43" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="47.95" y1="280.57" x2="46.45" y2="277.98" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="45.55" y1="276.42" x2="44.05" y2="273.82" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="58.90" y1="282.39" x2="55.90" y2="282.39" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="54.10" y1="282.39" x2="51.10" y2="282.39" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="65.95" y1="273.82" x2="64.45" y2="276.42" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="63.55" y1="277.98" x2="62.05" y2="280.57" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<text x="55.00" y="290.00" font-size="3.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">A</text>
+<path d="M 107.00,272.00 L 101.00,261.61 L 89.00,261.61 L 83.00,272.00 L 89.00,282.39 L 101.00,282.39 Z" fill="#fff" stroke="#333" stroke-width="0.3"/>
+<line x1="103.25" y1="265.50" x2="104.75" y2="268.10" stroke="#111" stroke-width="0.9"/>
+<line x1="101.52" y1="266.50" x2="104.98" y2="264.50" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="103.02" y1="269.10" x2="106.48" y2="267.10" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="93.50" y1="261.61" x2="96.50" y2="261.61" stroke="#111" stroke-width="0.9"/>
+<line x1="93.50" y1="263.61" x2="93.50" y2="259.61" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="96.50" y1="263.61" x2="96.50" y2="259.61" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="85.25" y1="268.10" x2="86.75" y2="265.50" stroke="#111" stroke-width="0.9"/>
+<line x1="86.98" y1="269.10" x2="83.52" y2="267.10" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="88.48" y1="266.50" x2="85.02" y2="264.50" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="86.75" y1="278.50" x2="85.25" y2="275.90" stroke="#111" stroke-width="0.9"/>
+<line x1="88.48" y1="277.50" x2="85.02" y2="279.50" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="86.98" y1="274.90" x2="83.52" y2="276.90" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="96.50" y1="282.39" x2="93.50" y2="282.39" stroke="#111" stroke-width="0.9"/>
+<line x1="96.50" y1="280.39" x2="96.50" y2="284.39" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="93.50" y1="280.39" x2="93.50" y2="284.39" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="104.75" y1="275.90" x2="103.25" y2="278.50" stroke="#111" stroke-width="0.9"/>
+<line x1="103.02" y1="274.90" x2="106.48" y2="276.90" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="101.52" y1="277.50" x2="104.98" y2="279.50" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<text x="95.00" y="290.00" font-size="3.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">B</text>
+<path d="M 147.00,272.00 L 141.00,261.61 L 129.00,261.61 L 123.00,272.00 L 129.00,282.39 L 141.00,282.39 Z" fill="#fff" stroke="#333" stroke-width="0.3"/>
+<line x1="143.25" y1="265.50" x2="144.75" y2="268.10" stroke="#111" stroke-width="0.9"/>
+<line x1="141.52" y1="266.50" x2="144.98" y2="264.50" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="143.02" y1="269.10" x2="146.48" y2="267.10" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="133.50" y1="261.61" x2="136.50" y2="261.61" stroke="#111" stroke-width="0.9"/>
+<line x1="133.50" y1="263.61" x2="133.50" y2="259.61" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="136.50" y1="263.61" x2="136.50" y2="259.61" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="125.25" y1="268.10" x2="126.75" y2="265.50" stroke="#111" stroke-width="0.9"/>
+<line x1="126.98" y1="269.10" x2="123.52" y2="267.10" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="128.48" y1="266.50" x2="125.02" y2="264.50" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="126.75" y1="278.50" x2="125.25" y2="275.90" stroke="#111" stroke-width="0.9"/>
+<line x1="128.48" y1="277.50" x2="125.02" y2="279.50" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="126.98" y1="274.90" x2="123.52" y2="276.90" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="136.50" y1="282.39" x2="133.50" y2="282.39" stroke="#111" stroke-width="0.9"/>
+<line x1="136.50" y1="280.39" x2="136.50" y2="284.39" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="133.50" y1="280.39" x2="133.50" y2="284.39" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="144.75" y1="275.90" x2="143.25" y2="278.50" stroke="#111" stroke-width="0.9"/>
+<line x1="143.02" y1="274.90" x2="146.48" y2="276.90" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<line x1="141.52" y1="277.50" x2="144.98" y2="279.50" stroke="#111" stroke-width="0.35" stroke-linecap="round"/>
+<text x="135.00" y="290.00" font-size="3.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">B+</text>
+</svg>

@@ -1,0 +1,2319 @@
+﻿===== p01.png =====
+Compêndio de Regras
+The Expanda.ble Game of
+Worldwide Railroad Building
+Regras Compreensivas 2019
+Jogo Base, Expansões & Acessórios
+===== p02.png =====
+Tabela de Conteúdo
+Jogo Base "Railways of the World"
+Versões
+Introdução
+Componentes
+Começando 0 jogo (montagem)
+Jogando 0 jogo
+Turnos e Ações de Jogador
+1. Leilão do Primeiro J ogador
+2. Rodadas de Ação dos J ogadores
+A. Construir Trilho
+B. Urbanizar
+C. Melhorar Motor
+D. Entregar um cubo de mercadoria
+E. Selecionar uma Carta de Operação de Ferrovia
+3. Renda e Dividendos
+Terminando o Jogo
+Conceitos do Jogo e Esclarecimentos
+Certificados de Título e Dinheiro
+Contadores de Jogadores Recomendados
+Principais dicas de linhas maiores
+Mini Expansões Opcionais
+Deck de Eventos
+Rotores de Cidade, Minas e Depósitos de Combustivel
+Trilhos de Mudança, Hotéis
+Varian tes
+Estratégias
+Regras Transcontinentais
+pág 2
+pág 2
+pág 2
+Pág 4
+Pág 4
+Pág 4
+Pág 4
+Pág 4
+Pág5
+Pág 6
+Pág 6
+Pág 6
+Pág 6
+Pág 6
+Pág 6
+Pág 7
+Pág 7
+Pág 7
+Expansões de Ferrovias do Mundo (Regras de mapa)
+Ferrovias do Leste dos E. U. (2005)
+Ferrovias do México (2010)
+Ferrovias da Europa (2008)
+Ferrovias do Oeste dos E.U. (2010)
+Ferrovias através do tempo (2011)
+Ferrovias da Grã-Bretanha (2013)
+Ferrovias da América do Norte (2013)
+Ferrovias Nipônicas (2017)
+Ferrovias de Portugal (2019)
+Os motores: Um Pouco de História
+Créditos para todas as Versões
+Apêndice de Cartas de Baróes de Ferrovia
+Apêndice de Cartas de Operação de Ferrovia
+Pág 10
+Pág 11
+Pág 11
+Pág 12
+Pág 13
+Pág15
+Pág15
+Pág 16
+Pág 16
+Pági7
+Pági7
+Pági9
+Pág21
+Nota: Ferrovias do Leste dos E. U., Ferrovias do México, Ferrovias da Europa, Ferrovias do Oeste dos E. U., Ferrovias
+através do tempo, Ferrovias da Grã-Bretanha, Ferrovias da America do Norte e Ferrovias de Portugal sáo mapas de
+expansão para Ferrovias do Mundo. Você precisará de peças do jogo base de Ferrovias do Mundo ou de Ferrovias Mpôni-
+cas para conseguir jogar estes mapas de expansão. (Isto inclui marcadores de ponto, peças de trilho e cidades, certificados
+de título, dinheiro, marcadores de cidade vazia, locomotivas e 0 marcador do primeiro jogador).
+1
+===== p03.png =====
+RAILWAYSdMORLD
+"Railways Of the WorU"
+Criado por Martin Wallace e Glenn Drover
+Edição Original' Railroad Tjcoon 2005
+"Railways of the WorU" Ia Edição 2009
+"Railways of the World" 2a Ediçüo 2010
+"Railways of 'he WorU" Edição 10 Anos 2017
+"Railways of Nippon "Jogo Base 2017
+Introdução
+Bem vindo a era das ferrovias! Você é um barão das ferrovias fazendo
+lucro ao entregar passageiros e mercadorias prontas! O potencial dos
+ganhos é enorme, mas você será o mais bem-sucedido?
+Você decide as melhores rotas e constrói os trilhos. move a
+ferrovia e entrega as mercadorias, capturando assim aquela fatia do
+mercado para sua companhia. Enquanto sua rede de trilhos se
+expande país, você investe em novas e melhores locomotivas para
+entregar as mercadorias mais rápido e mais longe.
+pde reescrever os anais da história e marcar seu nome junto dos
+maiores de ferrovia do mundo?
+Componentes
+Existem dois jogos Railways of the World e Railways of
+Nippon. Os componentes de jogo basico são os mesmos, exceto onde
+anunciado diferente.
+Tabuleiro
+Cada tabuleiro de jogo consiste dos seguintes itens:
+• Cidades: Vermelha, Amarela, Azul, Preta, Roxa e Cinza
+• Planície, Água, Montanhas e Linha de Cume
+Os mapas do l_zste dos E. U.A. e México estão inclusos no jogo Irise
+Railways Of the World e estão disponíveis como expansões.
+O Mapa do Japão está incluso em Railways of Nippon e também
+está disponível como expansão.
+Livro de Regras
+O Compêndio de Regras contem as regras básicas necessárias para
+jogar Railways of the World, as regras espx•cíficas para cada mapa
+de expansão, regras para componentes adicionais assim como
+esclarecimentos, dicas, variantes e estratégias gerais.
+Contador de Pontuação e de Renda
+O Contador de pntuaçio em Ferrtovias do Mundo pode ser
+usado com todos mapas de expansão exceto o Railways tbrough
+Time, Railways of Great Britain, Railways of Europe e Railways of
+Nippon, que possuem seus próprios Contadores de Pontuação no
+mapa ou em um tabuleiro separado.
+lbntua#) Maddra e Contador de
+Jogadores usam os discos m arcadores de Pontuação e Renda
+pontuação de madeira para marcar
+sua pontuação.
+Marcador de Primeiro Jogador
+O Marcador de Primeiro Jogador é
+entregue ao jogador que ganhar o Leilão de
+10 jogador.
+Peças de Trilho
+Peças hexagonais de
+trilhos (retas, curvas e
+cruzamentos) são
+usadas para criar
+de trilho de ferrovia ("ligaçóes") conectando uma cidade a outra.
+• Railways of the World — 217 peças de trilho
+• Railways of Nippon — 164 peças de trilho
+Locomotivas de Controle dos Jogadores
+Conjuntos de 25 Icxomotivas coloridas são utilizadas para mostrar
+controle das ligaçóes de krrovia.
+• 6 conjuntos para Ferrovias do Mundo em Preto, Verde,
+Amarelo, Roxo, Vermelho e Azul
+• 4 conjuntos para Railways of Nippon em Verde-azulado,
+Branco, Laranja e Dourado.
+NOTA: As cores de jogador das locomotivas não estão relacionadas
+aos cubos de mercadoria ou as Cidades em nenhuma maneira. As
+cores das locomotivas meramente designam qual jogador controla
+cada uma das ligações de trilhos.
+2
+===== p04.png =====
+Cartas de Barão de Ferrovia
+As cartas de Barão de Ferrovia dão aos jogadores objetivos secretos para
+pntos extras de vitória, normalmente conquistados no fim do jogo.
+Cada variante de mapa tem seu próprio conjunto de Cartas de Barão de
+Ferrovia. Veja o Apêndice no fim deste manual pra mais informações.
+Cartas de Operação de Ferrovia
+As cartas de Operação de Ferrovia dáo aos personagens objetivos e
+vantagens durante o jogo. Cada mapa tem seu próprio conjunto de
+Cartas de Operação de Ferrovia. Vea o Apêndice nofim deste manual
+para mais informações.
+Cartas de Referência aos Jogadores
+As cartas de Referência aos Jogadores mostram as principais linhas
+de ação para o mapa em um lado e o sumário de ações do jogador,
+custos de construçao de trilho e número de marcadores de cñdade
+urzia para contar no fim do jogo do outro lado.
+A icone da Roda de Cores é uma ajuda quando você estiver usando
+as Mini Expansões de Rotores de Cidade. Cada mapa tem seu
+próprio conjunto de Cartas de Referência aos Jo dores.
+Cartões de Motor
+Estes representam o investimento de aprimorar tcxla.s as loco-
+motivas de uma ferrovia em particular, substituindo o
+modelo antigo com um mais avançado. Todos os jogadores
+começam no Nível "1". O número na carta é o nÚmero
+maximo de "ligações" que um cubo de mercadoria pode
+entregue aquele jogador.
+• Railways of the World — 24 Cartões
+• Railways of Nippon — 16 Cartões
+Marcadores de Cidade Vazia
+Os Marcadores de Cidade Vazia (MCV) são usados
+marcar o esgotamento de cubos nas cidades. O fim
+jogo é engatilhado depois de uma quantidade
+determinada de MCVs serem colcxados (baseado
+no número de jogadores).
+O jogo termina na compleição do ultimo turno
+completo depois de colocar-se o último h,4CV.
+• Railways of the World — 20 marcadores
+• Railways of Nippon — 20 marcadores
+3
+de Nova Cidade
+A colcR:açáo de uma destas peças (a ação "Urbanização")
+em uma cidade cinza representa o crescimento da
+industria em uma cidade pequena e a nova demanda
+Pr mercadorias. Estes novo crescimento significa que a
+cidade agora muda de cinza para uma nova cor e os
+cubos de mercadoria dessa nova cor agora podem ser
+entregues a esta cidade.
+• Railways of the World — 12
+• Railways of Nippon — 16 peças
+e de
+(1 sacola e 25 cubos de cor:
+vermelho, amarelo, azul, preto e roxo.)
+Estes são colocados em cidades
+no começo do jogo e entregas entre as
+ligaçóes de ferrovia para gerar Pontos de
+Vitória e renda para a ferrovia. Estas "mercadorias" representam urna
+karcelf
+do n io no mercado. U ma vez que são entregues, a
+a entrega bem sucedida pega aquela parte do
+rrovla que
+mercado e aumenta sua renda como um resultado.
+Notas de $1 .OOO, $5.OOC e $10.OOO.
+Certificado de Título de 1, 5 e 10
+Certificados de Título representam a quantidade de dinheiro em
+milhares de dolares emitido r sua ferrovia para levantar dinheiro.
+gal:r uma quantia igual ao valor do Cer-
+Quando emitida, dê ao jo
+tificado de Título do banco. O Certificado será colocado na frente
+do jo dor para representar o valor em dinheiro entregue ao jogador
+Peças de Ligação Especiais
+(2 peças hex onais) para uso na expansão Railways Of
+the Eastern
+• Estas não estáo inclusas em Railways of Nippn.
+Regras
+COMEÇANDO O JOGO
+Montagem de tabuleiro e componentes
+• Selecione o mapa que deseja jogar e col(Xlue-o no meio da
+mesa onde todos possam vê-lo e alcançá-lo.
+Coloque os cubos dc mercadoria na Sacola de Mercadorias.
+Randômicamente compre e coloque um número de cubos de merca-
+doria em cada cidade, igual ao número impresso nessa cidadc (Em
+um jogo de 2 ou 3 jogadores, verifique a tabela de reduçóes de cubos
+recomendada na página 8). Entretanto, nenhuma cidade deve
+começar o jogo com menos de um cubo de mercadoria.
+• Coloque as peças de Nova Cidade viradas para cima em uma
+ao lado do mapa.
+• Coloque as peças de trilho ao lado do mapa.
+• Coloque os Certíficados de Títulos virados para cima em pilhas de
+valores iguais.
+(À)loque o dinheiro em um lado para formar o banco.
+• Conte a quantia necessária de Marcadores de Cidade Vazia
+baseado no mapa e na contagem de jogadores sendo utilizada, devol-
+vendo o restante para a caixa.
+===== p05.png =====
+Montando Cartas de de Ferrovias
+• Divida o deck de Operação de Ferrovias e entregue todas as cartas
+"Start" marcadas com um "S" amarelo no canto inferior esquerdo.
+• Divida as cartas de Recompensa de serviço no título (apenas
+aquelas com o ícone amarelo), randomicamente escolha 4 delas
+(Ou todas, se 4 ou menos estiverem disponíveis) e retorne 0 resto
+para a calxa.
+• Agora coloque as cartas selecionadas de recompensa de serviço e
+todas as cartas de "start" viradas para cima dispostas próximas ao
+tabuleiro de jogo.
+• Finalmente, embaralhe o restante do deck de Operação de Ferro-
+ente a duas vezes o número de jogadores,
+vias, compre cartas 1
+e adicione-as ao disp y.
+• Dica• Sobreponha as cartas do
+Serviço etc.)
+Marcador e Contador de fases do turno
+• Colo ue um marcador sobressalente de Cidade Vazia no primeiro
+espaço Martelo) do contador de fases do turno no mapa para
+marcar cada uma das fases de cada turno.
+• O ícone de martelo é um lembrete para a fase de leilão do
+Primeiro Jogador.
+• Os círculos com númerc-xs 1-3 marcam as 3 rodadas de açóes de
+• ícone de dinheiro é um lembrete da hse de Renda e Dividendos.
+• A carta com um símbolo de virada é um lembrete de que o turno
+acabou e uma nova carta de Operação de Ferrovias deve ser virada
+no quadro ao fim do turno.
+PREPARAÇÃO DO JOGADOR
+• Cada jogador recebe 2 cartas de barão de ferrovia e escolhe uma
+para deixar em sua frente virada para lño. A outra é descartada do
+jo sem ser revelada.
+jc%ador uma cor e 0 equivalente de
+• Cada jogador rec& uma pilha de Placas de Motor ( numerados
+1-8) para colocar em sua frente, com o Motor level 1 virado para
+Marcador dc Renda c Marcador dc Pon
+Os marcadores de renda e pontuação são
+pntos de cada jogador, assim como a renda
+que eles rec&m ao final de cada turno.
+• Renda no marcador é em milhares
+(SI = $1.000).
+• Jogadores recelym marcadores no
+para marcar os
+primeiro ponto do marcador de renda, identifi-
+cando que eles tem de renda no começo.
+• Uma vez que 0 jogador chegue ao fim do marcador, mova 0 token
+do jogador ae volta para o inicio do marcador e adicione o número
+máximo de pont(xs em seu resultado final.
+• Se isso acontecer, a renda do jogador pelo restante do jogo é o
+número marcado no ultimo espaço do contador de pntuaçáo.
+Uso de dinheiro e Certificado de Açóes
+Jogadores começam sem dinheiro!
+• A qualquer momento durante o turno de um jogador ele pode Fgar
+um ou mais Certificados de (colcxando os certificados em sua
+frente para mostrar que eles foram "emitidos" para o jogador).
+• Para cada Cxrtificado de Ações emitido, o jogador recebe $5.(m
+do banco.
+• Não existe um limite para o número de açóes que
+emitidas quando o dinheiro é necessário para fazer uma compra ou
+pagar uma aposta. Entretanto, apenas as necessárias no
+momento serão emitidas.
+• Uma vez emitidas, nunca sá0 pagas, elas ficam com os joga-
+dores pelo restante do jogo, e custam ao jo or $ 1.000 para cada
+ação emitida durante a fase de renda e divi dos.
+• No fim do jogo, cada Qrtificado de Ações que um jogador possui
+custa a ele um ponto de vitória.
+• Emitir ações não a)nta como uma ação.
+• Existem Certificados de Ação em denominaç(xs de 5 e 10 que
+podem ser para economizar espaço.
+JOGANDO O JOGO
+Rodadas de Jogador e Turnos
+Ferrovias do Mundo é jogado em uma série de turnos que consistem
+nas seguintes três fases:
+1 — Leilão do Primeiro Jogador para determinar o Primeiro JK%ador
+2 — Açóes dos Jogadores (l por jogador em ordem do turno para
+cada um dos 3 turnos)
+3 — Renda e Dividendos
+1 - LEILÃO DO PRIMEIRO JOGADOR
+Um leilão é realizado para determinar quem será o
+"Primeiro Jogador" neste turno.
+• O jogador mais novo submete a primeira aposta do
+primeiro turno. Depois disso, 0 primeiro jogador do turno
+•anea;roszsmsx eomleilâo nos turnos subsequentes.
+• Jogadores podem colocar uma avy»sta mais alta que a
+mínima ou passar. A aposta inicial é SI .OOO.
+• um jogador decidir passar, ele não pode
+entrar nova-
+mente no leilão posteriormente.
+• Apcxstas continuam em sentido horário até que tcxios além do
+maior apostador tenham passado.
+• O maior apstador paga a uantia de sua apsta em dólares para o banco
+(emitindo se necessário e Fga o marcador de Primeiro Jogador.
+optarem por passar, então o jogador a esquerda
+• os
+do Primeiro or anterior se to rna o novo Primei ro Jogador.
+or "Ordem de Turno" no tabuleiro para mostrar a
+• Use o m
+ordem do turno ao colocar a locomotiva de controle do Primeiro
+or no primeiro espaço, com os outros jogadores colocando suas
+ocomotivas de controle em sentido horário na ordem de jogo.
+2- AÇÕES DO JOGADOR
+Existem três rodadas de do jotdor.
+• Em cada rodada, cada jogador po realizar uma ação, começando
+com o Primeiro Jogador e continuando na ordem do turno. (Você
+pode passar, sacrificando sua ação.)
+• Depis de cada rodada, o marcador de fase do turno é avançado
+junto do contador de circular (os círculos numerados 1-3
+na fase do Turno) e uma nova rodada de açóes começa.
+• Cada rodada o jogadorxd fazer uma das seguintes açóes:
+A — Construir T I Checar Linhas Co mpletas
+B — Urbanizar
+C — Melhorar Motor
+D— Entregar um cubo de mercadoria
+E — uma carta de OFraçáo de Ferrovia
+A- CONSTRUIR TRILHO
+Jogado posicionam peças de trilho para tentar conectar as cidades.
+jogador pode colocar até 4 peças em uma única ação de jogador.
+• Uma peça ou uma série de peças conectando uma cidade específi-
+camente para outra é charnada "ligação."
+• Quando um jogador constrói um trilho, o fim do trilho deve se
+manter para que a ferrovia continue em uma linha contínua.
+• A primeira peça a ser colocada deve conectar-se a uma cidade ou a
+uma ligação incompleta que o jogador seja proprietário.
+Tcxias as outras Exsas colcRadas durante a ação devem estender lidaçácx
+• O jogador deve parar de construir se ele fizer uma ligação com
+outra cidade. Note que isso significa que o jogador não pode criar
+mais de um link com uma única ação.
+• Se um jogador colocou peças de trilho, completou Sua ligação,
+o trilho é considerado "
+incompleta". Tcxlas as irwomple-
+tas são removidas ao fin de 3 rcxladas em cada turno.
+• Uma vez que os trilhos sejam colocados, jogadores nao podem
+removê-los, exceto no caso de ligaçóes incompletas que devem ser
+removidas ao final da terceira rodada de cada turno.
+• Sempre que um trilho é colocado, os jogadores devem col(xar uma
+IARomotiva de controle de sua cor para indicar sua propriedade. Se a
+ligação não for completa até 0 final deste turno, 0 trilho e a locomo-
+tiva serão removidos.
+• O custo para cada trilho é definido pelo tipo de terreno no
+hexágono em que ele é construído.
+4
+===== p06.png =====
+Verique as Linhas Completas
+O primeiro a conectar 2 B)ntos de saída de uma linha maior
+usando suas pÑias (mas passando por um número qualquer
+de cidades) im 'atamente ganha o número corres ndente de
+no marcador de renda. Nenhum outro jc*ador ganhar
+pela mesma linha depois disso.
+Custos para Construir uma Fça de trilho estão detalhados nas cartas de
+referência de jogador. A não ser que esFcíficado de outra maneira, os
+Custos são pagos no Exmco.
+• É legal construir uma ligação entre duas saídas diferentes e encontrá-
+-Ias no meio durante as múltiplas rudas de um mesmo turno.
+• Jogadores ENKlem redirecionar as lyça.s de trilho no fim de suas
+- es incom letas. Quando rairecionando trilhos, o jogador deve
+pagar o custo hexágono de terreno de novo, e deve continuar com
+uma açáo normal de construir trilho.
+• Jogadores construir trilhos cruzados quando necessário, mas
+náo podem redircü)nar as trilhos de outro jogador.
+• O custo para construir um trilho cruzado é o mesmo para
+regulares. Eles só yxlem ser construidos quando cruzarem uma seção
+existente do trilho, incluindo sua. Ela substitui a Fça naquele hexágono
+Ele não conecta de nenhuma forma as 2 seç(rs de trilho e vxxle
+como uma forma de sobrepujar.
+• Hexágonos de cidade permitem que construa nos lados do
+hexágono que çx»ntos de conexão (o Fqueno opráo de trilho).
+Uma ligação completa!
+Todas as peças do trilho conectam-se entre
+si assim como em uma área aberta de cada
+Uma ligaçáo incompleta
+Todas as peças de trilho conectam-se entre si,
+mas não conectam-se em uma das cidades.
+Emlx)ra seja um movimento legal, ele náo
+completa a ligação entre duas cidades.
+Todas as peças de trilho conectam-se a
+cidades, mas não sc conectam entre si.
+Como uma ação única, este não é um
+movimento legal.
+Nota!
+as peças de trilho devem colcxadas
+ern cnmpletas.
+mente preenchidos, como
+adjacentes a de água, não são jogáveis.
+B - URBANIZAR
+• O jogador ativo paga $10.000 ao banco para colocar uma nova
+cidade disponível em qualquer hexágono de cidade cima e adiciona
+duas mercadorias randômicas da sacola de mercadoria para qualquer
+outro cubo de mercadoria presente na cidade. NOTA: Nao existem
+peças de nova cidade vermelha.
+• Se a cidade sendo urbanizada estiver vazia, remova o ECM.
+NOTA: Isso mio extende o jogo se o fim do jogo já tiver sido acionado.
+• Cada cidade e ser urbanizada uma vez, uma vez que agora será
+uma cidade co orida e apenas cidades cinza podem ser urbanizadas.
+C - MELHORAR MOTOR
+• O jogador ativo melhorar seu Motor em um nível por ação,
+substituindo a placa antiga por uma nova ou virando-a se houver
+necessidade. Isso representa um investimento em melhoria de
+as suas locomotivas por um melhor.
+• O nível atual de Motor é o numero máximo de ligasóes que um
+cubo de mercadoria pode ser movimentado e entregue por aquele
+jo or q uando usar a ação Entregar Cubo de Mercadoria.
+emplo: Um jogador com um Motor "2 "pode entregar um Cubo de
+Moradoria para uma cidade uma ou duas ligações mais distántes, mas
+não 3.)
+• O custo para melhorar para um novo nível de motor está apresen-
+tado na Placa de Motor nova.
+•.O nível máximo de motor é 8.
+5
+D - ENTREGAR UM CUBO DE MERCADORIAS
+• Um cubo de mercadorias só pde ser entregue em uma cidade com a
+mesma cor do de mercadorias (um cubo vermelho deve ir para
+uma cidade vermelha etc.)
+• Cubos de mercadorias ser entregues através de cidades cinzas.
+Nenhum cubo pode ser entregue para uma cidade cinza até que ela seja
+e ganhe uma cor.
+• O jogador ativo pode mover um cubo de mercadorias de uma cidade
+para outra, assim entregando o cubo no destino.
+• Os de mercadoria só podem ser movidos por ligaçóes completas.
+• O cubo pcxie mover-se um numero de ligações igual ao nível de motor
+do jogador ativo.
+• Durante a ação de entrega de culM)S de mercadoria, o cul_M) não
+ser movido para o mesmo lugar duas vezes, incluindo a cidade em que
+ele começa e termina, e náo pode viajar 2 vezzs na mesma
+• Um cubo DEVE parar de se mover e ser entregue assim que ele chega a
+uma cidade da mesma cor.
+• Cubos de mercadoria não podem ser para cidades diferentes
+sem que seja entregue.
+• Quando 0 cubo é entregue, ele é removido de jogo e na
+sacola de mercadorias.
+• Depois que o cubo de mercadorias chega em seu destino, o jogador
+determina quem ganha a renda da entrega. Cada jogador ganha 1 ponto
+no contador de renda para cada ligação completa que eles possuem em
+que a mercadoria viajou. Isso significa que um cubo pode ser movido
+por ligações de outros jogadores, que rec&ráo os pntos por esse movi-
+mento.
+• Importante: O jogador ativo deve ser dono da primeira ligação que o
+será movimentado.
+• Se 0 último cubo é movido de uma cidade, um marcador de cidade
+vazia deve ser na cidade. (Nota: O tipo de marcardor de cidade
+vazia não importa. Se seu jogo tiver diferentes tipos de ECM,
+eles sá0 meramente decorativos.)
+E - SELECIONAR UM CARTÃO DE OPERAÇÃO DE FERRO-
+Um jogador selecionar uma das cartas de Operação de Ferrovias
+disponível. O uso desta carta não conta como uma ação.
+A maioria das cartas de Operação de Ferrovias possuem um símbolo no
+canto inferior direito. Cada símbolo é associado a uma regra especial
+para a carta.
+Circulo Verde: Estas cartas não podem ser selecionadas (por
+exemplo, cartas de Recompensa de Serviço). Eles garantam
+um beneficio pra o primeiro jogador que cumprir o
+objetivo impresso na carta depois que ela fica dispnível.
+Uma vez que o objetivo é completo, a carta é removida de
+jogo e colocada em uma pilha de descarte. Muitas destas são
+cartas inicias, marcadas com um "S" amarelo.
+Diamante Roxo: Esta carta é mantida na frente do jogador
+pelo resto do jogo. A habilidade destas cartas pode ser usada
+em I de suas 3 ações pr turno.
+"X" Vermelho: Estas cartas são usadas imediatamente
+quando compradas e depois descartadas.
+Mão de cartas: Jogadores pegando estas cartas podem
+ficar com elas até precisarem usar. Uma vez usada, a carta
+é descartada.
+Símbolo do infinito: (Ou sem sínN0 em versóes anteri-
+ores) Esta carta é mantida virada pra cima na frente do
+jogador e garante o benefício da carta até o fim do jogo.
+Estrelas Pretas: Estas cartas do Deck do Mexicc são
+opcionais e podem ser usadas ou substituidas conforme
+Seu desejo.
+Espinho dourado: Estas cartas de Ferrovias da America
+do Norte são usadas na variante Transcontinental.
+===== p07.png =====
+3 - RENDA E DIVIDENDOS
+• Todos os jogadores agora coletam a quantidade de renda
+mostrada (em milhares de dólares) no espaço do contador de
+renda que estão ocupando com seu marcador de pontuação.
+• Então, os jogadores devem pagar os "dividendos de ação" de
+$ I .OOO para cada ação emitida.
+• Se um jogador tiver mais dividendos do que dinheiro, ele ime-
+diatamente para de emitir mais açóes para pagar a dívida.
+• Dividendos não são pagos com novas açóes emitidas para
+liquidar a dívida até a próxima fase de renda.
+• Neste momento, qualquer ligação que estiver incompleta (não
+una 2 cidades) é removida.
+Terminando o turno
+NOCIVI da fase de Renda e Dividendos
+• mplete a fase de Renda e Dividendos comprando uma carta
+adicional do deck de Operação de Ferrovias e colocando-a virada
+para cima no quadro. Então, retorne o marcador de fase de turno
+para o primeiro espaço (Martelo) no contador para iniciar o
+leilão para o Primeiro Jogador do próximo turno.
+TERMINANDO O JOGO
+Por favor consulte as recras apropriadas para cada expansão espe-
+cificamente para mais detalhes nas condiçóes de fim de jogo.
+• O fim do jogo é engatilhado quando um certo numero de mar-
+adores de cidade vazia são colocados no tabuleiro. O número
+varia dependendo do mapa sendo jogado e do contador de per-
+sonagem. Por favor, consulte as regras do mapa que está utili-
+zando para detalhes.
+• Quando o último marcador de cidade vazia é
+complete o turno atual e mais um turno completo. Isso si nifica
+que todos os jogadores terão suas 3 açóes antes de o jogo hnal-
+mente acabar.
+Pontuação
+Quando o jogo termina, o jogador marca sua pontuação no
+contador, ajustando com as seguintes informações:
+• Todos os •ogadores movem seus marcadores I espaço para trás
+para cada dertificaçáo de Ação que eles emitiram.
+• Cartas de Barão de Ferrovia são reveladas e pontuam se foram
+completadas. Qualquer carta de Barão de Ferrovia que requer
+mais, menos, mais long etc." náo pontua em evento de um
+empate.
+• Cada ponto no contador de pontuação vale um ponto de
+vitória.
+Ganhando o jogo
+O •ogador com mais pontos de vitória é o vencedor.
+m caso de empate, o jogador empatado com mais ligações
+• Se ainda houver um empate, o jogador empatado com mais
+dinheiro ganha.
+CONCEITOS E CLARIFICAÇÕES DE JOGO
+Certificados de Ação e Dinheiro: Certificados de ação são infor-
+maçóes públicas. Todas as outras condiçóes de vitória no fim de
+jogo de Cartas de Barão podem ser rastreadas, e sentimos que
+dinheiro não deveria ter nenhum tipo de vantagem ao ser escon-
+dido. Tendo dito isso, você pode jogar o iogo da forma que você e
+seu grupo preferirem (i.e. "regras da casa são permitidas e
+encorajadas.
+Contadores de Jogador Recomendados para cada Mapa de
+Expansão: Você pode querer usar esta tabela como um guia para
+ajustar seus jogos para seu estilo favorito de jogo. Jogos com
+menos jogadores tem uma competição direta menor, enquanto
+grandes quantidades de jogadores resulta em um jogo mais agres-
+sivo. Interessantemente, Railways Through Time permite que você
+simplesmente ajuste 0 número de tabuleiros para alcançar o
+mesmo resultado.
+2 Jogadores
+• Mexico
+• Eastern U.S. with the Glenn Drover Variant (see page 8)
+• Railways through Time
+• Nippn
+3 Jogadores
+• Mexico
+• North America
+• Europe
+• Railways through "lime
+• Nippon
+5 Jogadores
+• Eastern U. S.
+• Western U.S.
+• Europe
+• Great Britain
+Majorline Tips:
+4 Jogadores
+• North America
+• Great Britain
+• Europe
+• Railways through -fime
+• Nippon
+6 Jogadores
+• Eastern U.S.
+• Western U.S.
+• Nós recomendamos que o jogador que completar a Linha Principal
+coloque um dos marcadores de IcRomotiva na tabela para mostrar
+que ele a completou.
+• Nós recomendamos que os jogadores usem um conjunto de dois
+marcadores combinando (como contas de vidro ou bandeirinhas)
+para marcar os dois finais de cada Linha Principal no mapa para que
+os jogadores consigam identificar facilmente as rotas.
+Dica de Recompensa de Serviço em Cidades
+Coloque um pequeno d6 na cidade com o valor de pontuação no top
+para lembrar a todos da Recompensa de Serviço disponível para a
+cidade. Remova o d6 quando a RecomFnsa de Serviço for cole
+Mini Expansões Opcionais - Ptxlem ser usadas com qualquer
+comprar Mini Visite o
+BARALHO DE EVENTOS
+O Baralho de Eventos dc Railways of the World é um conjunto dc 55 cartas
+contendo: • 50 Cartas de Evento • 4 Cartas em Branco • I Carta de
+Como usar a Expansão do Baralho de Eventos
+Próxirno do tabuleiro de jogo, crie os seguintes "espaços" para cartas:
+Baralho
+de Eventos
+Eventos
+Futuros
+Evento
+• NO início do jogo, embaralhe o baralho de eventos e o coloque virado para baixo no
+espaço de Baralho de Eventos.
+• Ompre uma carta do top do Baralho de Eventos e col(Xlue-a virada para cima no
+espaço de Eventos Futuros.
+• Este evento terá seu efeito dwrante o turno do jogo, quando se move para o
+espaço Evento Atual.
+• Se uma marcada como Evento Futuro é comprada, coloque-a na pilha de
+descarte e compre novamente.
+• Depis da fase de Renda e Dividendos, colcXlue a carta no espaço de Evento Atual
+para a de Descarte. Mova a de "-aço de
+Evento Atual c compra uma nova carta para o espaço Eventos Futuros.
+• Cartas que não estáo marcadas como Eventos Futuros impactam o jogo quando
+estio na psiçáo de Evento Atual, e aquelas marcadas como Eventos Futures
+impactam o jogo quando estão no espaço de Eventos Futuros.
+• Cartas marcadas como Eventos Futuros fazem efeito quando estão no esplço de
+Eventos Futuros. Estes eventos NÃO se repetem quando a carta passa para o espaço
+de Evento Atual. Não haverá nenhum evento neste turno (a nao ser que a rova carta
+para o espaço de Eventos Futuros for uma carta de Eventos Futuros e se ative).Pilha
+dc Descarte.
+Os jogadores o de
+preferirem. Remover cartas elou adicionar novas cartas com as cartas em branco.
+6
+===== p08.png =====
+ROTORES DE CIDADE (E Gráfico de Roda de Cnres )
+Os Rotores de Cidade, originalmente utiliza-
+dos na expansão
+Western U.S., podem ser usados com Outros
+mapas. Use o Gráfico de Roda de Cores
+encontrado nas Cartas de Referência do
+Jorr para ajudar no planejamento.
+• tores de Cidade ser com qualquer mapa e o gráfico
+de ru de cores nas cartas de referência de jogadores é usado para ajudar
+• colha ap ro xi madamente um quarto das cidades colo*tsna:•
+mapa e coloque um rotor de cidade da cor combinando em cada
+uma. A segunda cor revelada também deve ser um par.
+• Cidades com rotores sempre agem como sua cor base (A cor
+superior do rotor) e normalmente provêm uma segunda cor através
+da área aberta do rotor.
+• Mercadorias combinando com qualquer uma das cores em um
+rotor de cidade devem ser entregues ali.
+• Depois de cada entrega na cidade, rode o rotor de cidade em
+sentido horário enquanto mantém a parte de parada para
+mostrar a próxima cor.
+MINAS
+A "ação adicional" CA)locar
+Mina está disponível para
+cada jogador duas vezes pr
+jogo durante o turno de ação do jogador.
+• O jogador ativo pode pagar SI 0,000 para uma mina.
+• Ele imediatamente escolhe uma cidade cinza e começa a comprar
+mercadorias da sacola de mercadorias até comprar uma que seja igual
+a outra cor previamente comprada (máximo de 5 compras).
+• Q)loque as mercadorias compradas na cidade cinza, depois de des-
+cartar a mercadoria combinando.
+• Deixe o marcador de Mina ra mcxstrar que aquela mina está
+esgotada e ninguém mais
+minerar na cidade.
+DEPÓSITO DE COMBUSTÍVEL
+Cada jogador começa com 4 depósitos de combustível em tokens de
+papelão (ou miniaturas de plástico). A "ação adicional" Construir
+um Depósito de Combustível fica disponível para cada jogador
+durante a fasc de Construir Trilho se eles depósitos de com-
+bustível disponíveis para colocar.
+• Por um adicional de o jogador ativo pcxle colcxar até dois dqxSitos
+de combustível numa única cidade com a qual ele está conectado, e a qual
+não tiver nenhum outro dqxSsito de combustível (indevxndente da cor).
+Esta cidade não precisa estar conectada com a ligiçáo sendo construída.
+Um depósito de combustível provêm as seguintes habilidades:
+• Quando entregar através de uma cidade onde você possui um
+depósito de combustível, você pode ignorar a cor da cidade e contin-
+uar através dela ao remover um de seus depósitos de combustível na
+cidade de volta para seu suprimento.
+• Um depósito de combustível também pode ser usado para fazer
+uma entrega mais longa com um motor de nível menor:
+ele seja dono de "parar" em uma cidade onde
+(guardando a mercadoria em sua frente).
+• Em sua próxima ação, ele pode continuar com a entrega ao
+remover um de seus depósitos de combustível na cidade de volta para
+seu suprimento.
+• Se você não continuar a entrega em sua próxima ação, a mercadoria
+é então descartada.
+• Você encadear de combustível. Você deve remover um
+depósito de combtLstível vez que você ignora a cor de uma cidade
+ou para nesta Icxalizaçáo e depis continua a entrega da mercadoria.
+• Um único depósito de combustível permite que você ou ignore a
+cor da cidade ou estenda a entrega de mercadoria. Entretanto, você
+pode usar múltiplcxs depósitos de combustível para fa.zzr os dcis na
+mesma entrega.
+7
+• Mi e tem uma mercadoria roxa na Cidade A, um motor de nít.vl 4 e dois
+{e4ósz
+'tos de combustível na cidade roxa B, que está a 4 ligações de distância.
+o primeiro turno ele en5rega a mercadoria rara da Cidade A para seu
+depósito de combustível na cidade B. Ele remot.'e um depósito de combustível
+para ignorar a cor da cidade e então remove a mercadoria do mapa e
+coloca-a em sua re uma vez que pretende estender a entrega em seu
+próximo turno Nenhum ponto é nho neste momento.)
+• No turno 2, ele mnove o outro
+de Combustível da cidade B para
+viam mais 3 ligações para a
+C, onde ele faz a entrega final
+ike agora marca um total de ,7pntos pelas quatro ligações da Cidade A
+para a Cidade B, assim como 3 ligações 7a Cidade B para a Cidade C.
+MUDAR DE TRILHO
+A "açáo adicional" Mudar
+de Trilho está
+para qualquer jogador
+duas vezes no j zanstruir Trilho.
+durante a ação
+• O jogador ativo pagar $5,0 para colcxar uma Mudança de
+Trilho de sua cor em qualquer lugar de trilho existente durante sua ação
+de construir trilho. (Isto náo conta como I de suas 4 de
+trilho.)
+• Este jogador agora ü)nstruir outros dessa conexão,
+•ndo todas as regras normais de construção de trilhos.
+significa que qualquer trilho colcxado na nova
+devem ser
+completado até uma nova cidade antes da fase de
+ou será
+removida, incluindo o marcador de mudar de trilho.
+pense na mudança de trilho como uma conexão de 3 vias para
+3 cidades. As linhas marcadas na ilustraçáo mostram apenas
+I das possíveis configurações. A nova ligação pode continuar
+até qualquer h"gono adjacente que você possa legalmente
+HOTÉIS
+Jogador*rn
+usar Hotéis para marcar a cidade
+correspo te no mapa para e aj udar
+outros jogadores a Icmlyar da renda extra que cl.
+coletam quando entregas são feitas em suas cidades!
+VARIANTES
+Redução de Mercadoria para menos jogadores: Geralmente, existe o
+caso em ue em um jogo para dois ou três jogadores, você reduza o
+número mercadorias col(Kadas em cada cid ade por um. En tre-
+tanto, alguns mapas de ex são não requerem essa redução de mer-
+cadorias para menos jogatots. Railways of Europe foi criado ara
+jogar bem com menos jogadores e muitos acreditam que Railways Of
+Great Britain também jogam melhor sem a rauçáo de mercadorias.
+Tabela de Rauçáo de Mercadorias:
+Western
+Mexico
+Europe
+Great Britain
+North America
+Through "lime
+Reduzir
+Não Reduzir
+Não Reduzir
+Não Reduzir
+Reduzi r
+Não Reduzir
+Reduzir
+Não Reduzir
+Não Reduzir
+Não Reduzir
+Reduzi r
+Não Ra uzir
+Não Reduzir
+Railways of Nippn Náo Reduzir
+Variante Agressiva de Bloqueio
+Você não pode redirecionar sua última peça de trilho em uma ligação
+incompleta. Isso permite uma abordagem mais agressiva de bloqueio.
+Variante de Leilão de Primeiro Jogador I
+No primeiro turno, o jogador menos experiente joga primeiro. O
+jogo procae em sentido horário e o jogador que vai em segundo
+ganha $ I o jogador que vai em terceiro recelx e assim
+r diante.
+epois que o primeiro turno é completo as regras anteriores de leilão
+se aplicam e as apostas com o jogador que começou o jogo.
+===== p09.png =====
+Variante de Leilão de Primeiro Jogador 2
+Apastar funciona exatamente como explicado nas regras princi acima,
+metade 1:1Ssua
+r a pasar vai último e
+aposta arredon para cima. Enquanto os j oga\ok saem do leilão eles
+metade de sua arredondada para cima, o que determina a
+de turno (na direção reversa das desistências). O jogador que
+o leilão paga o valor total de sua aposta e vai em primeiro.
+tenha essa nova ordem de turno quando fizrr o leilão para o
+turno subseq uente.
+A variante "Glenn Drover" de dois jogadores para o mapa Eastern
+U.S: Nenhum dos jogadores construir a cx.ste das montanhas até
+que um dos jogadores alcance 30 pntos. Isto faz o jogo de dois joga-
+dores mais agressivo.
+Jogos Curtos; Para um jogo relativamente mais Curto, diminua em 2 0
+número de Marcadores de Cidade Vazia necessários para o fim do
+Cartas de Baráo de Ferrovia:
+Um método alternativo para escolher Cartas de Barão de Ferrovia:
+Jogadores d ecidem qual Barão de Ferrovia erem ficar e qual descar-
+tar depois de uma Linha Principal ser cor*etada.
+ESTRATÉGIAS
+Emitir ações é do jogo, mas muita dívida en terrar sua ferrovia.
+Seja disciplina.t#
+com o número de que vcx:ê emite. 9a
+tentador construir uma grande rede e começar as entregas longas logo no
+Começo, uma estratégia mais segura é construir uma ligação pequena,
+entregar mercadorias, construir outra ligação entregar mais mer-
+cadorias, melhorar seu motor, e assim [X)r diante.
+• Railways of the World é um jogo de comfktiçáo brutal por mercad(».
+Tente proteger Suas conexões de trilhos nas melhores cidades 0 quanto
+antes. vcxê esperar, os outros jogadores chegarão lá primeiro!
+• Você deve ficar de olho nas mercadorias que outros jogadores pode
+entregar antes de você. Entregue estas mercadorias "de risco" antes de
+outras que são "seguras" (seja porque estão entre cidades que apenas
+vcxe se conectou, ou porque nenhum outro jogador pcxle entregá-las a
+uma cidade com a cor certa).
+• No começo do jogo, ganhar 0 leilão pode ser muito importante. Ir
+na frente garante que você tem a primeira escolha de carta, rota ou
+mercadoria que você deseja. Entretanto, você também devem pensar
+em suas despesas para evitar ficar enterrado em dívidas. E se o jogador
+à sua direita fizer uma grande aposta, pode ser uma boa ideia passar,
+uma vez que ir em segundo é quase tão bom quanto ir em primeiro (e
+você não paga nada!).
+• Quando estiver tentando decidir onde «instruir suas primeiras
+ligações, olhe por concentrações de mercadorias de uma cor e as
+cidades que pegam essas mercadorias. Garante que você construirá
+ligações que permitirão entregas rápidas .com um motor nível l) e
+outras que possam ser entregues com duas (E um motor nível
+2). Dessa forma, você começará bem.
+• As Linhas Principais estão disponíveis desde o começo do jogo.
+Fique atento de quais sáo e qual o trabalho para incorporar uma ou
+duas Linhas Principais em sua estratégia de jogo. Você pode também
+considerar trabalhar para impedir que seus oponentes completem
+linhas principais também!
+Estratfta - Railways of the Eastern U.S.
+• NAO EIXE um único jogador dominar a área nordeste do mapa
+Fastern U. S. Esta região é muito densa e com grandes cidades; um
+jogador deixado sozinho ali criará uma forte ferrovia. Dois ou três joga-
+dores deveriam FIO menos ter alguma presença nessa área lucrativa.
+REGRAS TRANSCONTINENTAIS
+Visáo geral: O Jogo Transcontinental combina os tabuleiros Fastern
+U.S. e Western U.S. para formar um único mapa dos Estados Unidos
+Continentais. Jogadores começam apenas com o tabuleiro Eastern e
+jogam até que ele esteja bem desenvolvido. Neste momento, o "oeste é
+aberto" e o tabuleiro Western fica disponível para desenvolvimento. O
+jogo durante a primeira parte do jogo se difere dos mapas isolados
+uma vez que os jogadores tentam se posicionar para a segunda metade
+do jogo ao solicitar território dentro do lado oeste do mapa Eastern e
+conseguindo lidar com uma rede madura. Quando o tabuleiro
+Western é aberto, vira uma corrida para quem chega e desenvolve
+mais áreas lucrativas no (Xste.
+IMPORTANTE: As regras de "Jogo mais rápido" no fim desta seção
+sáo para aqueles que doejam um jogo mais curto, ou para aqueles que
+ficam sem mercadorias quando estiverem montando o tabuleiro
+Western quando a fase Western for ativada.
+Compnentes
+• Use todos os componentes do jogo base Railways Of the World e 0
+mapa Eastern U.S., exceto as ligações oeste.
+• Use tcxlos componentes da Western U.S.
+• Os trens não são limitadcxs pelo número físico de peças. Você pode
+usar uma cor não utilizada como
+• Marcador de pontos de Railways of North America.
+Opcional: Use 4 cartas iniciais do Kickstarter de Railways of North
+America (incluídos em novas edições). Estes possuem um ícone de espinho
+dourado ao invés de um S amarelo).
+10 até Buffalo- 4 pntos 10 até Little Rock- 4 pontos
+10 até Elko- 4 pntos 10 até Dodge City- 4
+m preparação
+Co oque o tabuleiro Eastern U.S. e seus materiais como de costume,
+incluindo o Marcador de Pontos/Renda. Você também pode o
+tabuleiro Western U.S. se desejar, mas não coloque nenhuma merca-
+doria até a fase Western ser ativada.
+Principais Linhas
+5 Pontos - Albuque ue Memphis
+Estratégia - Railways of Europe
+• Como resultado de um mapa menor e da
+a diferente da
+Europa (mais montanhosa) 0 jogo traz os jo ores para a competição
+mais cao.
+• Normalmente têm uma apropriação de terras no meio do mapa no
+começo. Este tipo de construção deve ser balanceada cuidadosamente
+com o número de certificado de ações emitidas.
+• Emitir diversas ações no começo do jogo para construir sua rede é
+muito perigoso.
+4 Pontos - Fort worrt\
+New Orleans
+4 Pontos - Billings <
+Chicago
+4 Pontos - Denver St. Louis
+Cartas de Barão de Ferrovia na variante Trans«mtinental
+A mas opções de kickstarrer de Railways of North A merica (R ONA)
+o reciam de 8 a 10 Barões de Ferrovia Transcontinental de edição
+limitada. A impressão de 2017 de RONA inclui 12 Cartas de Barão
+Transcontinentais (marcadas com um es inho dourado).Por conta de
+algumas não terem esses cartões Barão Transcontinentais,
+existem duas opções pra as cartas de Barão de Ferrovia:
+Opção 1: Você não usa as cartas de Barão de Ferrovia dcxs jogos
+Eastern e Western. No lugar, cada jogador duas cartas de edição
+limitada dos Baróes de Ferrovia Transcontinental. Cada jogador
+escolhe uma das cartas e descarta a outra virada para baixo.
+Opção 2: Se você não tiver, ou optar por não usar as cartas de Barão
+de Ferrovia Transcontinental: Durante a p ração, si as regras
+normais ara o tabuleiro Eastern (cada ganha 5aois Baróes de
+Ferrovia Pastern U.S. randomicamente, secretamente escolhe um e
+descarta o outro virado para baixo). No começo da fase Western, faça
+o mesmo com os Baróes de Ferrovia Western U.S. Ainda nio revele os
+Baróes de Ferrovia Eastern U.S. neste momento. AO invés disso, revele
+os barões de ferrovia no fim do jogo como de costume (e com as
+exceções comuns, como George Pullman).
+2 Variante Distribua todos os Barões de Ferrovia de ambos os
+ta uleiros durante a preparação inicial ao invés de esperar para dis-
+tribuir os Baróes Western quando começar a fase Western.
+8
+===== p10.png =====
+Cartas de Operação de Ferrovia na Variante Transcontinental:
+Use o baralho Eastern U.S. durante a fase Fastern do jogo. Quando
+a fase Western começar, remova qualquer carta remanescente do
+baralho Eastcrn U.S. e comece novamente com o baralho Western
+U.S. depois de remover todas as cartas iniciais.
+Posicionando Mercadorias
+Para diminuir o tempo de jogo e para garantir que você tenha mer-
+cadorias o suficiente, uma mercadoria a MENOS por
+cidade em todas as cidades Eastern U .S. (minimo de 1 mercadoria)
+durante a preparação inicial. Faça o mesmo quando estiver
+montando o mapa Western U.S. quando a fase Western for ativada.
+Note que ainda podem não haver mercadorias o suficiente. Para um
+jogo mais rápido ou para cobrir situações onde não há mercadorias o
+suficiente para a fase Western, por favor observe as notas sob o título
+"Jogo rápido" nesta mesma página.
+Jogando o jogo — As Fases Eastern e Western: O jogo Transconti-
+nental é jogado em duas fases, primeiro a fase Eastern e depois a fase
+Western.
+Jogando a fase Eastern
+Durante a fase Eastern, o mapa Western não é usado. as
+jogadas acontecem no tabuleiro Eastern como se fosse um jo
+padrão que estivesse sendo jogado .com exceção de Cidades Ktor, e
+das ligações Western como notado).
+• As habilidades de li çóes Western nao são usadas.
+• A Linha Principal tNew York até Kansas City vale 15 pnt0S (ao
+invés de 20) e não requer uma ligação Western.
+• Cidades Rotor sáo opcionais. O uso de cidades rotor não é
+recomendado nas primeiras vezzs que você joga, mas ser adi-
+cionadas depois, se preferir.
+Depósitos dc Combustiveis só estão disponíveis na fase Western.
+Uma vez que o Oeste esteja aberto, elas podem ser construídas/usa-
+Cidade Vazia for
+• A fase Eastern continua até o final de seu turno completo. Ele não
+continua para mais um turno completo como se estivesse jogando 0
+final de um jogo Eastern U.S.
+Entre hses
+• O jogo agora pausa para a limpeza da fase Eastern e a
+da fase Western.
+Retornar
+primeira açáo dewlwttasaopçáo de retornar ações para o banco. A
+segunda ação custa um adicional de três Pontos de Vitória; e assim em
+diante. por exemplo, retornar quatro ações custaria (2+3+4+5) = 14 PVs.
+• Cada jo
+r determina quantas ações irá devolver.
+• Isso ser simultâneo, mas se algum dos jogadores insistir em
+uma ordem estrita, isso deve acontecer na mesma ordem do turno
+anterior.
+Popule o tabuleiro Western
+• Remova todos os Marcadores de Cidade Vazia do tabuleiro
+Eastern; eles serão reutilizados no tabuleiro Western.
+• Não modifique de outra forma o tabuleiro Eastern. Especifica-
+mente, não remova nenhuma mercadoria, trilho ou Marcador de
+Nova Cidade a não ser que esteja usando as regras de jogo rápido.
+• Coloque o tabuleiro Western adjacente ao tabuleiro Eastern, e
+alinhe os três rios mais ao sul.
+• O rio que alcança Minneapolis não se estende para o tabuleiro
+Western.
+• Lembre-se de mercadorias no tabuleiro Western usando a
+mesma regra utilizada para o mapa Eastern U.S., i.e. coloque uma
+mercadoria a MENOS em todas as cidades Western US (mínimo de
+1 mercadoria).
+9
+Cartas de Operação de Ferrovia:
+• Todas as cartas de Operação de Ferrovia não solicitadas sáo remov-
+idas do baralho Eastern e estão removidas de 'iv • de volta na
+• Coloque as quatro cartas iniciais do baralho estern
+caixa, sem utilizá-las.
+Embaralhe as cartas restantes de OFraçáo de Ferrovia Western U.S.
+e distribua duas cartas por jogador.
+a hse Western
+eres todem voltar a jogar normalmente e jogar
+• Ligaçóes pdem ser construídas entre os dois tabuleiros.
+• Como de costume, nác é necessário que a ligação do jogador seja
+contígua.
+• Por exemplo, jordores podem inicialmente começar a construir
+na costa oeste se e es desejarem.
+• Durante a fase Western, Marcadores de Cidade Vazia serão coloca-
+dos no tabuleiro Wcstcrn c APENAS cm cidades que normalmente
+começam com mais de uma mercadoria. As únicas cidades que
+começam com 1 mercadoria sá0 as cidades cinzas.
+• Note que algumas cidades cinzas começam com 2 mercadorias,
+entretanto, podem Marcadores de Cidade Vazia.
+• Cidades vazias no tabuleiro Eastern nao são mais relevantes e não
+contam quando determinando o gatilho de fim de jogo.
+• Cidades Eastern não podem mais ser urbanizadas, ou ter um
+aumento de mercadorias!
+Fim de Jogo
+• O jogo Transcontinental termina quando o último Marcador de
+Cidade Vazia é col(w.ido no tabuleiro Western.
+• Use o mesmo número de Marcadores de Cidade Vazia para o tabu-
+leiro Western Solo - Ou seja, 6 + 2 por jogador.
+• Como de termine o turno em que o último Marcador de
+Cidade Vazia é colcxado, e continue a jogar por mais um turno
+completo.
+Pontuação
+A pontuação final do jogo é calculada como de
+Jogo rápido
+Estas regras são para aqueles que não possuem mercadorias adicio-
+nais para jogar as regras comuns do jogo Transcontinental.
+• Quando você completa a fase Eastern, remova tus as merca-
+dorias do mapa Eastern de qualquer cidade sem uma conexão
+(ligação) construída nela.
+• Remova todas as meraorias de cidades cinzas no mapa Eastern.
+Isto forçará os jogadores "irem para o oeste" para entregas futuras!
+• Lembre-se ue em nenhuma das versões, as cidades Eastern não
+pcxlem ser u izadas, ou ter crescimen to de mercadoria!
+• Quando jogando com 2 ou 3 j res, lembre-se de reduzir a
+quantidade de mercadorias em
+cidade por um, para um
+mínimo de uma mercadoria por cidade
+o
+===== p11.png =====
+2005
+Introdução:
+É o meio dos anc» 1800, e é o dono de uma jovem companhia
+ferroviária. A era das ferrovias Cidades proliferam com
+passageiros em potencial, o interior rende uma bela colheita e incon-
+táveis novas fábricas estáo repletas de produtos manufaturados! Os
+lucros em potencial são enormes, mas quem será o primeiro a
+agarrar as melhores Oportunidades? A competição será feroz e apenas
+mais espert(» e irão prosperar. Você é quem manda.
+Você é o Barão da Ferrovia!
+COMPONENTES DA EXPANSÃO
+Tabuleiro
+O mapa da metade leste dos Estados Unidos da América durante os
+primeiros 50 anos da era das ferrovias (1830-1880).
+Veja no Apêndice para notas em cartas de Barão de Ferrovia e
+Operação de Ferrovia:
+• Cartas de Barão de Ferrovia (12)
+• Cartas de de Ferrovia (31)
+• Cartas de Referência dos Jogadores (6)
+• Peças de Ligação Especial (2)
+NOTAS DA EDIÇÃO ORIGINAL
+Ligaçóes Principais: O mapa original de Eastern U.S. era o único
+mapa com Cartas de Ligações Principais. Estas cartas de Ligações
+Principais ser removidas completamente do jogo para
+otimizar o espaço da mesa. Tudo o que voci precisa está na Carta de
+Sumário de Ligações Principais para referência. O mapa atual possui
+as Ligações Principais detalhadas nele.
+Ligação Western
+Construir uma ligação representa a construção de uma rede
+de trilhos a do lado esquerdo do mapa. Esta rae que
+você consiga acessar as grandes riquezas do Oeste Americano.
+Durante a era das ferrovias, inúmeros vagões replet(xs de gado e
+grácvs foram transportados para novas ferrovias para alimentar as
+cidades em crescimento no leste (e na Europa). A cidade de Chicago
+cresceu e prosperou como um centro de ferrovias, mercado e mata-
+douro.
+Ação Construir uma ligação Western
+• Um jogador que tenha completado uma ligação para Kansas City
+ou Des Moines agora é elegível para realizar a ação Construir uma
+ligação Western naquela cidade com uma ação de construção futura.
+• para conseguir fazcr a ação Cmlstruir uma Ligação Western o
+jogador deve primeiro pagar $30,000.
+• Apenas 1 ligação Western pode ser construída em cada uma das
+duas cidades elegíveis - Kansas City e Des Moines.
+• O jogador então colcxa a peça "Ligação Especial" no hexágono
+apropriado de "Ligação Western" a oeste da cidade na qual o jogador
+está (tanto Kansas City quanto Des Moines) e coloca sua
+locomotiva de controle nela.
+• Quatro mercadorias vermelhas são colocadas da sacola de merca-
+dorias para a cidade.
+• Seguindo em frente, todas as mercadorias vermelhas entr*ues de
+uma ligação Western para Chicago são colocadas novamente na
+sacola e então duas mercadorias randômicas são colocadas em
+Chicago.
+Linha Principal: New York para Kansas City & Ligação Western
+• O primeiro jogador a conectar New York e Kansas City com uma
+ligação Western que ele tenha construído tanto em Kansas City
+quanto em Des Moines ganha 20 pontc» no contador de renda.
+• Se a ligação Western estiver em Des Moines, o jogador deve
+conectar Des Mines em sua rota conectando Kansas City e New
+York.
+Regras de Redução de Mercadoria para jogos de 2 e 3 jogadores
+Em um jogo de 2 ou 3 jogadores, reduza o número de mercadorias
+colocadas em cada cidade por um. Entretanto, nenhuma cidade
+pode começar o jogo com menos de I mercadoria nela
+Veja também a variante Glenn Drover para 2 jogadores em Eastern
+U.S. na página 8.
+Fim de Jogo
+O número de Marcadores de Cidade Vazia (MCVs) que terminam o
+jogo depende do número de jogadores.
+2 jogadores: 10 Marcadores de Cidade Vazia
+3 jogadores: 12 Marcadores de Cidade Vazia
+4 jogadores: 14 Marcadores de Cidade Vazia
+5 jogadores: 16 Marcadores de Cidade Vazia
+6 jogadores: 18 Marcadores de Cidade Vazia
+lxmbre-se de reduzir sua pontuação em I ponto de Vitória para
+cada ação emitida. A maior pontuação é a vencedora.
+10
+===== p12.png =====
+2010
+In troduçáo:
+É o meio do século XIX no México. Quanto mais e mais ferrovias
+emergem nos EUA, 0 transporte de mercadorias está em alta. O
+comércio entre os países está em crescimento, e o México está
+pronto para desenvolver um sistema de ferrovias para transportar
+mercadorias para os EUA. Você pode construir a melhor ferrovia ao
+sul da fronteira e controlar as Ferrovias do México?
+COMPONENTES DA EXPANSÃO
+Tabuleiro
+Nota: As cartas com Estrelas Negras (Barão de Ferrovia e Operação de
+Ferrovia) são opcionais e podem ser usadas ou substituídas conforme seu
+desejo.
+• Cartas de Barão de Ferrovia (12)
+• Cartas de Operação de Ferrovia (38)
+• Cartas de Referência de Jogador (4)
+Fim de Jogo
+O número de Marcadores de Cidade Vazia (MCVs) que terminam o
+jogo depende do número de jogadores.
+2 jogadores: 8 Marcadores de Cidade Vazia
+3 jogadores: 9 Marcadores de Cidade Vazia
+4 jogadores: 10 Marcadores de Cidade Vazia
+Irmbre-se de reduzir sua pontuação em 1 ponto de Vitória Inra
+cada ação emitida. A maior pontuação é a vencedora.
+11
+Original Edition 2008
+2nd Edition 2010
+I n trcxluçáo:
+É o meio do século XIX m Europa. AS ferrovias apareceram primeira-
+mente na Inglaterra e agora estão aparecendo em 0 território
+Europeu. Riqueza e prestígio aguardam a pessoa que conseguir trabalhar
+nos recursos e demandas do continente. Você construirá monta-
+nhas acidentadas no sul da Europa, ou Fla vasta imensidão da Rússia
+(Eidental? Se vcwê for afortunado o suficiente, talvez consiga assinar um
+contrato de fretamento corn uma cidade Icxalizada estrategicamente ou
+mesmo uma capital Um continente aguarda em Railways of Europe
+COMPONENTES DA EXPANSÃO
+Tabuleiro
+BAI AYS.
+• Cartas de Barão de Ferrovia (10)
+• Cartas de Operação de Ferrovia (29)
+• Cartas de Referência ao
+jogador (5)
+Fim de Jogo
+O número de Marcadores de Cidade Vazia (MCVs) que terminam 0
+jogo depende do número de jogadores.
+2 jogadores: 9 Marcadores de Cidade Vazia
+3 jogadores: 1 1 Marcadores de Cidade Vazia
+4 jogadores: 13 Marcadores de Cidade Vazia
+5 jogadores: 15 Marcadores de Cidade Vazia
+Lembre-se de reduzir sua pontuação em I pnto de Vitória para
+cada ação emitida. A maior pontuação é a vencaora.
+===== p13.png =====
+2010
+Vá para o Oeste! No meio dos anos 18(H) este grito era a
+da crença de uma jovem nação em manifestar seu destino: Que os
+Estados Unidos deveriam se expandir através do continente. Enquanto
+alguns barões julgavam melhor em desenvolver a economia no
+lxste dos U novas riquezas e 0EN)rtunidades lucrativas aguarda
+no oeste Aqueles que tiveram a coragem de construir sobre as
+rochas e através de Sierra Nevada para conectar o Inste e Oeste se
+juntaram em um panteão de visionários das ferrovias. tem a perícia
+para controlar o e ser tão sucedido quanto aqueles que
+vieram antes de vcxê?
+COMPONENTES DA EXPANSÃO
+Tabuleiro
+g:
+• Cartas de Barão de Ferrovia (12)
+• Cartas de Operação de Ferrovia (38)
+• Cartas de Referência ao jogador (6)
+Regras de Redução de Mercadoria para jogos de 2 e 3 jogadores
+Em um jogo de 2 ou 3 jogadores, reduza o número de mercadorias
+colocadas em cada cidade por um. Entretanto, nenhuma cidade
+começar 0 jogo com menos de I mercadoria nela
+Rotores de Cidade:
+Colc:xlue um Rotor de Cidade em cada uma das seis cidades (mcxstradas
+abaixo) cuja cor combina com a cidade subjacente. Vire o Rotor de
+Cidade para que a cor rewlada seja a mesma cor do Rotor de Cidade.
+em Francisco t.océpüe•ria um Rotor de Cidade Vermelho
+que aporçáo emhaix•n do
+para mais informações sobre Rotores de Cidade veja as regras na página 7.
+Os Rotores de Cidade recomendados para a expansão Western U.S são:
+• San Francisco
+• Tacoma
+• Denver
+• Butte
+• Salt Lake City
+• Oklahoma City
+Dqósito de Q)mbustível
+Dê a cada jogador quatro depósitos de combustível em suas próprias
+cores junto com o resto de suas peças.
+Para mais informações sobre depósitos de combustível veja as prgras na
+Regras opcionais
+Jogadores escolher ná0 usar os depósitos de combustível elou
+os Rotores de Cidade. Jogadores escolher cidades diferentes
+para os Rotores de Cidade, e podem ser usadas com mais ou menos
+que seis cidades.
+Fim de Jogo
+O número de Marcadores de Cidade Vazia (MCVs) que terminam 0
+jogo depende do número de jogadores.
+2 10 Marcadores de Cidade Vazia
+3 jogadores: 12 Marcadores de Cidade Vazia
+4 jogadores: 14 Marcadores de Cidade Vazia
+5 jogadores: 16 Marcadores de Cidade Vazia
+6 jogadores: 18 Marcadores de Cidade Vazia
+Izmbre-se de reduzir sua pontuação em 1 ponto de Vitória para
+cada ação emitida. A maior pontuação é a vencedora.
+12
+===== p14.png =====
+2011
+Introdução:
+É a metade do século IX]. Copiando idéias de antigos viajantes do
+tempx), Thomas Edison adaptou sua própria versão da "Bobina de
+Tesla". Com a ajuda da ferrovia da Pennsylvania, o Sr. Edison preparou
+diversas Icxomotiva.s para viajar através do temy) e preparou seu
+próprio grupo de engenheiros r&ldes para ganhar os que
+esperam. O trabalho não será fácil, mas o lucro é imenso. Você está
+pronto para Railways Through Time?
+COMPONENTES DA EXPANSÃO
+40 Cartas de Operação de Ferrovia
+Tabuleiro de Renda e Pontuação
+8 Tabuleiros de períodos de tempo
+Cada tabuleiro representa um de tempo diferente.
+Começando o Jogo
+• Jogadores começam notao de temp em que eles desejam
+j ogar. O n úmero revomendado períOs de tempo usado em um
+jogo é igual ao número de jxdores +1.
+• O tabuleiro de Ren e Pontuação é sempre usado.
+• É recomendado que j res sempre incluam pelo
+com uma cidade
+• Coloque mercadorias randomicamente em cada cidade igual ao
+número impresso naquela cidade. Diferente de outras expansões,
+quando jogar com 2 Ou 3 jogadores, não reduza 0 número de mercado-
+rias em cada cidade.
+• Colcxlue as 4 Cartas de OLxracáo de Ferrovia iniciais viradas
+para cima próximo ao tabuleiro: The RiilroadEra Begins, fime Blazer,
+Speed Record and P
+Lines.
+• Remova dotes qualquer carta de OFraçáo de Ferrovia que
+seja esprcífica para um Frícxlo de temp não utilizado no atual.
+• Então revele Cartas de Operação de Ferrovias igual a duas vezes
+o número de jogadores. Como de costume, ao final de cada turno, lem-
+bre-se de comprar I nova carta de OFMaçáo de Ferrovia e virar para
+cima antes de iniciar o prdximo turno.
+Ordem de Turno
+• Cada turno começa com um leilão para decidir a ordem de
+jogo. A Ordem do leilão sempre Segue a Ordem da anterior.
+• O primeiro jogador que passar deve pagar metade de sua
+(arredondado para baixo) e colcxar um trem no fim do marcador
+to&rdem de Turno no Marcador de pntuaçáo.
+• O p róximo joga&r a tamlún paga metade de sua
+aposta (arredondada para baixo e se torna o penúltimo jogador
+contador de Ordem de Turno.
+• Isto continua da mesma forma até os jogado
+res menos o
+maior apostador terem passado.
+• O apstador vencedor a apsta i nteira para o ban co e se
+torna o primeiro jogador da
+Novo de jogo
+Túneis do Tem
+Em Railways Trrough nme, jogadores agora pcxlern se conectar ac»
+vermelhos brilhantes de "túnel do temp".
+túnel do tempo ele deve pagar um adicional de $1,000 para o custo da
+construção e a ligação é cxnsiderada cnrnpleta.
+• Construir trilhos de uma cidade para um hexágono de túnel do
+temp termina a ação do jogador, assim como se ele tivesse construído
+de cidade a cidade.
+Importante Em Raiã'2mugh Time, os jogadores não mais usam
+• Cidades meramente adjacentes aos túneis de temp ainda não
+estáo a eles. Lanbre-se, vcxê deve ter um ícone de espora
+para conectar o trilho à cidade.
+• Quando usar a carta Government Land Grant, se o trilho
+conectar a um túnel do temp, o jogador ainda deve pagar os $1 m).
+odo
+$2;ooo
+13
+===== p15.png =====
+Entregando Mercadorias através do temp
+• Quando um jogador tem trilhos que emergem de túneis do temp em
+dois Frícxios de tempo diferentes, ele entregar mercadorias livre-
+mente entre estas duas cidades.
+Napoleonic
+Neste exemplo, a ligação viaja da cidade roxa d" Idade da Pedra para a
+cidade vermelha da era Napoleônica. este cubo vermelho pecisa apenas de
+um motor nível 1 e vale 1 Ponto de Vitória
+• Mercadorias viajar em qualquer direção através do temp uma
+vez que os comecem a construir suas redes.
+Napoleonicj
+Neste exemplo, a ligação viaja enfiv a cidade vermelha Napoleônica
+para a cidade Roxa da Idade da pedra e entüo termina em uma cidade
+Azul da idade da pedra. Esta mercadoria azul requer um motor de
+nível 2 e vale 2 Pontos de Vitória.
+• Jogadores NÃO usar túneis do temp para entregar mercado-
+rias em cidades que residem no mesmo Fríodo de temp.
+• Uma vcz quc uma mcrcadoria dcixa um pcricx{o dc tcmp, CIC
+NUNCA MAIS pde re-entrar nesse Fríodo de tempo.
+• Trilhos construídos de túneis de tempo devem sempre se conectar
+a uma cidade.
+Napoleonic
+• Mercadorias lxxlern viajar por diferentes Fríodos de temp antes de
+encontrar seu destino final.
+T. Napoleonic
+Neste exemplo, a mercadoria vermelha viaja da cidade azul para a cidade
+mxa na Idade da Pedra, então pula para a cidade cinza no Egito, efinal-
+mente para a cidade vermelha na era Napoleônica. Esta entrega de merca-
+daria vermelha requer um motor de nível 3 e vale 3 Pontos de Vitória.
+Reclamando Linhas de Ternl-X)
+Em Railways Throueh Time, Linhas Principais foram
+Linhas Temporais. cada de temp tem uma ou duas Link:
+Temporais listadas no top do tabuleiro.
+• Jogadores para ser primeiros a conectar as duas cidades
+em uma Linha Temporal com marcação naquele tabuleiro.
+• Uma vez que o jogador completa a primeira Linha Temporal ele a
+reclama ao colcxar um de seus tokens de trem na listagem da Linha
+Tempral e nenhum outro jogador pcxie reclamar aquela Linha
+Temporal. com um túnel do temp não pdem ser usadas
+para reclamar uma Linha Tempral.
+• as Linhas Temprais filturas que um jogador completar depis
+da primeira DEVEM SE CONECI'AR a sua Linha Tempral original
+ANTES de serem reclamadas. Veja o exemplo abaixo:
+• Emzta; A irnagem do Tabuleiro da Enz Industrial mostnt um hexágono da
+cidade de Pittsbwgh que náo chegou ao jogo final'
+Linhas Temporais não garantem no momento em que são recla-
+madas. No fim do jogo os jogadores contam o número de Linhas Tem-
+prais que completam e ganham de Vitória de acordo com a
+tabela de pntuaçáo.
+Fim de Jogo
+O número de Marcadores de Cidade Vazia (Mesma de
+Railways of the World) que terminam o jogo deFnde do número de
+jogadores.
+2 jogadores: 9 Marcadores de Cidade Vazia
+3 jogadores: I I Marcadores de Cidade Vazia
+4 jogadores: 13 Marcadores de Cidade Vazia
+5 jogad0Rs: 15 Marcadores de Cidade Vazia
+6 jogadores: 19 Marcadores de Cidade Vazia
+l.cmbre-se de reduzir sua IX)ntuaçáo em 1 ponto de Vitória pra cada
+ação emitida. A maior pntuaçáo é a vencedora.
+14
+===== p16.png =====
+2013
+É a metade do século [XI na Inglaterra e os trilhos de lx)ndes que
+surgiram para transyytar carvão estáo sendo evoluídos para ferrovias.
+Numerosas cnmpanhias usando diferentes medidores ferroviários se
+conectaram a vilas, cidadelas e cidades através do país. Muitas
+estão para acontecer, e os Quatro Grandes resultarão disso. Você tem o
+que é necessário para gerenciar uma companhia ferroviária? Sua compa-
+nhia será a mais lucrativa?
+Componentes de Expansão
+Tabuleiro de
+RAILWAYS
+Caur
+Nota do Mapa: Jogadores não lxxiem construir na linha preta entre
+Hull, Grimsby e Goole. Isto representa o um grande estuário
+de maré que nao teve pnte até 1981 FIO que se tornou a pnte
+suspensa mais longa do mundo na évxxa.
+• Cartas de Barão de Ferrovia (10)
+• Cartas de Operação de Ferrovia (27)
+• Cartas de referência de Jogador (5)
+Fim de Jogo
+O número de Marcadores de Cidade Vazia (MCVs) que terminam o
+jogo depende do número de jogadores.
+2 jogadores: 10 Marcidores de Cidade Vazia
+3 jogadores: 12 Marcadores de Cidade Vazia
+4 jogadores: 14 Marcadores de Cidade Vazia
+5 jogadores: 16 Marcadores de Cidade Vazia
+lxmbre-se de reduzir sua pntuaçáo em 1 pnto de Vitória para cada
+ação emitida. A maior pntuaçáo é a vencedora.
+15
+2013
+Introdução
+o começo do século XIX no Canadá. A primeira ferrovia Transconti-
+nental está sendo a)nstruída, graças a uma terra de 25 milhões de acres
+cedida governo canadense. A ppulaçáo está em crescimento e o
+transporte é uma demanda enorme. conseguirá construir linhas
+férreas para transportar as massas, ou vai arriscar os desafios de
+construir nas Montanhas xxhosas para suas fortunas não contadas.
+de Expansão
+de jogo
+Nota: As cartas de Railway ofNorth America manadas com uma folha de
+M Para uso 0 mapa canadense.
+O NA original incluía urn marcador de pontuaçáo para ojogo Transco n -
+tinental Agora existe um narrador de pontuação universal para a base de
+ROTW, RÓNA, e o jogo Transcontinental (cujas regras estão na versáo
+impressa das Regras Completas de 2017 disponível em www eagle-gryphon. -
+com)
+RoNA também inclui 12 Cartas de Barão de Ferrovia, 4 Cartas
+vpe*çáo e 6 Cartas de Referência de Jogadorpara ojogo Transconti-
+de
+nental, todos com um ícone de espinho dourado.
+Cartas (incluindo aquelas com ícone de espinho dourado)
+• Cartas de Barão de Ferrovia (24)
+• Cartas de Operação de Ferrovia (50)
+• Cartas de Referência de Jogador (12)
+Modo de
+Clarificaçáo de map
+Linha de neve: A Linha de Neve usa sítnlN)los de de neve para
+marcar uma fronteira entre
+nos entre a linha leste-oeste na
+metade entre as extremidales norte e sul do tabuleiro Canadense. Cons-
+truir trilhos em qualquer hexágono ao norte da linha de neve custa
+$ I a mais que o preço comum.
+Exceção: Se você usar uma carta de Linha férrea, vc:xé ainda não pga
+nada. Se o hexágono estiver completamente marcado mas não tiver o
+férreo, trate-o como um hexágono normal. Alguns dos hexágo-
+nos com mais água podem parecer que não ENRIem ser mas
+se estiverem completamente marcados, então é legal construir. (Eles
+são hexágonos de água, claro.)
+As linhas férreas estão impressas no mapa como pequenos
+azuis com um navio branco nelas - fora de lqaluit e de St. John.
+Existem 6 pntos de linha férrea e 5 cartas férreas no total, o que
+que essencialmente inútil uma vez que não há nenhuma linha férrea ou
+entrada de cidade para conectá-lo à cidade.
+Fim de Jogo
+O número de Vlarcadores de Cidade Vazia (MCVs) que terminam o
+jogo de-Fxnde do número de jogadores.
+2 j%adores: 9 Marcadores de Cidade Vazia
+3 jogadores: 11 Marcadores de Cidade Vazia
+4 jogadores: 13 Marcadores de Cidade Vazia
+5 jogadores: 15 Marcadores de Cidade Vazia
+Lembre-se de reduzir Sua pntuaçáo em 1 pnt0 de Vitória para cada
+ação emitida. A maior pntuaçáo é a vencedora.
+===== p17.png =====
+2017
+Intrtxluçáo
+Railways of Nippon é uma versão stand-alone de Railways of the World e
+contém tudo o que vcRé precisa para jogar com até 4 jogadores.
+Seu tabuleiro e cartas únicas tarnlún estão dispní
+vets como uma
+expansão para Railways Of the World.
+Nota: Comprado como uma expansáo, voei precisará das peças do jogo base
+de Railways of the World (peçaç de trilho e de cidades, dinheiro, marcadores
+de tidades vazias, trens e marcador de primeirojogador) para jogar
+Railways of Nippon.
+Os compnentes base de Railways of Nippn são idênticos àqueles
+encontrados em Railways of the World exceto quando notado. A
+maioria das diferenças tem a ver com o número de suprtados
+e elementos esFcíficos do mapa do Japão.
+Tabuleiro de Jogo
+RAILWAYS
+Peças de Trilho; 164
+I_xwomotivas de Controle dos I (K)
+• Cartas de Barão de Ferrovia (10)
+• Cartas de OFraçáo de Ferrovia (42)
+• Cartas de Referência de Jogador (4)
+Cartões de Motor ( 16 Cartas)
+Marcadores de Cidade Vazia (20 marcidores)
+Peças de Nova Cidade ( 16 Fças)
+Pegue o baralho de Operação de Ferrovia e separe as duas (2) cartas
+iniciais (marcadas com um S amarelo no canto inferior esquerdo), e
+coloque-as virada para cima próximo do tabuleiro.
+Fim de Jogo
+O número de Marcadores de Cidade Vazia (MCVs) que terminam 0
+jogo dqxnde do número de jogadores.
+2 jogadores: I O Marcadores de Cidade Vazia
+3 j—ores: 12 Marcadores de Cidade Vazia
+4 jogadores: 14 Marcadores de Cidade Vazia
+Lembre-se de reduzir sua em 1 ponto de Vitória paracada
+ação emitida. A maior pntuaçáo é a vencedora.
+2019
+Portugal é o país mais a da Europa. Com uma costa que se espalha
+pr mais de 700 km de frente para o Oceano Atlântico, Portugal usa
+suas viajadas rotas comerciais para desenvolver sua indústria.
+A Terra Portuguesa é uma presença crucial para duas regiões autónomas
+— Madeira e Açores. A maioria das destas são direto
+da terra firme. Enquanto as rotas marítimas de turismo e mercadorias
+têm um imprtante pabYl para a sobrevivência destas ilhas, elas
+tarntún luxu(xsos de qualidade superior para o con-
+tinente EuroFu tamEún.
+de Expansão
+Tabuleiro de Jogo
+RAILWAY
+• Cartas de Objetivo (10)
+• Cartas de Operação de Ferrovia (34)
+• Folhas de Auxílio ao Jogador (4)
+Fim de Jogo
+O número de Marcadores de Cidade Vazia (MCVs) que terminam 0
+jogo dqxnde do número de jogado
+2 jogadores: 9 Marcadores de Cidade Vazia
+3 jogadores: 10 Marcadores de Cidade Vazia
+4 jogadores: I I Marcadores de Cidade Vazia
+I..embre-se de reduzir sua pntuaçáo em I ponto de Vitória para cada
+ação emitida. A maior pntuaçáo é a vencedora.
+16
+===== p18.png =====
+MOTORES: UM POUCO DE HISTÓRIA
+24-0 John Bull
+Esta inglesa de 1831 serviu em
+uma das primeiras ferrovias dos Esta&
+Unidos, Entre Camden e Amboyz
+O John Bull foi enviado, desmontado e
+colcxado de volta no lugar, sem o
+beneficio de plantas ou
+O John Bull foi consideravelmente
+modificado durante seus mais
+de trinta anos de serviço. Este
+motor foi o primeiro em uso no estado de New Jersey. em 1981 , o
+pequeno patriarca retornou a vida na filial de Georgetown em Washing-
+ton, D.C, em aniversário de 150 anos de sua primeira corrida na
+América. A locomotiva John Bull é o mais antigo veículo ainda 0Frável
+de propulsão própria.
+0-4-0 DeWitt Clinton
+Este motor foi o terceiro construído
+pela West Point Foundry
+Association, New York, para a
+Mohawk & Hudson River Railroad
+em 1831. Ele pesava a
+proximadamente 3.5 toneladas
+sem água, viajava a M) milhas por
+hora com 5 carros em um nível
+comum, era movido a carvão
+antracite e foi o primeiro motor
+do Estado de New York em uma
+ferrovia. O DeWitt Clinton da
+Mohawk & Hudson Railroad foi o primeiro trem em New York.
+44-0 American
+Os 4-4-0 American-class a vapr foram
+as locomotivas mais comuns no final
+do século XIX e no começo do século
+XX. Era tão comum que eram
+chamados "Padrão Americano", ou,
+para abreviar, simplesmente
+"American" Durante os anos 50
+e 60, a Icxornotiva American era
+não apenas o motor de
+passageiros nas ferrovias da América mas tarntún o motor de carga. Ele
+foi o primeiro a vapor prcxluzido em larga esala, e é um que abriu
+espaço para o (Rste. Aproximadamente 39 exemplos do 4-4-0 ainda
+sobrevivem nos Unidos.
+O Union Pacific 4-4-0 4f 1 19 encontrou o Central Pacific Jupiter na
+compleição da ferrovia transcontinental.
+44-0 8-Wheeler
+Em 18%, Henry R. Camplxll,
+engenheiro chefe da
+Philadelphia Germantown and
+Norristown Railroad, patenteou a
+combinação de um caminhão
+comum com dois pares de
+motoristas, um par ficando na
+frente e outro na parte de trás da
+caixa como é feito nos motores de
+o
+passageiros atuais. Este motor foi contratado em 16 de maio de I e
+foi encerrado em 8 de maio de 1837.
+Este foi o primeiro motor de oito rus desse tip, e dele, as
+americano de hoje clamam sua origem.
+17
+2-6-0 Mogul
+AFsar de kxomotivas dese psicionamento de rcxlas
+serem construídos desde 1852, O primeiro verdadeiro
+2-6-0 náo foi construído até o início de
+1860s. Os primeiros que firam
+construídos em 1860 para a
+Inuisville & Nashville railroad.
+Apesar de as locomotivas 2-6-0
+terem mais de empuxo, sua susExnsáo
+rígida a fazia mais propensa a descarrilamentos que os
+4-4-()s da ékxxa. Muitos mecânicos contemprâneos de ferrovias atribuem
+estes desc_arrilamentos para o puco distribuído na frente da Icxomo-
+tiva. Em 1864, William S. Hudson patenteou um sistema de susFnsáo
+equalizado que ajudou a resolver estes problemas de descarrilamento.
+(hm esta questão resolvida, mais de 1 1 Icwomotivas tip-Mogul
+K)ram construídas ao longo dos 50 anos seguintes. O nome da clasx de
+Icxomotiva, provawlmente deriva de outra Icxornotiva carregando
+o mesmo nome construída para a Taunton L.CKomotive and Manufactu-
+ring Cnmpany em Eur-a a Czntral Railroad de New Jerwy.
+4-6-0 Ten-Wheeler
+O primeiro 4-6-0 construído na América
+foi o ChesaFake construído Norris
+Uxomotive Works em Março de 1847 ,
+para a Philadelphia and Reading
+Railmad. Apenas alguns dias depois de
+William Norris ter completado o
+ChesaFake, a Hinkley
+frxomotive Works compktou
+primeiro 4-6-0, o New
+Hampshire, para a %ston and Maine Railroad. Durante os anos 1860 e
+até 1870, a demanda FIO 4-6-0 cresceu enquanto execu-
+tivos de ferrovias trocavam suas Icxomotivas singulares, de
+geral, que na época eram as 44-0, para comprar com pro-
+lñsitos esFcíficos. Tanto a Pennsylvania Railroad e as de Baltimore e
+Ohio adotaram cedo a 4-6-0, usando-a para carga rápida e grande fluxo
+de passageiros nos trens. Esta montagem de se tornou a segunda
+mais ppular configuração para novas locomotivas a vapr na América
+durante 0 meio do século XIX.
+R 0 ConM)lidation
+A Pennsylvania Railroad Provavelmente construiu a
+primeira locomotiva deste mcxielo de rus,
+mas assim como as primeiras 24-0,
+A primeira 2-8-0 tinha um eixo
+dianteiro rigidamente aplicado
+no quadro da l(xomotiva.
+A Icxomotiva ConsolidatiDn,
+construída em 1865, considerada a verdadeira
+primeira 2-8-0 construída nos Unidos. Esta Icxomotiva é a
+origem do nome de classe da 2-8-0. Apenas algumas ferrovias compra-
+ram este tipx» de Icxomotiva quando ele foi apresentado pr
+mas até a metade de 1870 isso tudo havia mudado. Em 1875 a Pennsyl-
+vania Railroad fez o design do 2-8-0 0 padrão para Icxomotivas de
+arga. 1875 também foi o ano em que a Erie Railroad começou a trcxar
+seus em serviço de carga com Os 2-8-0 yxliam
+trens duas vezes mais metade do custo de mcxielos mais
+antigos de design de locomotiva. Do pnt0 de vista financeiro, a escolha
+de Icxomotivas de carga era clara.
+Pelos últimos 5 ou 6 anos, eu queria revisar, padronizar e atualizar o
+jogo base ROTW e suas expansões. Minha ideia de fazer o Railways of
+Nippn um novo jogo base com suprte para 2-4 jogadores mt deu a
+desculpa perfeita para atacar as revisões maiores necessárias para tcxla a
+===== p19.png =====
+Então, finalmente, os jogos ROTW estão padronizados e BRIeráo
+veite t(Xlas elas! — Rick %ued, Eagle-Gryphon Games.
+Railways oftbe 1 Oth Anniversary Edition 2017 Agradeci-
+mentos Para a equipr de leitura que diligentemente olhou
+(de novo e de novo) as revisóes ue fizemos (de novo e de novo) para
+da série IOI'W. Este time inclui Rudll P. Smith, Jimmy Hensel, Rick
+Holzgrafe, Samuel Hin7, Chris Hillery, Jarod SC Chiang, Dante Amor,
+e Ralph H. Anderson
+Para Dante Amor e Ralph H. Anderson pr t'Xlo seu trabalho duro
+revisão, atualizando, arrumando, clarificando e organizando todas as
+de Regras de Railways Of the agora vive Como o
+E finalmente para Scott Whitworth, que merece muito do crédito r
+suas muitas, muitas horas atualizando tcxios os elementc» gráficos
+livro de regras, e tcxios os tabuleiros de jogo, caixas, cartas e gráficos para
+as impressões e reimpressões dos jogos básicos de ROTW, Railways of
+Nippn, e as muitas expansões da série ROTW
+Ofthe Fastern U.S.
+Game •gn: Glenn Drover e Martin Wallace
+Arte: Paul Niemeyer e David Oram
+Regras: Rick Soued, Sean Brown e Keith Blume
+Play T
+Sweet, Alan Reeve, Jim ) , S ix Feet Under '(Ekn
+Rhoads, Rich Waldbiesser, Sue Shannon Carr, Emily
+Caine, Marco DeLaurentis, Eric Gibson, Rob Pusch, Andy
+POKI
+ski) ,
+Funaqrrames (N ick Medinger, M argaret H arrington, tt
+Ackerson, Winer) , Rainy Day Games (Steve Elis, James
+Eastham, Brent Per Lee, Dan Morgan, Ken Waters, Brian
+Collins), Shad Brown, George%arino, Terry lrslie Lights-
+tone, Brian Blume, Tom Wham
+Railways of Mexico
+Map Desiv Sean Brown.
+Arte: Paul iemeyer
+regras: Rick Soued, Sean Brown and Keith Blume Card Design: Jason
+Spears, Bobby Warren & the BGG Communi
+Jack Provenzale, the
+es ichael Pennisi, Ray
+Petersen, Tcxid Sweet, Alan Reeve, Jim
+) , Six Feet Under (Ekn
+Rhoads, Rich Waldbiesser, Sue Waldbiesser, Shannon Carr, Emily
+Caine, Marco DeLaurentis, Eric Gibson, Rob Pusch, Andy POK{I-
+Games (Nick Medinger, Margaret Harrington,
+Ackerson,
+Vediner) , Rainy Day Games (Steve Ellis, James
+Eastham, Brent Edington, Perry Lee, Dan Morgan, Ken Waters, Brian
+G)llins), Shad Brown
+Railways of Europ
+Game Design: Glenn Drover
+onceito do mapa e Onceitos adicionais: Jim Provenzale, Jacoby
+O'Connor, Paul Niemeyer, Sean Brown e Keith Blume
+Arte: Paul Niemeyer e David Oram
+Arte do tabuleiro: paul Niemeyer
+Regras: Rick Soued e Keith Blume
+Graphic Design: Jaóy O'Connor e Jim Provenzale; Fast Forward
+e, the Fagles (Michael Pennisi, Ray
+PlayT • JackP
+Peters?nUkd "Matthew" Sweet, Reeve, Jim , S ix Feet
+Under (Ikn Rhoads, Rich Waldbieser, Sue Waldbiesser, Shanncn Carr,
+Emily Caine, Marco Eric Gibson, Rob Pusch, Andy
+Pogorzelski), F
+Games (Nick Medinger, Margaret Harrington,
+Matt Linda Pedlow, Stephen Pedlow, Rainy
+Day Games (Steve Ellis, James Fastham, Brent Edington, Per Lee,
+Dan Morgan, Ken Waters, Brian Q)llins), The Game Parlor (Ishua
+Daniel Welch, Christopher Michael Welch, Steven R. Schwartz
+Michael Rokrrt Petko, David Haldeman), Shad Brown, George
+Marino, Terry Scarlxary, Leslie Lightstone, Alex
+Soued, Brian Blume, Tom Wham, James M. Ward, Tcxld Bookman,
+Mike Carr, Jennifer Waldbiesser, Jim Forsythe, Connor Forsythe, e W
+Eric Martin
+Rick e Brown
+Arte de Capa: The Routeto California, 1871 (litho) por Currier e Ives
+Usado com permis.sáo da Bridgeman Art Library
+Arte de mapa por: Paul E Niemeyer.
+Editado por: Keith Blume
+Rh(Y1ds, Rich Waldbiesser, Sue Waldbiesser, (Rain Day Games) Steve
+Ellis, James Fastham, Martin Bell, Helen Ho
+, Seth Jaffee, Patrick
+Saxton, Guy Shani, Walter von Tagen III,
+Welx
+Railways 7b•ougb Time
+CX)nceito de jogo por: Brett Kitani & Charlie Bink
+Editado pr: Sean Brown & Rick %ued.
+Arte de capa: David A. Oram
+Arte de Mapa pr•. Paul E Niemeyer & Charlie Bink
+Play Testing: Brett Kitani, Shayla Chase, Brandon Allen, Adina lanku,
+Karl Fenner, Ron Ra Peterson, Todd "Matthew" Sweet, Alan
+Reeve, Ben Rhoads, RichWalãbiesser, Sue Waldbiesser, Steve Ellis,
+James Eastham, Martin [kll, Sean Brown, Carey Grayson, Keith
+Blume, e Rick & Joanne Soued
+ofGvat Britain
+Desenvolvimento Adicional Brown and Keith Blume
+Arte de Capa: David A. Oram
+Arte de Mapa: Paul E. Ni
+Edição: Matt Ackerson e ti#lume
+Intr(Xluçáo: Sue Waldbieser
+Play Lting: ±ott RLLEII, Kris Hall, Tom Tim Myers, Rachelle
+Grein, Aaron Kranz. Aaron Silverman, Paul Sauberer, Steven 721cxun,
+Summer Jones, Yves l_aFrance, Kurt Ikade, Patrick Ikade, (Juegos de Mesa
+Alejandro Mora, Álex Femánu, Jeffrey Chaves,
+F]gin Fe) Ray Peterson, Tcxld "Matthew" Sweet, Alan Reeve, (Six Feet
+Under) Rhoads, Rich Waldbiesser, Sue Waldbiesser. Matt Ackerson,
+(Rainy Day Garns) and co, (Denver Train Gamem) Wayne
+Williams, Chuck Flnger, Chris Finger, e Jim Mcdaniels.
+Amenca
+Game • gn pr: Brown e Rick Ho
+Desenvolvimento po r: Keith Blume, Steve , e Travis Reynolds
+Arte de capa oferecida por: The Bridgeman Art Library
+Gráficos pr: Sean Brown
+Play Ruse], Kris Hall, Tom Hanccrk, 'lim Myers, Rachelle
+Grein, Aaron Kram- Aaron Silverrnan, Paul Saulrrer, Steven
+Summer Jones, Yves IaFrance, Kurt Ikade, Patrick Beade, (Juegos de Mesa
+Costa Rica ) Luis Paulino Mora, Imis Carlos Hernández. Rcxlrigo Vega,
+Alejandro Mora, Álex Fernández, Jeffrey Chaves, Rolxrto Álvaro, (the
+Ray Peterson, "Matthew" Sweet, Alan Reeve, (Six Feet
+Under) Rhoads, Rich Waldbieser, Sue Waldbiesser, Matt Ackerson,
+(Rainy Day Games) SteveHlis and CÃ). (Denver Train Gamers) Wayne
+Williams, Chuck finger, Chris e Jim McDaniels
+Railways of Nippn
+e Rick Soued
+Design dc Inapa e
+adicionais; Hisashi
+Desenvolvimento • o nal : Dante Amor, Russell P. Smith e Ralph H.
+Railways of Portugal
+Conceito e desenvolvimento: Rick %ued
+Design de mapa e regras adicionais: Vital Lacerda
+Design Gráfico: Joio
+Arte de Capa: lan O'TcX)le
+Desenvolvimento adicional: Ralph H. Anderson e Randal Lloyd
+Versáo Brasileira pr Mosaico Jogos
+Direção geral: Fábio Rilxiro
+Tradução: Alvaro Ramos da Silva
+Revisão: Alvaro Ramos da Silva e Vinícius Carlos Vieira
+Arte: VictorCast
+18
+===== p20.png =====
+APÊNDICE DE CARTAS DE BARÃO DE FERROVIA
+Cartas de Barão de Ferrovia
+Cartas de Barão de Ferrovia dá aos jogadores objetivos
+secretos para Pontos de Vitória extras, normalmente
+marcados no fim do Cada mapa tem seu próprio
+conjunto de Cartas de Baráo de Ferrovia. Em Railways
+of Portugal, estas sáo chamadas "Cartas de Objetivo".
+Notas sobre Cartas de Barão de Ferrovia Gerais
+• No caso de um empate para o requerimento de uma Carta de Barão,
+nenhum ponto bônus é oferecido a não ser que seja indicado de outra
+forma na carta. Por exemplo, para atingir a maioria requerimenns
+de mais dinheiro, vcKê precisa ter mais dinheiro que outros jogadores.
+• Cartas que provêm para ligações em Icxais incluem
+ligaçóes múltiplas para a mesma Icxalizaçáo. Elas tamEún servem para
+um número es-pxcífico de ligações tamk_ún.
+• Pontos de Maior Ferrovia são para quem tem mais ligações completas.
+• Pontos de Ferrovia Mais l_nnga são para quern tem mais
+con-
+secutivas, sem ramificações
+• Quando estiver ligando duas cidades pntos, vcxê deve traçar uma
+rota usando apenas suas próprias ligaç(rs.
+• Cartas com uma Estrela Negra (Baralho do México) são opcionais e
+IXXlem ser usadas ou substituídas como desejar
+• Cartas com o Espinho Dourado (Baralho North America) são para a
+variante Transcontinental.
+RAILWAYS OF US.
+Henry Farnam
+Ganhe 2 EM)ntos para cada ligação que sua ferrovia de Chicago
+para qualquer outra cidade. Limitado a um total de 8 pontos bônus
+(Isso inclui múltiplas para a mesma cidade.)
+James Fisk
+Ganhe 2 pntos para cada ligação que sua ferrovia pssu.ir de Mobile
+qualquer Outra cidade. Limitado a um total de 8 pontos
+inclui múltiplas para a mesma cidade.)
+Jay Gould
+Ganhe 7 se vc.x:ê emitiu a menor quantidade de de açáo.
+E H. Harriman
+Ganhe 6 pntc» se você tiver o motor mais evoluído (Nível maior que
+qualquer outro jogador.)
+Cyrus Holliday
+Ganhe 5 yx»ntos se vcxê construiu uma "Ligação Western".
+Mark Hopkins
+Ganhe 6 B)ntos -vcxê é o jogador wnectado a mais cidades no fim do jogcx
+D. Judah
+Ganhe 8 tiver a longa (mais conxcutixO.
+J.P. Morgan
+Ganhe 6 se tiver a maior ferrovia (Mais completas.
+George Pullman
+Ganhe 6 pntc» se é o primeiro jogador a evoluir um Motor para 0
+nível "6" (Revele imediatamente se vcxê é o primeiro a evoluir o motor
+para o nível "6".)
+Moses Taylor
+Ganhe 5 pontc» se você tiver mais dinheiro.
+Wrn. Henry Vanderbilt
+Ganhe 6 pontos se você tiver mais Ff-as de trilho em jogo.
+Q»rnelius Vanderbilt
+Ganhe 5 pontos se sua ferrovia New York e Chicago.
+RAILWAYS OF MEXICO
+Francisco l. Madero Estrela Negra
+Ganhe 3, 4, ou 5 pontos se você tiver 2, 3, ou 4 hotéis resF:ctivarnente
+ao final do jogo.
+Matias Romero Etrela Negra
+Ganhe 6 pontas se você é o primeiro a evoluir um Motcr para o
+nível "6". (Revele imediatamente se você é o primeiro a evoluir c motor
+para o nível
+Pancho Villa Estrela Negra
+Ganhe 3 pontos se sua ferrovia conecta Chihuahua e Brownsville.
+Patrick Henry Estrela Negra
+Ganhe 6 pntos se tiver mais trilhos em jogo.
+Benito Juárez
+Ganhe 6 é o o motor mais e,oludo ao final
+Don Antonio Escandón
+Ganhe 5 v«xê é o jogador a mais cidade ao final do jog:).
+Ferdinand Maximilian
+Ganhe 6 pntos se é o jogador que emitiu de
+ação ao final do jogo.
+Jc»é Yves Limantour
+Ganhe 6 pontos se é o jogador com mais dinheiro ao fim do jogo.
+Manuel González
+Ganhe 5 pontos se Sua ferrovia conecta Culiacán e Tampico.
+Pofirio Díaz
+Ganhe 5 pnt0S se tiver a maior ferrovia Maior Ferrovia"
+"Ligações totais").
+Lerdo de Tejada
+Ganhe 2 pontos para cada hgaçáo sua tiver de Mexico City para
+qualquer outra cidade. (Iso inclui múlti# para a mesma cidade.)
+William Jackson Palmer
+Ganhe 5 pontos se você é o jogador com a ferrovia mais longa (mais
+consecutivas).
+RAILWAYS OF EUROPE
+Dr. Ernst Werner Siemens
+Ganhe 6 é o mm o motor mais evoluído ao fim jcg:).
+Otto Von Bismarck
+Ganhe 6 pontos se você emitir certificados de
+Jacob Bronnum Scavenius Estrup
+Ganhe 5 pntos se vcx:ê tiver a maior ferrovia (rnais completas).
+Alexander Lyrnan Holley
+Ganhe 5 pntos se vcxê for o jogador
+com mais cidades conectadas ao
+fim do jogo.
+Cnr Nicholas I
+Ganhe 2 pntos para cada ligação de sua ferrovia de Moscou Pira
+q uer outra cidade. (Isso inclui múlti plas ligações para a mesma
+cida e.) Limitado a um total de 4
+Alfonso XII
+G 2 pntos para cada cidade Espanhola para a qual vcxê está
+conectado. Nota: é uma cidade Portuguesa e não conta para 0
+objetivo da carta.
+Johannes
+Ganhe 6 se vcxê tiver mais dinheiro.
+Friedrich List
+Ganhe 6 pntos se vcx:ê tiver mais Fças de trilho em jogo.
+5 pntos tiver a longi (mais a»nmltivas).
+Franz Anton (krstner
+Ganhe 5 pntos se conectar Vienna a St. Petersburg.
+RAILWAYS OF THE WESTERN U.S.
+Frederick H. Billings
+Ganhe 6 pntos se vcx:ê conectar Tacoma aos
+Thomas Clark Durant
+Ganhe 6 pntos se vcx:ê emitiu menos certificados de ação.
+Jay Gould
+Ganhe 6 pntos se você tiver a maior ferrovia (mais ligaçóes completas).
+David Moffat
+Ganhe 6 mntch vcré é o com o motor fim
+I.zland Stanford
+Ganhe 6 pontQs se tiver mais dinheiro.
+E H. Harriman
+Ganhe 6 pntc» vcxé tiver a mais longi (mais ligi«s
+Henry Villard
+Ganhe 2 para cada ligação que sua ferrovia tiver de Portland
+qualquer outra cidade. (Limite de 4 e iso inclui múltiplas
+a mesma cidade).
+===== p21.png =====
+Collis P. Huntington
+Ganhe 8 se vcxê conectar San Francisco e Deming.
+Jay Cax»ke
+Ganhe 6 se você emitiu mais certificados de ação.
+Mark Hopkins
+Ganhe 2 pntos ada
+que sua ferrovia tiver de San Fran-
+cisco para qualquer outra ci . (Limite de 4 e isso inclui
+múltiplas ligações para a mesma cidade).
+Cyrus K. Holliday
+Ganhe 3 pntos cada pr conectar a uma destas cidades urbanimdas:
+Dcxlge City, Santa Fe.
+James J. Hill
+Ganhe 3 pntas cada para conectar a uma destas cidades urbanizadas:
+Richland, Idaho Falls.
+RAILWAYS OF GREAT BRITAIN
+Hudson
+Ganhe 5 pntos se conectar Ireds & York para Bristol.
+Stephenson
+Ganhe 5 pntas se vcxê é o primeiro jogador a conectar mais cidades ao
+fim do jogo.
+Daniel Gtxxh
+Ganhe 6 pntoS se emitir menos certificados de ação.
+Ganhe 5 pntos se tiver mais de trilho ao fim do jogo.
+Joseph Pease
+Ganhe 5 se tiver a maior ferrovia (mais totais).
+Nicholas
+Ganhe 5 pntos se vcx:ê conectar Liverpx)l a [ondon.
+Stephenson
+Ganhe 6 pntos se vcxê é o jogador com o motor mais evoluído ao fim
+do jogo.
+Arthur Wellesley Duke ofWellington
+Ganhe 6 pntas se tiver mais dinheiro.
+Edward Pease
+Ganhe 5 IX)ntos se você tiver a ferrovia mais longa (mais ligações conse-
+cutivas).
+Lambard Kingdom Brunel
+Ganhe 2 pnt0S para cada ligação que sua ferrovia tiver de London para
+qualquer outra cidade. (Limite de 4 e isso inclui múltiplas
+para a mesma cidade).
+RAILWAYS OF NORrH AMERICA
+Alexander Galt
+Ganhe 6 pontos se você tiver 0 motor mais evoluído no fim do
+Donald Smith
+Ganhe 6 pnt0s se vCKê tiver a maior ferrovia (mais totais).
+Francis Hincks
+Ganhe 2 pntos para cada ligaçáo que sua ferrovia tiver de Vancouver
+pra outra cidade. (Limite de 8 e inclui múltiplas
+para a mesma cidade).
+(korge-Etienne Cartier
+Ganhe 6 pntos se tiver mais dinheiro.
+(korge Stephen
+Ganhe 8 pontos se vcxê tiver a ferrovia mais longa (mais ligaçóes conse-
+cut1Vas
+John MacDona1d
+Ganhe 8 Pnt0S por conectar Ottawa e lqaluit.
+John MolM)n
+Ganhe 8 pntos pr conectar Ottawa e
+John Young
+Ganhe 2 pntos para cada pr conectar a estas cidades: Juneau, Echo
+Bay, lvujivik, St. John.
+Casimir Gmwski
+Ganhe 2 pontos para cada ligação que Sua ferrovia tiver de Quebec para
+outra cidade. (Limite de 8 e isso inclui múltiplas para a
+mesma cidade).
+William Van Home
+Ganhe 6 pntos se v•cRê emitir menos certificados de ação.
+Thomas Shaugnessy
+Ganhe 6 pontos se vcwê emitir menos certificados de ação.
+Sandford Fleming
+Ganhe 6 pontos por conectar St. John a Wlnnipeg.
+Thomas Clark Durant
+Espinho Dourado
+Ganhe 10 pontos pr fazer uma entrega de 9 ligações (ou maior).
+Jay Gould
+Espinho Dourado
+Ganhe 8 pontos se você tiver a maior ferrovia (mais ligações totais).
+David Moffat
+Espinho Dourado
+Ganhe 8 conectando Iknver, Grand Junction, Gallup, c Salt lake Gty.
+I_zland Stanford
+Espinho Dourado
+Ganhe 8 pontos se você tiver mais dinheiro.
+Espinho Dourado
+E H. Harriman
+Ganhe 8 pntos vtxê tiver a mais lonya (mais ligaçús .
+Henry Villard
+Espinho Dourado
+Ganhe 8 pontos ao ganhar com pelo menos duas Linhas Maiores West.
+Collis e Huntington
+Espinho Dourado
+Ganhe 10 ao conectar New York ou Charleston com San Fran-
+cisco ou Tacoma.
+Jay
+Espinho Dourado
+Ganhe 9 pontos ao ganhar com três Ou mais Ligações Principais, pelo
+menos uma em cada mapa.
+Mark Hopkins
+Espinho Dourado
+Ganhe 8 pontos se for o primeiro a conectar San Francisco com
+Fargo, Topeka, ou Oklahoma Ciw.
+Cyrus K. Holliday
+Espinho lhurado
+Ganhe 10 pontos ao fazer uma entrega de 9 ligações (ou mais).
+James J. Hill
+Espinho Dourado
+Ganhe 10 pontos ao conectar New York ou Charleston com San Fran-
+cisco Ou Tacoma.
+Frederick H. Billings
+Espinho lhurado
+Ganhe 8 pontos se vcRê é o primeiro a conectar Tacoma com Fargo,
+Topeka, ou Oklahoma City
+RAILWAYS OF NIPPON
+Masaru Inoue
+Ganhe 8 pontos se você é o jogador com mais cidades conectadas ao fim
+do jogo. náo ganha estes pontos se estiver empatado.
+Ichiz.o Kobayashi
+Ganhe 1 ponto para cada caade Cinza que você estiver conectado.
+Limitado a um total de 8 pontos lñnus.
+Shuzn Toyama
+Ganhe 2 pontos para cada ligação que vcxê criou de Osaka para qualquer
+outra cidade. Limitado a um total de 8 pntos bônus.
+Kaemon Takashima
+Ganhe 8 pontos se vc.xê tiver mais dinheiro.
+Keita
+Ganhe 1 ponto para cada caade Azul ao qual você está conectado.
+Kaichiro Nezu
+Ganhe 7 pontos se você emitir menos certificados de açáo.
+Keijiro Amemiya
+Ganhe I ponto para cada caade Roxa ao qual vcxê está conectado.
+Noritsugu Hayakawa
+Ganhe 2 pontos para cada ligação que criou de Tokyo para qualquer
+outra cidade. Limitado a um total de 8 pontos
+Hisanshige Tanaka
+Ganhe 7 pontos se é o jogador com o maior nível de motor ao fim do
+jogo. Empates ná0 são válidos, a menos que 0 empate seja no nível #8).
+Aensuke Osawa
+Ganhe I pnto para cada cidade Amarela ao qual vcxê está conectado.
+RAILWAYS OF PORTUGAL
+Cartas de Objetivo
+• Ganhe 2 pontos para cada conexão marítima.
+• Ganhe 1 pnto para cada trilho que vcxê construir em um
+hexágono de montanha. (Máximo 8 pontos)
+• Ganhe 5 pntos se você é o jogador com a ferrovia mais longa.
+20
+===== p22.png =====
+RAILWAYS OF PORTUGAL Goal cards (cont.)
+• Ganhe 5 pntos Se você tiver a maior ferrovia.
+• Ganhe 5 pntos se você é o jogador com mais dinheiro
+• Ganhe 6 pntos se você é o jogador que emitiu menos
+certificados de ação.
+• Ganhe 5 se você é o jogador conectado a mais cidades.
+• Ganhe 6 se você é o jogador com o maior nível de
+motor no fim do jogo. (Empates no 8 são Frmitidos)
+• Ganhe 2 pontcxs para cada a Barrancos, Leiria e
+Bragança.
+• Ganhe 2 para cada conexão a Monção, Guarda e
+APÊNDICE DE CARTAS DE OPERAÇÃO DE FERROVIA
+Icnnografia; Cartas de de Ferrovia tem um símbolo no canto
+inferior direito. Cada sírnlxjlo é assaxiado a uma regra esFcial
+regras pira aquela carta.
+Címulo Verde: Estas Girtas não Bxlem ser selecionadas (pr
+exemplo, cartas de RecomFnsa de Elas dão um Erneficio
+ao primeiro jo&ldor que completar o objetivo impreso na carta
+depis que ela fica dispnível. Uma vez que o objetivo é completo,
+a carta é removida de jogo e colcmda numa pilha de
+Muitas destas cartas iniciais estão marcaias com um "S" amaRlo.
+0
+Diamante Roxo: Esta carta é mantida em frente ao jogador
+FIO resto do jogo. A habilidade nestas cartas ser usada em
+apenas 1 das 3 ações do jogador por turno.
+' 'X" vermelho: Estas cartas são imediatamente quando
+coletadas e então descartadas.
+Máo de Cartas: Jogadores usando estas cartas pdem ficar com
+elas até precisarem. Depois de usada, a carta é descartada.
+Símlx»lo do Infinito: (Ou sem sínblo em mais
+antigas) Esta carta é guardada dc facc para cima na frcnrc do
+jogador e provê o da carta até o fim do jogo.
+Estrelas Negras: Estas cartas são do Baralho do México. São
+opcionais e yxiem ser usadas ou substítuidas conforme desejar.
+Espinho Dourado: Estas cartas do Ruralho de Railways of
+North America são para a variante Transcontinental.
+As cartas a seguir são identificadas ainda pr Nomes de Cidade específi-
+Railways Through Time de Ternp: City
+ou em
+Charter, Hotel, Campaign, Service Bounty, "lime
+Lista de Cartas incluindo número de cartas usadas em cada mapa.
+Ícone: X Vermelho
+WUS-I ; RONA-I; RON-2
+Imediatamente coloque de graça uma Fça de Nova Cidade na cidade
+cinza de sua escolha. Náo adicione mercadorias.
+Carta de Cidade (nomedacidade) Ícone: Infinito
+EUR-3
+Nenhum outro jogador BNle construir uma ligação Enra nomedacidade.
+• NOTA: A carta não tem feito em trilhos quejd estejam construídos na
+cidade quando ela for escolhida.
+Ícone: X Vermelho
+Crescimento de Cidade
+EUS-4; MEX-3; EUR-3•, WUS-4; RTT-3•, ROGB-3; RONA-4;
+RON-4; ROP-3
+Escolha qualquer cidade singular, e então adicione 2 meradorias ran-
+domicamente nela.
+M -2;RON-2
+Ícone: Mão de Cartas
+Em uma ação de Construir Trilho futura, os hexágonos de água
+custam apenas S 1 k cada.
+Motores a Carvão
+WUS- 2; RONA-2; RON-3
+Ícone: Mão de Cartas
+Pague metade do preço (arredondado Pira cima) e uma única ação
+futura de Melhorar Motor.
+Ícone: X Vermelho
+Diplomáticas
+Ires de IRIO menos 2 jogadores (vcxê
+Entregue uma mercadoria usando
+incluso). Tcxlos os jogadora envo
+ganham 1 adicional de renda.
+Melhoria de Motor
+MEX-3
+Ícone: Mão de Cartas
+Descarte esta carta em uma ação de Melhorar Motor futura para
+melhorar o nível de seu rmtor em I nível gratuitamente.
+Ícone: Mão de Cartas
+-3; RON-2
+Passe por uma cidade da cor da mercadoria sendo entregue.
+l„inha Férrea
+RONA-5
+Ícone: Mão de Cartas, S Amarelo
+Impulsionamento
+R"1T-2
+Ícone: Máo de Cartas
+Uma evolução de motor custa a menos.
+Carta Capital
+EURO; ROP-2
+Ícone: Infinito
+Você pode construir sobre um hexágo no de inha férrea • tam ente.
+ignorar a de linnua de neve para este
+• NOTA: A carta é a ÚNICA maneira de construir em um hexágono de
+Linha Férrea. (Remova do'ogo depois de usar.)
+Portos de Trcxa Etrangeiros Ícone: X Vermelho
+RON-I
+Adicione uma mercadoria cidades prtuárias de Hanagawa,
+Nagasaki, Yokohama, e Kolx.
+Ícone: Círculo Verde, S Amarelo
+O primeiro a conectar San Francisco a Omaha via Promontory
+ganha 6 pntos adicionais no marcador de renda.
+Concessão de Terras do Governo Ícone: Mão de Cartas
+EUS-4; MEX-2; WUS-4; RT1ü2; ROGB-2; RONA-4
+Qualquer trilho cnnstruí&) em terreno aberto durante uma única ação
+futura de Construir Trilho é gratuito.
+• NOTA: Isto pode ser usado para construir uma
+onde apenas parte
+do é aberro. ar ser pam uma
+ligação entre 2 terrenos abertos, uma montanha e um ria Você pagaria
+ta para conseguir até 5 peças grátis de tenrno aberto!
+Ganhe um pnto no contador de renda para cada ligação construída
+em nomedecidade. (Limite de uma Carta Capital por jogador.)
+• NOTA: Uma vez que o Jogador tenha reclamado uma Carta Capital, ele
+recebe um ponto para cada ligação construída de ou para aquela Cidade
+depois que a Cartafoi pega. Exemplo: Um jogador escolhendo a Carta
+Capital de Paris quando já tiverem 2 ligações para Paris pode ganhar no
+máximo 4 pontos pr esta Carta.
+Fontes Termais
+RON-I
+Ícone: Mão de Cartas
+Ganhe I pnto no marcador de renda para cada trilho construído em um
+hexágono de Montanha, em uma única ação fritura de Construir Trilho.
+Hotel (nomedacidade)
+cone: Infinito
+EUS-6; MEX-4; EUR4; WUS-6; RIT-8; ROGB-6; RONA-6;
+RON-6; ROP-IO
+Ganhe I Fü)nto no marcador de renda para cada mercadoria entregue a
+nomedacldade (ind*ndente de qual jogador fa a entrega).
+===== p23.png =====
+nomedacidade Ícone: Mão de Cartas
+RO -6
+Ganhe 3 do marcador de renda quando nomedacidade não tiver
+mercadorias nela. Descarte essa carta se nomedacidade já estiver vazia
+quando for revelada e compre outra.
+Marítimo do Estado Ícone: X Verm elho
+15-2
+O jogador que Fgar esta carta imaitamente pode uma
+conexão marítima pagando aFnas $2 ao invés dos $6 de
+Ícone: X Vermelho, S Amarelo
+RONA-5
+Para usar esta carta, vCKê deve pagar $ 1 Escolha qualquer cidade
+cinza. Compre mercadorias da sacola até você comprar uma mercadoria
+da mesma cor (máximo de 5 compras). Cnlcxlue tus as cores únicas
+• NOTA: Para todas as captas de Recompensa de Serviço sem o ícone S
+Amarelo: Cartas de Recompensa de serviço são preparadas no começo do
+. pegue essas cartas do baralho para 0 mapa que você está usando e ran-
+JZcamenv selecione 4 (ou todas, se apenas 4 ou menos estiverem disponi-
+veis) para dispor no começo do jogo. Retorne o resto para a caixa. Você ganha
+ligações de outmsjogadom uma
+a recumpensa inteira mesmo
+que seja o dono da primeira
+, como de costume.
+RectHTIFnsa de
+(nomedacidade) de Variante
+n:: Círculo Verde, Espinho Dourado RONA-4
+O primeiro a entregar mercadorias a nomedacidade ganha 4
+pntos adicionais no marcador de renda.
+• NOTA: Para a Variante hanscontinental: Regras para as 4 recompensas
+de serviço no jogo Transconiinental são cobertas na seção Tianscontinental
+(Estas rartas estão inclusas na expangio Railways of
+Nova indústria
+Ícone: X Vermelho
+Estação Shinbashi
+RON-I
+Íajne : Círculo Verde, S Amarelo
+EUS-4; MEX-4; EUR-4; WUS-4; REIT-3; ROGB-4; RONA-4;
+RONS; ROP-3
+Imediatamente col(Xlue de graça uma de "Nova Cidade" em uma
+cidade cinza de sua escolha e então adicione duas mercadorias randomi-
+Camente (Ação grátis de Urbanização).
+Novo Trem
+WUS-I; RONA-I
+Ícone: Círculo Verde, S Amarelo
+O primeiro jogador a evoluir um trem para o nível 4 ganha 4 pntos no
+contador de renda.
+Ícone: X Vermelho
+Cr•cimento de
+MEX-2
+Quando esta carta é virada para cima do baralho de Operação de
+Ferrovia, descarte-a e distribua 2 cartas viradas para cima.
+Ícone: Círculo Verde, S Amarelo
+Linhas de Passageiro
+EUS-I; ME.X-I; EUR-I; WUS-I; R"IT-I; ROGB-I; RONA-I;
+ROP-I
+O primeiro jogador a entregar 4 mercadorias diferentes ganha 4
+pntos adicionais no contador de renda.
+• NOTA: Jogadores mantêm a contagem ao colocar as mercadorias em
+frente de si (1 de cada cor que eles já fizeram enfirgas) até
+entregar a quarta cor e ganhar os pontos bônus. Entüo eles
+todas as
+mercadorias guardadas para a sacola de memadorias.
+Ícone: Diamante Roxo
+E 2; WUS-2; RONA-2
+Construa até 5 segmentos de trilho em uma única ligação. Isso pcxle ser
+usado durante apenas I de suas três açíxs pr turno.
+Em 1872, a primeira linha ferroviária foi construída de Tokyo para
+Yokohama. Õ primeiro j—or que recriar esta linha e entregar uma
+mercadoria azul dc Tokyo para Yokohama ganha um (1) ponto adicio-
+nal no marcador de renda Nota: deve preparar o jogo com uma
+randômica) mercadoria azul em Tokyo, e substituir a carta "O
+cio da Era das Ferrovias" pr esta.
+de Velcwidade Ía)ne: Círculo Verde , S Amarelo
+EUS-I; MEX-I; EUR-I;RIT-I; ROGB-I; RON-I; ROP-I
+O primeiro jogador a fazer uma entrega de exatamente 3 ligações ganha
+3 adicionais no marcador de renda.
+• NOTA: Você deve fazr uma entrega de exatamente 3 ligações, náo quatro
+Sutter's Mill
+WUS-I
+Ícone : X Vermelho
+Adicione 3 novas mercadorias randômicas a Sacramento.
+Início da Era das Ferroús Ícone: Círculo Verde, S Amarelo
+EUS-I; MEX-I; EUR-I;WUS-I; RTI'-I; ROGB-I; RONA-I;
+RON-I; ROP-I
+O primeiro j
+r a entregar uma mercadoria ganha 1 pnt0 adicional
+no marcador renda.
+Pioneiro do Temp
+RTT-I
+Ícone Círculo Verde, S Amarelo
+Parceria Público-Privada
+Ícone: Mão de Cartas
+ROP-2
+Descarte esta carta em uma ação futura de Melhorar Motor para evoluir
+Seu motor em um nível por $$ a menos.
+Executivo de Ferrovia
+EUS-2; MEX-2
+Ícone: X Vermelho
+r que Fgar esta carta r_xxle imaiatamente 2 ações. Um
+pcxle
+usar esta carta para reclamar outro Executivo da
+Ferrovia. esta carta for entregue durante a preparação, embaralhe-a de
+volta no baralho.
+InsFtor de Ferrovia
+ROGB-2
+Ícone: Mão de Cartas
+Jogue esta carta para irnFdir 1 en de outro jogador. A mercadoria
+Frmanece na cidade e o ze
+sua ação. Nenhum jogador
+ser parado FIO InsFtor mais de 1 vez por jogo.
+RecomFnsa de Serviço (nomedacidade) Ícone: Círculo Verde
+EUS-6; MEX-4; EUR-5; WUS-6; RTT-8; ROGB-5; RONA-6;
+RON-2; ROP-7
+O primeiro a entregar uma mercadoria através do temp ganha
+2 pntos adicionais no marcador de renda.
+de Temp perícxlMletemp Ícone : Círculo Verde
+O primeiro jogador a entregar uma mercadoria para qualquer cidade
+em Fríododetemp de qualquer outro de temp ganha
+pnto adicional no marcador de renda.
+Ícnne : Infinito
+Depósito Comercial
+MEX-3
+Coloque uma IKRomotiva de controle de sua cor em uma ligaç*) de
+propriaade de outro jogador. que uma entrega é feita usando
+essa ganhe I pnto no marcador de renda.
+• NOIA: Quando
+r escolhe esta carta, ele imediatamente coloca
+10 numa ligação de sua escolha que seja de proprie-
+dade de outro jogador. Sempre que uma entrega é feita usando essa ligação,
+em adição a pontuZ%um, o jogador que colocou o Depósito Comercial
+ganha um ponto
+no marcador de renda. O Depósito Comercial
+não afeta a pontuação de objetivos de Barão, Linhas Principais, etc.
+Ícone : Mão de Cartas
+de Túneis
+-3; EUR-3; WUS-4; RIT-2; ROGB-2; RONA-4; ROP-2
+Uma ação singular futura de Construir Trilho todas as montanhas e
+Cumes tem a metade do preço para a construção.
+22
