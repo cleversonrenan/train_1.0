@@ -65,8 +65,11 @@ Cada face vale uma forma:
 
 Ex.: `3, 3, 6` → duas curvas de 60° e uma peça livre.
 
-**Rerrolada:** uma vez por turno, você pode rerrolar **qualquer número** dos três dados,
-pagando **1 mil por dado rerrolado** ao banco. Vale o segundo resultado.
+**Rerrolada:** uma vez por turno, e **antes da primeira ação**, você pode rerrolar
+**qualquer número** dos três dados, pagando **1 mil por dado rerrolado** ao banco.
+Vale o segundo resultado. No protótipo, clique em **↻ Rerrolar dados** (cartão dos dados
+ou barra de ações), marque os dados no modal e confirme; se não houver caixa, o próprio
+modal permite emitir um título (+5 mil) antes de pagar.
 
 Isso converte azar em despesa, não em sentença — e é fiel ao Railways, onde dinheiro é a
 restrição de verdade. Consequência imediata: **nos primeiros turnos ninguém tem caixa**,
@@ -89,7 +92,8 @@ Ações possíveis:
   A peça tem de continuar a sua rede (ou começar num portal de cidade).
 - **ENTREGAR** — ver §4.
 - **MELHORAR MOTOR** — sobe 1 nível, paga o custo da tabela.
-- **URBANIZAR** — 10 mil: converte 1 cidade cinza em cidade colorida e repõe cubos.
+- **URBANIZAR** — 10 mil: escolha a cidade cinza, a **cor da cidade** e a cor de
+  **cada um dos 2 cubos** (podem ser diferentes; por padrão seguem a cor da cidade).
 
 **Conexão incompleta** = peça desenhada sem chegar a uma cidade ou sem continuar a rede.
 É **apagada no fim do turno**. Você perdeu o dinheiro.
@@ -109,6 +113,10 @@ O **GARFO** não sai de uma face isolada. Ele é comprado:
 
 Assim o garfo é decisão, não sorte: com 3 formas no kit, abrir um garfo é
 **entregar o turno inteiro** para ganhar duas frentes. É a jogada que ganha jogo.
+
+**Garfo sobre peça existente:** selecione uma peça de 2 portais e use **Adicionar garfo**.
+Os 2 portais originais ficam onde estão; escolhe-se **1 novo portal** apontando para um
+hexágono vazio. Custa **+1 forma** (2 no total, como um garfo normal) e **1 ação**.
 
 **Custos de construção** (por hexágono atravessado, em milhares):
 

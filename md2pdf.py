@@ -116,25 +116,25 @@ def parse(md: str) -> str:
 
 
 CSS = """
-@page { size: A4; margin: 17mm 16mm 16mm 16mm; }
+@page { size: A4; margin: 15mm 15mm 14mm 15mm; }
 * { box-sizing: border-box; }
-body { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.2pt; line-height: 1.45;
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 9.7pt; line-height: 1.38;
        color: #14181d; margin: 0; }
-h1 { font-size: 21pt; margin: 0 0 2mm 0; letter-spacing: -0.02em; }
-h2 { font-size: 13.2pt; margin: 7mm 0 2mm 0; padding-bottom: 1.2mm;
+h1 { font-size: 20pt; margin: 0 0 2mm 0; letter-spacing: -0.02em; }
+h2 { font-size: 12.6pt; margin: 5mm 0 1.6mm 0; padding-bottom: 1mm;
      border-bottom: 0.5pt solid #d5d5d5; page-break-after: avoid; }
-h3 { font-size: 11.2pt; margin: 5mm 0 1.5mm 0; page-break-after: avoid; }
-p { margin: 0 0 2.4mm 0; }
-ul, ol { margin: 0 0 3mm 0; padding-left: 6mm; }
-li { margin-bottom: 1.1mm; }
+h3 { font-size: 10.8pt; margin: 3.8mm 0 1.2mm 0; page-break-after: avoid; }
+p { margin: 0 0 1.9mm 0; }
+ul, ol { margin: 0 0 2.2mm 0; padding-left: 6mm; }
+li { margin-bottom: 0.8mm; }
 table { border-collapse: collapse; width: 100%; margin: 2mm 0 4mm 0;
         font-size: 9.6pt; page-break-inside: avoid; break-before: avoid-page; }
 th, td { border: 0.5pt solid #b9bec4; padding: 1.6mm 2.4mm; text-align: left;
          vertical-align: top; }
 th { background: #eef1f4; font-weight: 600; }
 td:nth-child(2), th:nth-child(2) { white-space: nowrap; }
-hr { border: none; border-top: 0.5pt solid #dcdcdc; margin: 5mm 0; }
-blockquote { margin: 2.5mm 0; padding: 2mm 3.5mm; background: #f4f6f8;
+hr { border: none; border-top: 0.5pt solid #dcdcdc; margin: 3.2mm 0; }
+blockquote { margin: 1.8mm 0; padding: 1.6mm 3.5mm; background: #f4f6f8;
              border-left: 2.2pt solid #4a6b8a; }
 blockquote p { margin: 0; }
 code { font-family: Consolas, monospace; font-size: 9.4pt; background: #f0f2f4;

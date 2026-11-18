@@ -123,6 +123,15 @@ svg#board{width:100%; height:100%; display:block; touch-action:manipulation}
 .die.sel{border-color:var(--accent); box-shadow:0 0 0 3px rgba(168,117,42,.2)}
 .die.locked{cursor:default}
 .die .rr{position:absolute; top:-6px; right:-6px; background:var(--accent); color:#fff; border-radius:50%; width:15px; height:15px; font-size:9px; display:grid; place-items:center; font-weight:700}
+.rollPick{display:flex; gap:14px; justify-content:center; margin:16px 0 26px}
+.rollDie{width:66px; height:66px; border:2px solid #cfc5b2; border-radius:14px; background:#fff; cursor:pointer; position:relative; display:grid; place-items:center; transition:box-shadow .12s, border-color .12s, background .12s}
+.rollDie:hover{border-color:#b9a98c}
+.rollDie.on{border-color:var(--accent); box-shadow:0 0 0 4px rgba(168,117,42,.18); background:#fffaf0}
+.rollDie svg{width:46px; height:46px}
+.rollDie .rk{position:absolute; top:-9px; right:-9px; background:var(--accent); color:#fff; border-radius:50%; width:21px; height:21px; font-size:12px; font-weight:700; display:grid; place-items:center}
+.rollDie .nm{position:absolute; bottom:-19px; left:50%; transform:translateX(-50%); font-size:10px; color:var(--muted); white-space:nowrap}
+.rollTotal{display:flex; justify-content:space-between; align-items:center; gap:10px; padding:9px 11px; border:1px solid #e3dac8; border-radius:9px; background:#fbf8f1; font-size:12px}
+.rollTotal b{font-size:14px}
 .diceCol{flex:1; min-width:0}
 .diceBtns{display:flex; flex-direction:column; gap:5px}
 .kit{display:flex; flex-wrap:wrap; gap:4px; margin-top:7px; min-height:22px}
@@ -386,7 +395,7 @@ function bonusCidade(idx){ return CIDADES[idx].cinza ? 3 : 4; }
 
 /* ---------------- estado ---------------- */
 let state = null;
-const ui = { selHex:null, selGates:[], modal:null, start:true, rerollSel:[], urb:{cidade:null,cor:null}, deliveryCity:null, view:null };
+const ui = { selHex:null, selGates:[], mode:'build', modal:null, start:true, rerollSel:[], urb:{cidade:null,cor:null,c1:null,c2:null}, deliveryCity:null, view:null };
 let toastTimer = null;
 
 const SAVE_KEY = 'bacia-do-corvo-v1';
@@ -416,8 +425,8 @@ function novoJogo(numPlayers, caixa){
     endTriggered: false, turnsLeftAfter: null,
     log: []
   };
-  ui.modal = null; ui.start = false; ui.selHex = null; ui.selGates = [];
-  ui.rerollSel = []; ui.deliveryCity = null; ui.urb = {cidade:null,cor:null}; ui.view = null;
+  ui.modal = null; ui.start = false; ui.selHex = null; ui.selGates = []; ui.mode = 'build';
+  ui.rerollSel = []; ui.deliveryCity = null; ui.urb = {cidade:null,cor:null,c1:null,c2:null}; ui.view = null;
   logMsg('Novo jogo: ' + numPlayers + (numPlayers === 1 ? ' barão.' : ' barões.') + ' Caixa inicial ' + caixa + ' mil.');
   salvar(); render();
 }
@@ -540,12 +549,62 @@ function construir(c, r, gates){
   state.actionsLeft--;
   p.acted = true;
   logMsg('Construiu ' + TIPO_NOME[v.tipo] + ' em ' + nomeTerreno(v.terreno) + ' por ' + v.custo + ' mil' + (v.terreno==='agua'?' (ponte)':v.terreno==='serra'?' (túnel)':'') + '.');
-  ui.selHex = null; ui.selGates = [];
+  ui.selHex = null; ui.selGates = []; ui.mode = 'build';
   toast('Peça construída: ' + TIPO_NOME[v.tipo] + ' (' + v.custo + ' mil).');
   commit();
   return true;
 }
 function nomeTerreno(t){ return t === 'agua' ? 'água' : t === 'serra' ? 'montanha' : t === 'cidade' ? 'cidade' : 'planície'; }
+
+/* ---------------- garfo por cima de uma peça existente ----------------
+   A peça já pagou 1 forma. Abrir o 3º portal gasta +1 forma (2 no total),
+   1 ação e aponta para um hexágono vazio. */
+function portasGarfo(p, c, r){
+  const pc = peca(p, c, r);
+  const out = [];
+  if (!pc || pc.gates.length >= 3) return out;
+  for (let k = 0; k < 6; k++){
+    if (pc.gates.indexOf(k) >= 0) continue;
+    const n = vizinho(c, r, k);
+    if (!n || peca(p, n.c, n.r)) continue;
+    out.push(k);
+  }
+  return out;
+}
+function validarGarfo(p, c, r, gates){
+  if (!state || state.phase !== 'actions') return { ok:false, motivo:'Role os dados primeiro.' };
+  if (state.actionsLeft <= 0) return { ok:false, motivo:'Sem ações restantes.' };
+  const pc = peca(p, c, r);
+  if (!pc) return { ok:false, motivo:'Não há peça neste hexágono.' };
+  if (pc.gates.length >= 3) return { ok:false, motivo:'Este hexágono já é um garfo.' };
+  if (!gates || gates.length !== 3) return { ok:false, motivo:'Escolha o 3º portal.' };
+  for (const g of pc.gates) if (gates.indexOf(g) < 0) return { ok:false, motivo:'Os 2 portais originais não mudam.' };
+  const novo = gates.find(g => pc.gates.indexOf(g) < 0);
+  if (novo === undefined) return { ok:false, motivo:'Escolha um portal novo.' };
+  const n = vizinho(c, r, novo);
+  if (!n) return { ok:false, motivo:'O portal ' + novo + ' aponta para fora do mapa.' };
+  if (peca(p, n.c, n.r)) return { ok:false, motivo:'O novo portal precisa apontar para um hexágono vazio.' };
+  if (p.kit.length < 1) return { ok:false, motivo:'Falta 1 forma no kit (o garfo gasta 2 no total).' };
+  return { ok:true, novo, tipo:'garfo' };
+}
+function adicionarGarfo(c, r, gates){
+  const p = ativo();
+  const v = validarGarfo(p, c, r, gates);
+  if (!v.ok){ toast(v.motivo, true); return false; }
+  let i = p.kit.findIndex(f => f !== 'livre');
+  if (i < 0) i = 0;
+  p.kit.splice(i, 1);
+  const pc = p.pieces[key(c,r)];
+  pc.gates = gates.slice().sort((a,b)=>a-b);
+  pc.tipo = 'garfo';
+  state.actionsLeft--;
+  p.acted = true;
+  logMsg('Transformou a peça em GARFO em ' + nomeTerreno(terreno(c,r)) + ', acrescentando o portal ' + v.novo + ' (+1 forma; 2 no total).');
+  ui.selHex = null; ui.selGates = []; ui.mode = 'build';
+  toast('Garfo pronto: portal ' + v.novo + ' acrescentado (−1 forma, 1 ação).');
+  commit();
+  return true;
+}
 
 /* Caminho mais curto pela rede. Retorna cidades alcancadas.
    hops = hexagonos ENTRADOS depois da cidade de origem.
@@ -680,21 +739,24 @@ function melhorarMotor(){
   ui.modal = null;
   commit();
 }
-function urbanizar(idx, cor){
+function urbanizar(idx, cor, c1, c2){
   const p = ativo();
   if (state.phase !== 'actions') return toast('Role os dados primeiro.', true);
   if (state.actionsLeft <= 0) return toast('Sem ações restantes.', true);
   if (!CIDADES[idx] || !CIDADES[idx].cinza) return toast('Só cidades cinzas podem ser urbanizadas.', true);
   if (p.urbanized[idx]) return toast('Essa cidade já foi urbanizada.', true);
-  if (!COR[cor] || cor === '?') return toast('Escolha uma cor.', true);
+  if (!COR[cor] || cor === '?') return toast('Escolha a cor da cidade.', true);
+  const cube1 = (!c1 || c1 === '?') ? cor : c1;
+  const cube2 = (!c2 || c2 === '?') ? cor : c2;
+  if (!COR[cube1] || !COR[cube2]) return toast('Escolha a cor dos 2 cubos.', true);
   if (p.money < 10) return toast('Urbanizar custa 10 mil.', true);
   p.money -= 10;
   p.urbanized[idx] = cor;
-  p.cubes[idx] = [cor, cor];
+  p.cubes[idx] = [cube1, cube2];
   state.actionsLeft--;
   p.acted = true;
-  logMsg('Urbanizou ' + CIDADES[idx].nome + ' como ' + COR[cor].nome + ' (−10 mil, 2 cubos).');
-  toast(CIDADES[idx].nome + ' agora é ' + COR[cor].nome + '.');
+  logMsg('Urbanizou ' + CIDADES[idx].nome + ' como ' + COR[cor].nome + ' (−10 mil, cubos ' + COR[cube1].nome + ' e ' + COR[cube2].nome + ').');
+  toast(CIDADES[idx].nome + ' → ' + COR[cor].nome + ' · cubos ' + cube1 + '/' + cube2 + '.');
   ui.modal = null;
   commit();
 }
@@ -767,7 +829,7 @@ function fazerEncerrarTurno(){
   state.active = prox;
   state.actionsLeft = 3;
   state.phase = 'roll';
-  ui.selHex = null; ui.selGates = []; ui.deliveryCity = null; ui.urb = {cidade:null,cor:null}; ui.view = null;
+  ui.selHex = null; ui.selGates = []; ui.mode = 'build'; ui.deliveryCity = null; ui.urb = {cidade:null,cor:null,c1:null,c2:null}; ui.view = null;
   const np = ativo();
   np.dice = null; np.kit = []; np.rerolled = false; np.acted = false;
   ui.modal = null;
@@ -904,7 +966,11 @@ function renderBoard(){
     const {c,r} = ui.selHex;
     const {x,y} = centro(c,r);
     const gates = ui.selGates;
-    const val = gates.length >= 2 ? validarConstrucao(p,c,r,gates) : null;
+    const pcSel = peca(p,c,r);
+    const ehGarfo = ui.mode === 'garfo' && !!pcSel;
+    const val = ehGarfo
+      ? (gates.length === 3 ? validarGarfo(p,c,r,gates) : null)
+      : (gates.length >= 2 ? validarConstrucao(p,c,r,gates) : null);
     const cor = (val && !val.ok) ? '#a3261e' : '#a8752a';
     out.push('<path d="' + hexPath(x,y) + '" fill="none" stroke="' + cor + '" stroke-width="0.85"/>');
     const anc = ancoras(p,c,r);
@@ -916,7 +982,8 @@ function renderBoard(){
         continue;
       }
       if (gates.indexOf(k) >= 0){
-        out.push('<circle cx="' + r2(pt.x) + '" cy="' + r2(pt.y) + '" r="1.05" fill="' + cor + '"/>');
+        const gcor = (ehGarfo && pcSel.gates.indexOf(k) >= 0) ? p.ink : cor;
+        out.push('<circle cx="' + r2(pt.x) + '" cy="' + r2(pt.y) + '" r="1.05" fill="' + gcor + '"/>');
       } else if (anc.indexOf(k) >= 0){
         out.push('<circle cx="' + r2(pt.x) + '" cy="' + r2(pt.y) + '" r="1.7" fill="none" stroke="#2f7d4f" stroke-width="0.42" opacity=".9"/>');
       } else {
@@ -944,16 +1011,22 @@ function renderBoard(){
   // 7. cliques nos portais do hexagono selecionado
   if (ui.selHex && state.phase === 'actions' && state.actionsLeft > 0){
     const {c,r} = ui.selHex;
-    if (!peca(p,c,r)){
-      const {x,y} = centro(c,r);
-      out.push('<g>');
+    const pcSel = peca(p,c,r);
+    const {x,y} = centro(c,r);
+    out.push('<g>');
+    if (!pcSel){
       for (let k = 0; k < 6; k++){
         if (!vizinho(c, r, k)) continue;
         const pt = portalPt(x,y,k);
         out.push('<circle class="portalhit" cx="' + r2(pt.x) + '" cy="' + r2(pt.y) + '" r="2.7" fill="transparent" data-gate="' + k + '"/>');
       }
-      out.push('</g>');
+    } else if (ui.mode === 'garfo' && pcSel.gates.length < 3){
+      for (const k of portasGarfo(p,c,r)){
+        const pt = portalPt(x,y,k);
+        out.push('<circle class="portalhit" cx="' + r2(pt.x) + '" cy="' + r2(pt.y) + '" r="2.9" fill="transparent" data-gate="' + k + '"/>');
+      }
     }
+    out.push('</g>');
   }
   b.innerHTML = out.join('');
 }
@@ -1126,14 +1199,13 @@ function renderDice(){
     return;
   }
   const sel = ui.rerollSel || [];
-  const custo = sel.length;
   html += '<div class="dice">' + p.dice.map((v,i)=>{
     const s = sel.indexOf(i) >= 0;
     return '<div class="die ' + (podeRerrolar ? '' : 'locked') + (s ? ' sel' : '') + '" data-die="' + i + '" title="' +
-      (podeRerrolar ? 'clique para marcar e rerrolar' : 'dado travado') + '">' + dieSvg(v) + (s ? '<span class="rr">↻</span>' : '') + '</div>';
+      (podeRerrolar ? 'clique para escolher este dado na rerrolagem' : 'dado travado') + '">' + dieSvg(v) + (s ? '<span class="rr">↻</span>' : '') + '</div>';
   }).join('') + '<div class="diceBtns">' +
     (podeRerrolar
-      ? '<button class="btn sm" data-action="reroll" ' + (custo===0 || p.money < custo ? 'disabled' : '') + '>Rerrolar ' + (custo||'') + ' (' + custo + ' mil)</button>'
+      ? '<button class="btn sm primary" data-action="reroll-open">↻ Rerrolar dados</button>'
       : '<span class="micro" style="max-width:92px">' + (p.rerolled ? 'rerrolada usada' : 'travado após a 1ª ação') + '</span>') +
     '</div></div>';
 
@@ -1145,7 +1217,7 @@ function renderDice(){
     html += '<span class="chip ' + (f==='livre'?'livre':'') + (n===0?' zero':'') + '">' + FORMA_NOME[f] + ' ×' + n + '</span>';
   }
   html += '</div>';
-  html += '<div class="hintLine">Rerrolar custa <b>1 mil por dado</b>, uma vez por turno. Garfo consome <b>2 formas</b> quaisquer.</div>';
+  html += '<div class="hintLine">Para rerrolar, use o botão <b>↻ Rerrolar dados</b> (ou clique num dado): escolha quais dados trocar por <b>1 mil cada</b>, uma vez por turno, antes da 1ª ação.</div>';
   $('#diceCard').innerHTML = html;
 }
 
@@ -1188,12 +1260,26 @@ function renderActionBar(){
   if (!ui.selHex){
     bar.innerHTML = '<div class="abMain"><div class="abTitle">O que deseja fazer?</div>' +
       '<div class="abSub">Clique num <b>hexágono vazio</b> para construir, ou numa <b>cidade com cubos</b> para entregar. ' +
-      'Ações restantes: <b>' + state.actionsLeft + '</b>.</div></div>';
+      'Ações restantes: <b>' + state.actionsLeft + '</b>.</div></div>' +
+      (podeRerrolar() ? '<div class="abBtns"><button class="btn" data-action="reroll-open">↻ Rerrolar dados <span class="micro">(1 mil/dado)</span></button></div>' : '');
     return;
   }
   const {c,r} = ui.selHex;
   const {x,y} = centro(c,r);
   const pc = peca(p,c,r);
+  if (ui.mode === 'garfo' && pc){
+    const val = ui.selGates.length === 3 ? validarGarfo(p,c,r,ui.selGates) : null;
+    const cand = portasGarfo(p,c,r).length;
+    const sub = 'Os 2 portais originais (' + pc.gates.join(' e ') + ') ficam. Escolha <b>1 novo portal</b>' +
+      (cand ? ' entre os ' + cand + ' candidatos marcados em verde.' : ' — não há candidatos livres neste hexágono.') +
+      (val && !val.ok ? ' <span class="tagBad">' + val.motivo + '</span>' : val && val.ok ? ' <span class="tagOk">pode acrescentar</span>' : '');
+    bar.innerHTML = '<div class="abMain"><div class="abTitle">Adicionar garfo em (' + c + ',' + r + ') · ' + nomeTerreno(terreno(c,r)) + '</div>' +
+      '<div class="abSub">' + sub + '</div></div><div class="abBtns">' +
+      '<button class="btn ghost" data-action="garfo-cancel">Cancelar</button>' +
+      '<button class="btn primary" data-action="garfo-confirm" ' + (val && val.ok ? '' : 'disabled') + '>Adicionar portal (1 ação · +1 forma)</button>' +
+      '</div>';
+    return;
+  }
   if (pc){
     const cid = CIDADE_EM[key(c,r)];
     let sub = TIPO_NOME[pc.tipo] + ' · custo ' + pc.custo + ' mil · turno ' + pc.t;
@@ -1202,8 +1288,13 @@ function renderActionBar(){
       sub += ' · ' + CIDADES[cid].nome + ' (' + (corCidade(p,cid)==='?' ? 'cinza' : COR[corCidade(p,cid)].nome) +
         ') · cubos: ' + (cubes.length ? cubes.join(' ') : 'nenhum');
     }
+    const podeGarfo = state.phase === 'actions' && state.actionsLeft > 0 && pc.gates.length < 3 &&
+      p.kit.length >= 1 && portasGarfo(p,c,r).length > 0;
     bar.innerHTML = '<div class="abMain"><div class="abTitle">Peça em (' + c + ',' + r + ') · ' + nomeTerreno(terreno(c,r)) + '</div>' +
-      '<div class="abSub">' + sub + '</div></div><div class="abBtns"><button class="btn ghost" data-action="cancel">Fechar</button></div>';
+      '<div class="abSub">' + sub + '</div></div><div class="abBtns">' +
+      (podeRerrolar() ? '<button class="btn" data-action="reroll-open">↻ Rerrolar</button>' : '') +
+      (podeGarfo ? '<button class="btn" data-action="garfo-start">Adicionar garfo (+1 forma)</button>' : '') +
+      '<button class="btn ghost" data-action="cancel">Fechar</button></div>';
     return;
   }
   const gates = ui.selGates;
@@ -1288,6 +1379,7 @@ function renderModal(){
   if (!ui.modal){ $('#overlay').classList.add('hidden'); return; }
   const m = ui.modal;
   if (m.type === 'delivery') return modalEntrega(m.city);
+  if (m.type === 'reroll') return modalRerrol();
   if (m.type === 'endturn') return modalFimTurno();
   if (m.type === 'upgrade') return modalMotor();
   if (m.type === 'urbanize') return modalUrbanizar();
@@ -1366,27 +1458,85 @@ function modalMotor(){
     '<button class="btn primary" data-action="upgrade-confirm" ' + (p.money<custo?'disabled':'') + '>Pagar ' + custo + ' mil</button></div>' +
     '</div>');
 }
+function podeRerrolar(){
+  const p = ativo();
+  return !!(state && state.phase === 'actions' && p && p.dice && !p.rerolled && !p.acted);
+}
+function abrirRerrol(preSel){
+  const p = ativo();
+  if (!podeRerrolar()){
+    return toast(p.rerolled ? 'A rerrolagem deste turno já foi usada.' :
+      p.acted ? 'A rerrolagem só vale antes da 1ª ação.' : 'Role os dados primeiro.', true);
+  }
+  ui.rerollSel = (preSel === undefined || preSel === null) ? [] : [preSel];
+  ui.modal = { type:'reroll' };
+  renderModal();
+}
+function modalRerrol(){
+  const p = ativo();
+  const sel = ui.rerollSel || [];
+  const custo = sel.length;
+  let html = '<div class="modal">' +
+    '<div class="kicker">RERROLAR · 1 MIL POR DADO</div>' +
+    '<h2>Escolha os dados que quer trocar</h2>' +
+    '<p class="muted">Clique nos dados que deseja rerrolar. Você pode fazer isso <b>uma vez por turno</b>, ' +
+    'somente <b>antes da primeira ação</b>. Os dados não marcados ficam como estão.</p>' +
+    '<div class="rollPick">' + p.dice.map((v,i)=>{
+      const on = sel.indexOf(i) >= 0;
+      return '<button class="rollDie ' + (on?'on':'') + '" data-action="reroll-die" data-die="' + i + '" title="' + (on?'clique para desmarcar':'clique para marcar') + '">' +
+        dieSvg(v) + (on ? '<span class="rk">↻</span>' : '') + '<span class="nm">' + FORMA_NOME[FACE_FORMA[v]] + '</span></button>';
+    }).join('') + '</div>' +
+    '<div class="rollTotal"><span>Caixa: <b>' + p.money + ' mil</b> · ' + (custo ? custo + ' dado' + (custo===1?'':'s') + ' marcado' + (custo===1?'':'s') : 'nenhum dado marcado') + '</span>' +
+      '<span>Custo: <b>' + custo + ' mil</b></span></div>';
+  if (p.money < custo){
+    html += '<p class="note" style="color:#8f241d">Faltam ' + (custo - p.money) + ' mil. Emita um título (+5 mil, sem gastar ação) para pagar a rerrolagem.</p>';
+  }
+  html += '<div class="closeRow">' +
+    (p.money < custo ? '<button class="btn" data-action="reroll-title">Emitir título (+5 mil)</button>' : '') +
+    '<button class="btn ghost" data-action="reroll-cancel">Cancelar</button>' +
+    '<button class="btn primary" data-action="reroll-confirm" ' + (custo === 0 || p.money < custo ? 'disabled' : '') + '>Rerrolar ' + custo + ' dado' + (custo===1?'':'s') + ' (−' + custo + ' mil)</button>' +
+    '</div></div>';
+  abrirModal(html);
+}
+function corSwatch(cor){
+  return '<span class="sw" style="background:' + COR[cor].hex + ';color:' + COR[cor].txt + '">' + cor + '</span>';
+}
 function modalUrbanizar(){
   const p = ativo();
   const cinzas = Object.keys(CIDADES).filter(k => CIDADES[k].cinza && !p.urbanized[k]).map(Number);
+  const corCid = ui.urb.cor;
+  const c1 = ui.urb.c1 || corCid;
+  const c2 = ui.urb.c2 || corCid;
   let html = '<div class="modal">' +
     '<div class="kicker">URBANIZAR · 1 AÇÃO · 10 MIL</div>' +
     '<h2>Trazer uma cidade cinza à vida</h2>' +
-    '<p class="muted">A cidade ganha uma cor de demanda e 2 cubos dessa cor. Custa 10 mil. Os cubos podem ser entregues em qualquer cidade da mesma cor (menos nela mesma).</p>' +
+    '<p class="muted">Escolha a cidade, a <b>cor dela</b> e a cor de <b>cada um dos 2 cubos</b>. Os cubos podem ir para qualquer cidade da sua própria cor (menos a cidade de origem).</p>' +
     '<h3>1. Cidade</h3><div class="seg">';
   for (const idx of cinzas){
     const sel = ui.urb.cidade === idx;
     html += '<button class="btn ' + (sel?'primary':'') + '" data-action="urb-city" data-idx="' + idx + '">' + esc(CIDADES[idx].nome) + '</button>';
   }
   if (!cinzas.length) html += '<span class="empty">Nenhuma cidade cinza disponível.</span>';
-  html += '</div><h3>2. Cor</h3><div class="seg">';
+  html += '</div><h3>2. Cor da cidade</h3><div class="seg">';
   for (const cor of ['A','M','V','X','P']){
-    const sel = ui.urb.cor === cor;
+    const sel = corCid === cor;
     html += '<button class="btn ' + (sel?'primary':'') + '" data-action="urb-cor" data-cor="' + cor + '" style="flex:0 0 auto;min-width:58px">' +
-      '<span class="sw" style="background:' + COR[cor].hex + ';color:' + COR[cor].txt + '">' + cor + '</span> ' + COR[cor].nome + '</button>';
+      corSwatch(cor) + ' ' + COR[cor].nome + '</button>';
   }
-  html += '</div><div class="closeRow"><button class="btn ghost" data-action="close">Cancelar</button>' +
-    '<button class="btn primary" data-action="urbanize-confirm" ' + (ui.urb.cidade !== null && ui.urb.cor && p.money>=10 ? '' : 'disabled') + '>Urbanizar (−10 mil)</button></div></div>';
+  html += '</div>';
+  for (const n of [1,2]){
+    const escolhida = n === 1 ? ui.urb.c1 : ui.urb.c2;
+    const efetiva = n === 1 ? c1 : c2;
+    html += '<h3>' + (n+2) + '. Cor do cubo ' + n + '</h3><div class="seg">';
+    for (const cor of ['A','M','V','X','P']){
+      const sel = efetiva === cor;
+      html += '<button class="btn ' + (sel?'primary':'') + '" data-action="urb-c' + n + '" data-cor="' + cor + '" style="flex:0 0 auto;min-width:52px">' + corSwatch(cor) + '</button>';
+    }
+    html += '<button class="btn ghost" data-action="urb-c' + n + '-reset" title="Seguir a cor da cidade">↺ igual à cidade</button></div>';
+    if (escolhida) html += '<div class="micro" style="margin-top:4px">Escolhida: ' + COR[escolhida].nome + '</div>';
+  }
+  html += '<div class="closeRow"><button class="btn ghost" data-action="close">Cancelar</button>' +
+    '<button class="btn primary" data-action="urbanize-confirm" ' + (ui.urb.cidade !== null && corCid && p.money>=10 ? '' : 'disabled') + '>Urbanizar (−10 mil)</button></div></div>';
   abrirModal(html);
 }
 function modalAjuda(){
@@ -1396,7 +1546,7 @@ function modalAjuda(){
     '<h3>O turno</h3>' +
     '<ol class="ruleList">' +
       '<li><b>Role 3d6.</b> Cada face vira uma forma: 1–2 RETA · 3–4 CURVA 60° · 5 CURVA 120° · 6 LIVRE (qualquer).</li>' +
-      '<li><b>Rerrole</b> qualquer número de dados, uma vez, antes da primeira ação: 1 mil por dado.</li>' +
+      '<li><b>Rerrole:</b> clique no botão <b>↻ Rerrolar dados</b> (no cartão dos dados ou na barra de ações), marque quantos dados quiser e confirme. Custa <b>1 mil por dado</b>, uma vez por turno, só antes da 1ª ação. Se não tiver dinheiro, emita um título dentro do próprio modal.</li>' +
       '<li>Faça <b>3 ações</b>: construir, entregar, melhorar motor, urbanizar.</li>' +
       '<li>No fim: receba a renda da trilha, pague 1 mil por título e apague conexões incompletas.</li>' +
     '</ol>' +
@@ -1407,9 +1557,11 @@ function modalAjuda(){
       '<li>As seguintes precisam tocar a rede por um portal ancorado (anel verde). Portais marcados com <b>×</b> apontam para fora do mapa e não servem.</li>' +
       '<li>Custo por hexágono: <b>planície 1 · ponte 2 · túnel 3</b>. Você tem <b>2 pontes e 2 túneis no jogo inteiro</b>.</li>' +
       '<li>GARFO: gasta <b>2 formas</b> quaisquer e faz o trilho entrar por 1 portal e sair por 2.</li>' +
+      '<li>Para transformar uma peça já colocada em garfo, selecione-a e use <b>Adicionar garfo</b>: os 2 portais originais ficam, você escolhe 1 novo portal (candidatos em verde), gasta <b>+1 forma</b> (2 no total) e <b>1 ação</b>.</li>' +
     '</ul>' +
     '<h3>Entregar</h3>' +
     '<p>Clique numa cidade com cubos. Um cubo só vai para cidade da <b>mesma cor</b>. O caminho usa a sua rede e pode ter no máximo o <b>nível do motor</b> em hexágonos intermediários. A renda sobe pelo tamanho da rota.</p>' +
+    '<p><b>Urbanizar</b> (1 ação, 10 mil): escolha a cidade cinza, a <b>cor da cidade</b> e a cor de <b>cada um dos 2 cubos</b> — elas podem ser diferentes. Por padrão os cubos seguem a cor da cidade; use <b>↺ igual à cidade</b> para voltar a isso.</p>' +
     '<p><b>1ª entrega</b> em cada cidade: +4 (colorida) ou +3 (cinza), só para quem chega primeiro.</p>' +
     '<p>Quando o último cubo de uma cidade é entregue, ela fica <b>abandonada</b>. Com 6 abandonadas (solo: 5), joga-se mais uma volta e o jogo acaba.</p>' +
     '<h3>Dinheiro</h3>' +
@@ -1470,9 +1622,9 @@ function rolarDados(forced){
 }
 function rerrolar(){
   const p = ativo();
-  if (!p || !p.dice || p.rerolled || p.acted) return;
+  if (!podeRerrolar()) return;
   const sel = ui.rerollSel || [];
-  if (!sel.length) return;
+  if (!sel.length) return toast('Marque pelo menos 1 dado.', true);
   if (p.money < sel.length) return toast('Faltam ' + (sel.length - p.money) + ' mil para rerrolar.', true);
   p.money -= sel.length;
   for (const i of sel) p.dice[i] = 1 + Math.floor(Math.random()*6);
@@ -1480,12 +1632,15 @@ function rerrolar(){
   p.rerolled = true;
   logMsg('Rerrolou ' + sel.length + ' dado(s) por ' + sel.length + ' mil: ' + p.dice.join(' · ') + '.');
   ui.rerollSel = [];
+  ui.modal = null;
+  toast('Dados rerrolados: ' + p.dice.join(' · ') + ' (−' + sel.length + ' mil).');
   commit();
 }
 function clicarHex(c, r){
   if (state.phase === 'over') return;
   if (ui.view !== null){ ui.view = null; render(); }
   if (ui.selHex && ui.selHex.c === c && ui.selHex.r === r) return;
+  ui.mode = 'build';
   const p = ativo();
   const pc = peca(p,c,r);
   const cid = CIDADE_EM[key(c,r)];
@@ -1513,12 +1668,45 @@ function confirmarConstrucao(){
   if (!ui.selHex) return;
   construir(ui.selHex.c, ui.selHex.r, ui.selGates);
 }
+function iniciarGarfo(){
+  if (!ui.selHex) return;
+  const p = ativo();
+  const {c,r} = ui.selHex;
+  const pc = peca(p,c,r);
+  if (!pc || pc.gates.length >= 3) return toast('Escolha uma peça com exatamente 2 portais.', true);
+  if (!portasGarfo(p,c,r).length) return toast('Não há portal livre para acrescentar neste hexágono.', true);
+  ui.mode = 'garfo';
+  ui.selGates = pc.gates.slice();
+  render();
+}
+function toggleGarfoGate(k){
+  if (ui.mode !== 'garfo' || !ui.selHex) return;
+  const p = ativo();
+  const {c,r} = ui.selHex;
+  const pc = peca(p,c,r);
+  if (!pc || pc.gates.indexOf(k) >= 0) return;
+  if (portasGarfo(p,c,r).indexOf(k) < 0) return toast('Esse portal não pode ser acrescentado.', true);
+  if (ui.selGates.length === 3 && ui.selGates[2] === k) ui.selGates = pc.gates.slice();
+  else ui.selGates = pc.gates.concat([k]).sort((a,b)=>a-b);
+  render();
+}
+function confirmarGarfo(){
+  if (!ui.selHex || ui.mode !== 'garfo') return;
+  adicionarGarfo(ui.selHex.c, ui.selHex.r, ui.selGates);
+}
+function cancelarGarfo(){
+  ui.mode = 'build'; ui.selHex = null; ui.selGates = []; render();
+}
 
 /* ---------------- eventos ---------------- */
 function onBoardClick(e){
   if (!state) return;
   const gh = e.target.closest('[data-gate]');
-  if (gh){ toggleGate(Number(gh.getAttribute('data-gate'))); return; }
+  if (gh){
+    const k = Number(gh.getAttribute('data-gate'));
+    if (ui.mode === 'garfo') toggleGarfoGate(k); else toggleGate(k);
+    return;
+  }
   const hh = e.target.closest('[data-hex]');
   if (!hh) return;
   const [c,r] = hh.getAttribute('data-hex').split(',').map(Number);
@@ -1537,19 +1725,16 @@ function onSideClick(e){
   if (a === 'title') emitirTitulo(1);
   else if (a === 'endturn'){ ui.modal = {type:'endturn'}; renderModal(); }
   else if (a === 'roll') rolarDados();
-  else if (a === 'reroll') rerrolar();
+  else if (a === 'reroll' || a === 'reroll-open') abrirRerrol();
   else if (a === 'upgrade'){ ui.modal = {type:'upgrade'}; renderModal(); }
-  else if (a === 'urbanize'){ ui.urb = {cidade:null,cor:null}; ui.modal = {type:'urbanize'}; renderModal(); }
+  else if (a === 'urbanize'){ ui.urb = {cidade:null,cor:null,c1:null,c2:null}; ui.modal = {type:'urbanize'}; renderModal(); }
 }
 function onDieClick(e){
   const d = e.target.closest('[data-die]');
   if (!d || !state) return;
-  const p = ativo();
-  if (state.phase !== 'actions' || p.rerolled || p.acted) return;
-  const i = Number(d.getAttribute('data-die'));
-  const j = ui.rerollSel.indexOf(i);
-  if (j >= 0) ui.rerollSel.splice(j,1); else ui.rerollSel.push(i);
-  renderDice();
+  if (!podeRerrolar()) return toast(state.phase === 'roll' ? 'Role os dados primeiro.' :
+    ativo().rerolled ? 'A rerrolagem deste turno já foi usada.' : 'A rerrolagem só vale antes da 1ª ação.', true);
+  abrirRerrol(Number(d.getAttribute('data-die')));
 }
 function onOverlayClick(e){
   const b = e.target.closest('[data-action]');
@@ -1564,6 +1749,15 @@ function onOverlayClick(e){
     }
     if (a === 'continue'){ ui.start = false; ui.modal = null; render(); return; }
     if (a === 'close'){ fecharModal(); return; }
+    if (a === 'reroll-die'){
+      const i = Number(b.getAttribute('data-die'));
+      const j = ui.rerollSel.indexOf(i);
+      if (j >= 0) ui.rerollSel.splice(j,1); else ui.rerollSel.push(i);
+      modalRerrol(); return;
+    }
+    if (a === 'reroll-cancel'){ ui.rerollSel = []; fecharModal(); render(); return; }
+    if (a === 'reroll-title'){ emitirTitulo(1); return; }
+    if (a === 'reroll-confirm'){ rerrolar(); return; }
     if (a === 'deliver'){
       const src = Number(b.getAttribute('data-src'));
       const cor = b.getAttribute('data-cor');
@@ -1575,7 +1769,9 @@ function onOverlayClick(e){
     if (a === 'upgrade-confirm'){ melhorarMotor(); return; }
     if (a === 'urb-city'){ ui.urb.cidade = Number(b.getAttribute('data-idx')); modalUrbanizar(); return; }
     if (a === 'urb-cor'){ ui.urb.cor = b.getAttribute('data-cor'); modalUrbanizar(); return; }
-    if (a === 'urbanize-confirm'){ urbanizar(ui.urb.cidade, ui.urb.cor); return; }
+    if (a === 'urb-c1' || a === 'urb-c2'){ ui.urb[a === 'urb-c1' ? 'c1' : 'c2'] = b.getAttribute('data-cor'); modalUrbanizar(); return; }
+    if (a === 'urb-c1-reset' || a === 'urb-c2-reset'){ ui.urb[a === 'urb-c1-reset' ? 'c1' : 'c2'] = null; modalUrbanizar(); return; }
+    if (a === 'urbanize-confirm'){ urbanizar(ui.urb.cidade, ui.urb.cor, ui.urb.c1, ui.urb.c2); return; }
     if (a === 'new-confirm'){
       ui.start = true; ui.modal = null; renderStart(); return;
     }
@@ -1590,7 +1786,7 @@ function onOverlayClick(e){
 function onKey(e){
   if (e.key === 'Escape'){
     if (ui.modal && ui.modal.type !== 'over'){ fecharModal(); render(); }
-    else if (ui.selHex){ ui.selHex = null; ui.selGates = []; render(); }
+    else if (ui.selHex){ ui.selHex = null; ui.selGates = []; ui.mode = 'build'; ui.rerollSel = []; render(); }
   }
 }
 function onTopClick(e){
@@ -1608,8 +1804,12 @@ function onActionBarClick(e){
   if (!b) return;
   const a = b.getAttribute('data-action');
   if (a === 'build-confirm') confirmarConstrucao();
-  else if (a === 'cancel'){ ui.selHex = null; ui.selGates = []; render(); }
+  else if (a === 'cancel'){ ui.selHex = null; ui.selGates = []; ui.mode = 'build'; render(); }
   else if (a === 'roll') rolarDados();
+  else if (a === 'reroll-open') abrirRerrol();
+  else if (a === 'garfo-start') iniciarGarfo();
+  else if (a === 'garfo-confirm') confirmarGarfo();
+  else if (a === 'garfo-cancel') cancelarGarfo();
   else if (a === 'score'){ ui.modal = {type:'over'}; renderModal(); }
 }
 
@@ -1623,9 +1823,10 @@ function boot(){
     get state(){ return state; },
     ui, CIDADES, MAPA, COR, RENDA_POS,
     centro, vizinho, rotasDe, opcoesEntrega, validarConstrucao, pagamento, saidasLivres,
-    novoJogo, rolarDados, rerrolar, construir, entregar, emitirTitulo,
+    novoJogo, rolarDados, rerrolar, abrirRerrol, modalRerrol, podeRerrolar, construir, entregar, emitirTitulo,
     melhorarMotor, urbanizar, fazerEncerrarTurno, limparIncompletas,
-    clicarHex, toggleGate, confirmarConstrucao, salvar, carregar,
+    clicarHex, toggleGate, confirmarConstrucao, portasGarfo, validarGarfo, adicionarGarfo,
+    iniciarGarfo, toggleGarfoGate, confirmarGarfo, cancelarGarfo, salvar, carregar,
     fecharModal, render
   };
 }
