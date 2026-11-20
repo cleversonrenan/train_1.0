@@ -314,9 +314,9 @@ function vizinho(c, r, k){
 const MAPA = [
   ['.','4','10','.','~','.','.','11','^'],
   ['.','1','.','.','~','.','.','^','^'],
-  ['.','.','.','.','~','.','.','3','^'],
+  ['13','.','.','.','~','.','.','3','^'],
   ['.','.','^','^','12','^','^','.','5'],
-  ['.','6','.','.','~','.','7','.','.'],
+  ['.','6','.','.','~','.','7','.','14'],
   ['~','.','.','8','~','2','.','9','.']
 ];
 
@@ -332,12 +332,14 @@ const CIDADES = {
   9:  { nome:'COSTA VERDE',  cor:'X', cubos:['M','P'], cinza:false },
   10: { nome:'VILA FERRO',   cor:'P', cubos:['A','X'], cinza:false },
   11: { nome:'BOCA DO MATO', cor:'M', cubos:['P','V'], cinza:false },
-  12: { nome:'VAU DO CORVO', cor:'?', cubos:[],        cinza:true  }
+  12: { nome:'VAU DO CORVO', cor:'?', cubos:[],        cinza:true  },
+   13: { nome:'ALDEIA NOVA',  cor:'?', cubos:[],        cinza:true  },
+   14: { nome:'PEDRA LISA',   cor:'?', cubos:[],        cinza:true  }
 };
 const CIDADE_EM = {};   // "c,r" -> indice
 for (let r = 0; r < ROWS; r++) for (let c = 0; c < COLS; c++){
   const cell = MAPA[r][c];
-  if (cell >= '1' && cell <= '9' || cell === '10' || cell === '11' || cell === '12'){
+  if (/^[0-9]+$/.test(cell)){
     const idx = parseInt(cell, 10);
     CIDADES[idx].c = c; CIDADES[idx].r = r;
     CIDADE_EM[key(c,r)] = idx;
@@ -359,12 +361,12 @@ const COR = {
   '?':{ nome:'cinza',   hex:'#9b9b9b', txt:'#fff' }
 };
 const FORMA_NOME = { reta:'RETA', c60:'CURVA 60°', c120:'CURVA 120°', livre:'LIVRE' };
-const TIPO_NOME  = { reta:'RETA', c60:'CURVA 60°', c120:'CURVA 120°', garfo:'GARFO' };
+const TIPO_NOME  = { reta:'RETA', c60:'CURVA 60°', c120:'CURVA 120°', bif:'BIFURCAÇÃO' };
 const FACE_FORMA = { 1:'reta', 2:'reta', 3:'c60', 4:'c60', 5:'c120', 6:'livre' };
 const CUSTO_MOTOR = { 2:8, 3:12, 4:16, 5:20 };
 const RENDA_POS = { 1:3, 2:4, 4:6, 6:8, 8:10, 10:12, 13:14, 16:16, 20:18, 24:20, 28:22, 32:20, 36:15, 40:10 };
 const RENDA_KEYS = Object.keys(RENDA_POS).map(Number).sort((a,b)=>a-b);
-const LIMITE_SOLO = 5, LIMITE_MULTI = 6;
+const LIMITE_SOLO = 4, LIMITE_MULTI = 5;
 
 function pagamento(pos){
   let v = 0;
@@ -380,7 +382,7 @@ function custoTerreno(c,r){
   return t === 'agua' ? 2 : t === 'serra' ? 3 : 1;
 }
 function tipoPeca(gates){
-  if (gates.length >= 3) return 'garfo';
+  if (gates.length >= 3) return 'bif';
   const d = (gates[1] - gates[0] + 6) % 6;
   if (d === 3) return 'reta';
   if (d === 1 || d === 5) return 'c60';
@@ -395,7 +397,7 @@ function bonusCidade(idx){ return CIDADES[idx].cinza ? 3 : 4; }
 
 /* ---------------- estado ---------------- */
 let state = null;
-const ui = { selHex:null, selGates:[], mode:'build', modal:null, start:true, rerollSel:[], urb:{cidade:null,cor:null,c1:null,c2:null}, deliveryCity:null, view:null };
+const ui = { selHex:null, selGates:[], mode:'build', bifBackup:null, modal:null, start:true, rerollSel:[], urb:{cidade:null,cor:null,c1:null,c2:null}, deliveryCity:null, view:null };
 let toastTimer = null;
 
 const SAVE_KEY = 'bacia-do-corvo-v1';
@@ -425,7 +427,7 @@ function novoJogo(numPlayers, caixa){
     endTriggered: false, turnsLeftAfter: null,
     log: []
   };
-  ui.modal = null; ui.start = false; ui.selHex = null; ui.selGates = []; ui.mode = 'build';
+  ui.modal = null; ui.start = false; ui.selHex = null; ui.selGates = []; ui.mode = 'build'; ui.bifBackup = null;
   ui.rerollSel = []; ui.deliveryCity = null; ui.urb = {cidade:null,cor:null,c1:null,c2:null}; ui.view = null;
   logMsg('Novo jogo: ' + numPlayers + (numPlayers === 1 ? ' barão.' : ' barões.') + ' Caixa inicial ' + caixa + ' mil.');
   salvar(); render();
@@ -458,6 +460,9 @@ function carregar(){
     if (!raw) return false;
     const s = JSON.parse(raw);
     if (!s || s.version !== 1 || !s.players || !s.players.length) return false;
+    for (const pl of s.players){
+      for (const k in pl.pieces) if (pl.pieces[k].tipo === 'garfo') pl.pieces[k].tipo = 'bif';
+    }
     state = s;
     ui.start = false;
     return true;
@@ -477,7 +482,7 @@ function ancoras(p, c, r){
   return out;
 }
 function temForma(p, tipo){
-  if (tipo === 'garfo') return p.kit.length >= 2;
+  if (tipo === 'bif') return p.kit.length >= 2;
   return p.kit.indexOf(tipo) >= 0 || p.kit.indexOf('livre') >= 0;
 }
 /* Portais que ainda apontam para um hexagono vazio: as saidas da rede.
@@ -497,7 +502,7 @@ function saidasLivres(p, extra){
   return n;
 }
 function gastaForma(p, tipo){
-  if (tipo === 'garfo'){
+  if (tipo === 'bif'){
     const ordem = p.kit.map((f,i)=>({f,i})).sort((a,b)=>(a.f==='livre'?1:0)-(b.f==='livre'?1:0));
     const tirar = ordem.slice(0,2).map(o=>o.i);
     p.kit = p.kit.filter((_,i)=>tirar.indexOf(i) < 0);
@@ -512,7 +517,7 @@ function validarConstrucao(p, c, r, gates){
   if (state.actionsLeft <= 0) return { ok:false, motivo:'Sem ações restantes.' };
   if (c < 0 || c >= COLS || r < 0 || r >= ROWS) return { ok:false, motivo:'Fora do mapa.' };
   if (peca(p, c, r)) return { ok:false, motivo:'Este hexágono já tem peça.' };
-  if (!gates || gates.length < 2) return { ok:false, motivo:'Escolha 2 portais (3 para garfo).' };
+  if (!gates || gates.length < 2) return { ok:false, motivo:'Escolha 2 portais (3 para bifurcação).' };
   if (gates.length > 3) return { ok:false, motivo:'Máximo de 3 portais.' };
   const fora = gates.filter(g => !vizinho(c, r, g));
   if (fora.length) return { ok:false, motivo:'O portal ' + fora[0] + ' aponta para fora do mapa.' };
@@ -530,7 +535,7 @@ function validarConstrucao(p, c, r, gates){
       return { ok:false, motivo:'Essa peça fecharia a rede: sem portal livre, você não poderia mais expandir.' };
   }
   if (!temForma(p, tipo))
-    return { ok:false, motivo:'O kit não tem ' + (tipo==='garfo'?'2 formas':TIPO_NOME[tipo]) + '.' };
+    return { ok:false, motivo:'O kit não tem ' + (tipo==='bif'?'2 formas':TIPO_NOME[tipo]) + '.' };
   if (p.money < custo)
     return { ok:false, motivo:'Faltam ' + (custo - p.money) + ' mil. Emita um título.' };
   if (t === 'agua' && p.bridges <= 0) return { ok:false, motivo:'Sem pontes: você já usou as 2.' };
@@ -541,6 +546,7 @@ function construir(c, r, gates){
   const p = ativo();
   const v = validarConstrucao(p, c, r, gates);
   if (!v.ok){ toast(v.motivo, true); return false; }
+  const eraBif = ui.mode === 'bif';
   p.money -= v.custo;
   if (v.terreno === 'agua') p.bridges--;
   if (v.terreno === 'serra') p.tunnels--;
@@ -548,62 +554,68 @@ function construir(c, r, gates){
   p.pieces[key(c,r)] = { gates: gates.slice().sort((a,b)=>a-b), tipo: v.tipo, custo: v.custo, t: state.turnNo };
   state.actionsLeft--;
   p.acted = true;
-  logMsg('Construiu ' + TIPO_NOME[v.tipo] + ' em ' + nomeTerreno(v.terreno) + ' por ' + v.custo + ' mil' + (v.terreno==='agua'?' (ponte)':v.terreno==='serra'?' (túnel)':'') + '.');
-  ui.selHex = null; ui.selGates = []; ui.mode = 'build';
-  toast('Peça construída: ' + TIPO_NOME[v.tipo] + ' (' + v.custo + ' mil).');
+  logMsg((eraBif ? 'Substituiu a peça por ' : 'Construiu ') + TIPO_NOME[v.tipo] + ' em ' + nomeTerreno(v.terreno) + ' por ' + v.custo + ' mil' + (v.terreno==='agua'?' (ponte)':v.terreno==='serra'?' (túnel)':'') + '.');
+  ui.selHex = null; ui.selGates = []; ui.mode = 'build'; ui.bifBackup = null;
+  toast((eraBif ? 'Bifurcação pronta' : 'Peça construída') + ': ' + TIPO_NOME[v.tipo] + ' (' + v.custo + ' mil).');
   commit();
   return true;
 }
 function nomeTerreno(t){ return t === 'agua' ? 'água' : t === 'serra' ? 'montanha' : t === 'cidade' ? 'cidade' : 'planície'; }
 
-/* ---------------- garfo por cima de uma peça existente ----------------
-   A peça já pagou 1 forma. Abrir o 3º portal gasta +1 forma (2 no total),
-   1 ação e aponta para um hexágono vazio. */
-function portasGarfo(p, c, r){
-  const pc = peca(p, c, r);
+/* ---------------- bifurcação: substitui a peça existente ----------------
+   Ao clicar em "Fazer bifurcação", a peça atual é apagada (com devolução
+   do custo e da obra) e o jogador desenha a bifurcação do zero: 3 portais,
+   2 formas e 1 ação. Cancelar restaura a peça original. */
+function portasBif(p, c, r){
   const out = [];
-  if (!pc || pc.gates.length >= 3) return out;
-  for (let k = 0; k < 6; k++){
-    if (pc.gates.indexOf(k) >= 0) continue;
-    const n = vizinho(c, r, k);
-    if (!n || peca(p, n.c, n.r)) continue;
-    out.push(k);
-  }
+  for (let k = 0; k < 6; k++) if (vizinho(c, r, k)) out.push(k);
   return out;
 }
-function validarGarfo(p, c, r, gates){
-  if (!state || state.phase !== 'actions') return { ok:false, motivo:'Role os dados primeiro.' };
-  if (state.actionsLeft <= 0) return { ok:false, motivo:'Sem ações restantes.' };
-  const pc = peca(p, c, r);
-  if (!pc) return { ok:false, motivo:'Não há peça neste hexágono.' };
-  if (pc.gates.length >= 3) return { ok:false, motivo:'Este hexágono já é um garfo.' };
-  if (!gates || gates.length !== 3) return { ok:false, motivo:'Escolha o 3º portal.' };
-  for (const g of pc.gates) if (gates.indexOf(g) < 0) return { ok:false, motivo:'Os 2 portais originais não mudam.' };
-  const novo = gates.find(g => pc.gates.indexOf(g) < 0);
-  if (novo === undefined) return { ok:false, motivo:'Escolha um portal novo.' };
-  const n = vizinho(c, r, novo);
-  if (!n) return { ok:false, motivo:'O portal ' + novo + ' aponta para fora do mapa.' };
-  if (peca(p, n.c, n.r)) return { ok:false, motivo:'O novo portal precisa apontar para um hexágono vazio.' };
-  if (p.kit.length < 1) return { ok:false, motivo:'Falta 1 forma no kit (o garfo gasta 2 no total).' };
-  return { ok:true, novo, tipo:'garfo' };
+function validarBif(p, c, r, gates){
+  if (!gates || gates.length !== 3) return { ok:false, motivo:'Escolha 3 portais para a bifurcação.' };
+  return validarConstrucao(p, c, r, gates);
 }
-function adicionarGarfo(c, r, gates){
+function iniciarBif(){
+  if (!ui.selHex) return;
   const p = ativo();
-  const v = validarGarfo(p, c, r, gates);
-  if (!v.ok){ toast(v.motivo, true); return false; }
-  let i = p.kit.findIndex(f => f !== 'livre');
-  if (i < 0) i = 0;
-  p.kit.splice(i, 1);
-  const pc = p.pieces[key(c,r)];
-  pc.gates = gates.slice().sort((a,b)=>a-b);
-  pc.tipo = 'garfo';
-  state.actionsLeft--;
-  p.acted = true;
-  logMsg('Transformou a peça em GARFO em ' + nomeTerreno(terreno(c,r)) + ', acrescentando o portal ' + v.novo + ' (+1 forma; 2 no total).');
-  ui.selHex = null; ui.selGates = []; ui.mode = 'build';
-  toast('Garfo pronto: portal ' + v.novo + ' acrescentado (−1 forma, 1 ação).');
-  commit();
-  return true;
+  const {c,r} = ui.selHex;
+  const pc = peca(p,c,r);
+  if (!pc) return toast('Selecione uma peça para transformar.', true);
+  if (pc.gates.length >= 3) return toast('Este hexágono já é uma bifurcação.', true);
+  if (state.phase !== 'actions' || state.actionsLeft <= 0) return toast('Role os dados e use uma ação.', true);
+  if (p.kit.length < 2) return toast('A bifurcação gasta 2 formas do kit.', true);
+  ui.bifBackup = { c, r, pc: JSON.parse(JSON.stringify(pc)), money:p.money, bridges:p.bridges, tunnels:p.tunnels };
+  delete p.pieces[key(c,r)];
+  p.money += pc.custo;
+  const t = terreno(c,r);
+  if (t === 'agua') p.bridges++;
+  if (t === 'serra') p.tunnels++;
+  ui.mode = 'bif';
+  ui.selGates = [];
+  render();
+  toast('Peça apagada. Desenhe a bifurcação com 3 portais (2 formas, 1 ação).');
+}
+function toggleBifGate(k){ toggleGate(k); }
+function confirmarBif(){
+  if (!ui.selHex || ui.mode !== 'bif') return false;
+  return construir(ui.selHex.c, ui.selHex.r, ui.selGates);
+}
+function cancelarBif(){
+  const b = ui.bifBackup;
+  if (b){
+    const p = ativo();
+    p.pieces[key(b.c,b.r)] = b.pc;
+    p.money = b.money; p.bridges = b.bridges; p.tunnels = b.tunnels;
+    ui.selHex = { c:b.c, r:b.r };
+  }
+  ui.bifBackup = null; ui.mode = 'build'; ui.selGates = [];
+}
+function adicionarBif(c, r, gates){
+  ui.selHex = { c, r }; ui.selGates = [];
+  iniciarBif();
+  if (ui.mode !== 'bif') return false;
+  ui.selGates = gates.slice();
+  return confirmarBif();
 }
 
 /* Caminho mais curto pela rede. Retorna cidades alcancadas.
@@ -829,7 +841,7 @@ function fazerEncerrarTurno(){
   state.active = prox;
   state.actionsLeft = 3;
   state.phase = 'roll';
-  ui.selHex = null; ui.selGates = []; ui.mode = 'build'; ui.deliveryCity = null; ui.urb = {cidade:null,cor:null,c1:null,c2:null}; ui.view = null;
+  ui.selHex = null; ui.selGates = []; ui.mode = 'build'; ui.bifBackup = null; ui.deliveryCity = null; ui.urb = {cidade:null,cor:null,c1:null,c2:null}; ui.view = null;
   const np = ativo();
   np.dice = null; np.kit = []; np.rerolled = false; np.acted = false;
   ui.modal = null;
@@ -966,11 +978,7 @@ function renderBoard(){
     const {c,r} = ui.selHex;
     const {x,y} = centro(c,r);
     const gates = ui.selGates;
-    const pcSel = peca(p,c,r);
-    const ehGarfo = ui.mode === 'garfo' && !!pcSel;
-    const val = ehGarfo
-      ? (gates.length === 3 ? validarGarfo(p,c,r,gates) : null)
-      : (gates.length >= 2 ? validarConstrucao(p,c,r,gates) : null);
+    const val = gates.length >= 2 ? validarConstrucao(p,c,r,gates) : null;
     const cor = (val && !val.ok) ? '#a3261e' : '#a8752a';
     out.push('<path d="' + hexPath(x,y) + '" fill="none" stroke="' + cor + '" stroke-width="0.85"/>');
     const anc = ancoras(p,c,r);
@@ -982,8 +990,7 @@ function renderBoard(){
         continue;
       }
       if (gates.indexOf(k) >= 0){
-        const gcor = (ehGarfo && pcSel.gates.indexOf(k) >= 0) ? p.ink : cor;
-        out.push('<circle cx="' + r2(pt.x) + '" cy="' + r2(pt.y) + '" r="1.05" fill="' + gcor + '"/>');
+        out.push('<circle cx="' + r2(pt.x) + '" cy="' + r2(pt.y) + '" r="1.05" fill="' + cor + '"/>');
       } else if (anc.indexOf(k) >= 0){
         out.push('<circle cx="' + r2(pt.x) + '" cy="' + r2(pt.y) + '" r="1.7" fill="none" stroke="#2f7d4f" stroke-width="0.42" opacity=".9"/>');
       } else {
@@ -1011,22 +1018,16 @@ function renderBoard(){
   // 7. cliques nos portais do hexagono selecionado
   if (ui.selHex && state.phase === 'actions' && state.actionsLeft > 0){
     const {c,r} = ui.selHex;
-    const pcSel = peca(p,c,r);
-    const {x,y} = centro(c,r);
-    out.push('<g>');
-    if (!pcSel){
+    if (!peca(p,c,r)){
+      const {x,y} = centro(c,r);
+      out.push('<g>');
       for (let k = 0; k < 6; k++){
         if (!vizinho(c, r, k)) continue;
         const pt = portalPt(x,y,k);
-        out.push('<circle class="portalhit" cx="' + r2(pt.x) + '" cy="' + r2(pt.y) + '" r="2.7" fill="transparent" data-gate="' + k + '"/>');
+        out.push('<circle class="portalhit" cx="' + r2(pt.x) + '" cy="' + r2(pt.y) + '" r="3.1" fill="transparent" data-gate="' + k + '"/>');
       }
-    } else if (ui.mode === 'garfo' && pcSel.gates.length < 3){
-      for (const k of portasGarfo(p,c,r)){
-        const pt = portalPt(x,y,k);
-        out.push('<circle class="portalhit" cx="' + r2(pt.x) + '" cy="' + r2(pt.y) + '" r="2.9" fill="transparent" data-gate="' + k + '"/>');
-      }
+      out.push('</g>');
     }
-    out.push('</g>');
   }
   b.innerHTML = out.join('');
 }
@@ -1267,16 +1268,15 @@ function renderActionBar(){
   const {c,r} = ui.selHex;
   const {x,y} = centro(c,r);
   const pc = peca(p,c,r);
-  if (ui.mode === 'garfo' && pc){
-    const val = ui.selGates.length === 3 ? validarGarfo(p,c,r,ui.selGates) : null;
-    const cand = portasGarfo(p,c,r).length;
-    const sub = 'Os 2 portais originais (' + pc.gates.join(' e ') + ') ficam. Escolha <b>1 novo portal</b>' +
-      (cand ? ' entre os ' + cand + ' candidatos marcados em verde.' : ' — não há candidatos livres neste hexágono.') +
-      (val && !val.ok ? ' <span class="tagBad">' + val.motivo + '</span>' : val && val.ok ? ' <span class="tagOk">pode acrescentar</span>' : '');
-    bar.innerHTML = '<div class="abMain"><div class="abTitle">Adicionar garfo em (' + c + ',' + r + ') · ' + nomeTerreno(terreno(c,r)) + '</div>' +
+  if (ui.mode === 'bif'){
+    const val = ui.selGates.length === 3 ? validarBif(p,c,r,ui.selGates) : null;
+    const sub = ui.selGates.length < 3
+      ? 'A peça anterior foi apagada. Escolha <b>3 portais</b> para desenhar a nova bifurcação. Cancele para restaurar a peça.'
+      : (val && !val.ok ? '<span class="tagBad">' + val.motivo + '</span>' : '<span class="tagOk">pode construir</span> · 2 formas, 1 ação');
+    bar.innerHTML = '<div class="abMain"><div class="abTitle">Desenhar bifurcação em (' + c + ',' + r + ') · ' + nomeTerreno(terreno(c,r)) + '</div>' +
       '<div class="abSub">' + sub + '</div></div><div class="abBtns">' +
-      '<button class="btn ghost" data-action="garfo-cancel">Cancelar</button>' +
-      '<button class="btn primary" data-action="garfo-confirm" ' + (val && val.ok ? '' : 'disabled') + '>Adicionar portal (1 ação · +1 forma)</button>' +
+      '<button class="btn ghost" data-action="bif-cancel">Cancelar (restaurar peça)</button>' +
+      '<button class="btn primary" data-action="bif-confirm" ' + (val && val.ok ? '' : 'disabled') + '>Construir (1 ação · 2 formas)</button>' +
       '</div>';
     return;
   }
@@ -1288,12 +1288,14 @@ function renderActionBar(){
       sub += ' · ' + CIDADES[cid].nome + ' (' + (corCidade(p,cid)==='?' ? 'cinza' : COR[corCidade(p,cid)].nome) +
         ') · cubos: ' + (cubes.length ? cubes.join(' ') : 'nenhum');
     }
-    const podeGarfo = state.phase === 'actions' && state.actionsLeft > 0 && pc.gates.length < 3 &&
-      p.kit.length >= 1 && portasGarfo(p,c,r).length > 0;
+    const podeBif = state.phase === 'actions' && state.actionsLeft > 0 && pc.gates.length < 3 && p.kit.length >= 2;
+    const podeEntregar = cid !== undefined && (p.cubes[cid]||[]).length > 0 &&
+      state.phase === 'actions' && state.actionsLeft > 0;
     bar.innerHTML = '<div class="abMain"><div class="abTitle">Peça em (' + c + ',' + r + ') · ' + nomeTerreno(terreno(c,r)) + '</div>' +
       '<div class="abSub">' + sub + '</div></div><div class="abBtns">' +
       (podeRerrolar() ? '<button class="btn" data-action="reroll-open">↻ Rerrolar</button>' : '') +
-      (podeGarfo ? '<button class="btn" data-action="garfo-start">Adicionar garfo (+1 forma)</button>' : '') +
+      (podeEntregar ? '<button class="btn" data-action="deliver-city">Entregar cubo</button>' : '') +
+      (podeBif ? '<button class="btn" data-action="bif-start">Fazer bifurcação (2 formas)</button>' : '') +
       '<button class="btn ghost" data-action="cancel">Fechar</button></div>';
     return;
   }
@@ -1309,7 +1311,7 @@ function renderActionBar(){
   if (CIDADE_EM[key(c,r)] !== undefined) titulo += ' · ' + CIDADES[CIDADE_EM[key(c,r)]].nome;
   let sub = '';
   let val = null;
-  if (gates.length === 0) sub = 'Escolha 2 portais no hexágono. O trilho entra por um e sai pelo outro. Um 3º portal transforma a peça em GARFO. <span style="color:#8a8172">Portais com × saem do mapa.</span>';
+  if (gates.length === 0) sub = 'Escolha 2 portais no hexágono. O trilho entra por um e sai pelo outro. Com 3 portais é uma <b>BIFURCAÇÃO</b> (2 formas). Clique numa peça existente para substituí-la. <span style="color:#8a8172">Portais com × saem do mapa.</span>';
   else if (gates.length === 1) sub = 'Portal ' + gates[0] + ' marcado. Escolha o segundo portal.';
   else {
     val = validarConstrucao(p,c,r,gates);
@@ -1317,7 +1319,7 @@ function renderActionBar(){
     sub = '<b>' + TIPO_NOME[tipo] + '</b> · custo <b>' + custo + ' mil</b>';
     if (t === 'agua') sub += ' (ponte · restam ' + p.bridges + ')';
     if (t === 'serra') sub += ' (túnel · restam ' + p.tunnels + ')';
-    if (tipo === 'garfo') sub += ' · consome 2 formas (kit: ' + p.kit.length + ')';
+    if (tipo === 'bif') sub += ' · consome 2 formas (kit: ' + p.kit.length + ')';
     else sub += ' · consome ' + TIPO_NOME[tipo] + ' (kit: ' + p.kit.filter(f=>f===tipo||f==='livre').length + ')';
     if (!val.ok) sub += ' — <span class="tagBad">' + val.motivo + '</span>';
     else sub += ' — <span class="tagOk">pode construir</span>';
@@ -1365,7 +1367,7 @@ function renderStart(){
       '<h2>Bacia do Corvo</h2>' +
       '<p class="muted">Ferrovias desenhadas à mão sobre 54 hexágonos.<br>Protótipo interativo das regras v0.5 — sem impressão.</p>' +
       '<div class="bigChoice">' +
-        '<button class="btn primary" data-action="start" data-players="1">1 jogador<br><span style="font-size:10px;font-weight:400;opacity:.75">solo · 5 cidades encerram</span></button>' +
+        '<button class="btn primary" data-action="start" data-players="1">1 jogador<br><span style="font-size:10px;font-weight:400;opacity:.75">solo · 4 cidades encerram</span></button>' +
         '<button class="btn" data-action="start" data-players="2">2 jogadores<br><span style="font-size:10px;font-weight:400;opacity:.7">cada um na própria folha</span></button>' +
       '</div>' +
       '<div class="startOpts">Caixa inicial: <input id="caixaInicial" type="number" min="0" max="100" step="5" value="' + caixa + '"> mil</div>' +
@@ -1551,26 +1553,26 @@ function modalAjuda(){
       '<li>No fim: receba a renda da trilha, pague 1 mil por título e apague conexões incompletas.</li>' +
     '</ol>' +
     '<h3>Construir</h3>' +
-    '<p>Clique num hexágono vazio e escolha <b>2 portais</b> (3 para garfo). O trilho cruza a borda sempre em ângulo reto, dentro do portal; a curva é feita no miolo.</p>' +
+    '<p>Clique num hexágono vazio e escolha <b>2 portais</b> (3 para bifurcação). O trilho cruza a borda sempre em ângulo reto, dentro do portal; a curva é feita no miolo.</p>' +
     '<ul class="ruleList">' +
       '<li>A primeira peça da rede precisa estar num hexágono de cidade.</li>' +
       '<li>As seguintes precisam tocar a rede por um portal ancorado (anel verde). Portais marcados com <b>×</b> apontam para fora do mapa e não servem.</li>' +
       '<li>Custo por hexágono: <b>planície 1 · ponte 2 · túnel 3</b>. Você tem <b>2 pontes e 2 túneis no jogo inteiro</b>.</li>' +
-      '<li>GARFO: gasta <b>2 formas</b> quaisquer e faz o trilho entrar por 1 portal e sair por 2.</li>' +
-      '<li>Para transformar uma peça já colocada em garfo, selecione-a e use <b>Adicionar garfo</b>: os 2 portais originais ficam, você escolhe 1 novo portal (candidatos em verde), gasta <b>+1 forma</b> (2 no total) e <b>1 ação</b>.</li>' +
+      '<li>BIFURCAÇÃO: gasta <b>2 formas</b> quaisquer e faz o trilho entrar por 1 portal e sair por 2.</li>' +
+      '<li>Para transformar uma peça em <b>BIFURCAÇÃO</b>, clique nela e use <b>Fazer bifurcação</b>: a peça antiga é apagada (o custo e a obra voltam para você) e você desenha a nova do zero com <b>3 portais</b>, gastando <b>2 formas</b> e <b>1 ação</b>. Cancele para restaurar a peça.</li>' +
     '</ul>' +
     '<h3>Entregar</h3>' +
     '<p>Clique numa cidade com cubos. Um cubo só vai para cidade da <b>mesma cor</b>. O caminho usa a sua rede e pode ter no máximo o <b>nível do motor</b> em hexágonos intermediários. A renda sobe pelo tamanho da rota.</p>' +
     '<p><b>Urbanizar</b> (1 ação, 10 mil): escolha a cidade cinza, a <b>cor da cidade</b> e a cor de <b>cada um dos 2 cubos</b> — elas podem ser diferentes. Por padrão os cubos seguem a cor da cidade; use <b>↺ igual à cidade</b> para voltar a isso.</p>' +
     '<p><b>1ª entrega</b> em cada cidade: +4 (colorida) ou +3 (cinza), só para quem chega primeiro.</p>' +
-    '<p>Quando o último cubo de uma cidade é entregue, ela fica <b>abandonada</b>. Com 6 abandonadas (solo: 5), joga-se mais uma volta e o jogo acaba.</p>' +
+    '<p>Quando o último cubo de uma cidade é entregue, ela fica <b>abandonada</b>. Com <b>4</b> abandonadas no solo (5 em 2 jogadores), joga-se mais uma volta e o jogo acaba.</p>' +
     '<h3>Dinheiro</h3>' +
     '<p>Título: +5 mil, −1 PV no fim e −1 mil de dividendo por turno. Pode emitir a qualquer momento do seu turno, sem gastar ação.</p>' +
     '<p><b>PV = posição na trilha de renda − número de títulos.</b></p>' +
     '<h3>Notas do protótipo</h3>' +
     '<ul class="ruleList">' +
       '<li>Rota conta <b>hexágonos intermediários</b> (as duas cidades não contam). É o que faz o motor 5 alcançar todos os pares do mapa — com a contagem incluindo as cidades, quatro pares ficariam inalcançáveis.</li>' +
-      '<li>Metas solo: <b>18 PV</b> maquinista · <b>26</b> chefe de estação · <b>34</b> barão dos trilhos. O jogo acaba com 5 cidades abandonadas (6 em 2 jogadores) e mais 1 turno.</li>' +
+      '<li>Metas solo: <b>18 PV</b> maquinista · <b>26</b> chefe de estação · <b>34</b> barão dos trilhos. O jogo acaba com 4 cidades abandonadas (5 em 2 jogadores) e mais 1 turno.</li>' +
       '<li>No modo 2 jogadores, cada um tem a própria folha (rede e cubos) e os bônus de 1ª entrega são disputados no mapa compartilhado.</li>' +
     '</ul>' +
     '<div class="closeRow"><button class="btn primary" data-action="close">Entendi</button></div></div>');
@@ -1640,11 +1642,12 @@ function clicarHex(c, r){
   if (state.phase === 'over') return;
   if (ui.view !== null){ ui.view = null; render(); }
   if (ui.selHex && ui.selHex.c === c && ui.selHex.r === r) return;
+  if (ui.mode === 'bif'){ cancelarBif(); render(); }
   ui.mode = 'build';
   const p = ativo();
   const pc = peca(p,c,r);
   const cid = CIDADE_EM[key(c,r)];
-  if (state.phase === 'actions' && state.actionsLeft > 0 && pc && cid !== undefined && (p.cubes[cid]||[]).length > 0){
+  if (state.phase === 'actions' && state.actionsLeft > 0 && !pc && cid !== undefined && (p.cubes[cid]||[]).length > 0){
     ui.selHex = {c,r}; ui.selGates = [];
     ui.modal = { type:'delivery', city:cid };
     ui.deliveryCity = cid;
@@ -1668,43 +1671,13 @@ function confirmarConstrucao(){
   if (!ui.selHex) return;
   construir(ui.selHex.c, ui.selHex.r, ui.selGates);
 }
-function iniciarGarfo(){
-  if (!ui.selHex) return;
-  const p = ativo();
-  const {c,r} = ui.selHex;
-  const pc = peca(p,c,r);
-  if (!pc || pc.gates.length >= 3) return toast('Escolha uma peça com exatamente 2 portais.', true);
-  if (!portasGarfo(p,c,r).length) return toast('Não há portal livre para acrescentar neste hexágono.', true);
-  ui.mode = 'garfo';
-  ui.selGates = pc.gates.slice();
-  render();
-}
-function toggleGarfoGate(k){
-  if (ui.mode !== 'garfo' || !ui.selHex) return;
-  const p = ativo();
-  const {c,r} = ui.selHex;
-  const pc = peca(p,c,r);
-  if (!pc || pc.gates.indexOf(k) >= 0) return;
-  if (portasGarfo(p,c,r).indexOf(k) < 0) return toast('Esse portal não pode ser acrescentado.', true);
-  if (ui.selGates.length === 3 && ui.selGates[2] === k) ui.selGates = pc.gates.slice();
-  else ui.selGates = pc.gates.concat([k]).sort((a,b)=>a-b);
-  render();
-}
-function confirmarGarfo(){
-  if (!ui.selHex || ui.mode !== 'garfo') return;
-  adicionarGarfo(ui.selHex.c, ui.selHex.r, ui.selGates);
-}
-function cancelarGarfo(){
-  ui.mode = 'build'; ui.selHex = null; ui.selGates = []; render();
-}
-
 /* ---------------- eventos ---------------- */
 function onBoardClick(e){
   if (!state) return;
   const gh = e.target.closest('[data-gate]');
   if (gh){
     const k = Number(gh.getAttribute('data-gate'));
-    if (ui.mode === 'garfo') toggleGarfoGate(k); else toggleGate(k);
+    if (ui.mode === 'bif') toggleBifGate(k); else toggleGate(k);
     return;
   }
   const hh = e.target.closest('[data-hex]');
@@ -1786,6 +1759,7 @@ function onOverlayClick(e){
 function onKey(e){
   if (e.key === 'Escape'){
     if (ui.modal && ui.modal.type !== 'over'){ fecharModal(); render(); }
+    else if (ui.mode === 'bif'){ cancelarBif(); render(); }
     else if (ui.selHex){ ui.selHex = null; ui.selGates = []; ui.mode = 'build'; ui.rerollSel = []; render(); }
   }
 }
@@ -1807,9 +1781,15 @@ function onActionBarClick(e){
   else if (a === 'cancel'){ ui.selHex = null; ui.selGates = []; ui.mode = 'build'; render(); }
   else if (a === 'roll') rolarDados();
   else if (a === 'reroll-open') abrirRerrol();
-  else if (a === 'garfo-start') iniciarGarfo();
-  else if (a === 'garfo-confirm') confirmarGarfo();
-  else if (a === 'garfo-cancel') cancelarGarfo();
+  else if (a === 'bif-start') iniciarBif();
+  else if (a === 'bif-confirm') confirmarBif();
+  else if (a === 'bif-cancel'){ cancelarBif(); render(); }
+  else if (a === 'deliver-city'){
+    if (ui.selHex){
+      const cid = CIDADE_EM[key(ui.selHex.c, ui.selHex.r)];
+      if (cid !== undefined){ ui.modal = {type:'delivery', city:cid}; ui.deliveryCity = cid; renderModal(); }
+    }
+  }
   else if (a === 'score'){ ui.modal = {type:'over'}; renderModal(); }
 }
 
@@ -1821,12 +1801,12 @@ function boot(){
   render();
   window.__game = {
     get state(){ return state; },
-    ui, CIDADES, MAPA, COR, RENDA_POS,
+    ui, CIDADES, MAPA, COR, RENDA_POS, LIMITE_SOLO, LIMITE_MULTI,
     centro, vizinho, rotasDe, opcoesEntrega, validarConstrucao, pagamento, saidasLivres,
     novoJogo, rolarDados, rerrolar, abrirRerrol, modalRerrol, podeRerrolar, construir, entregar, emitirTitulo,
     melhorarMotor, urbanizar, fazerEncerrarTurno, limparIncompletas,
-    clicarHex, toggleGate, confirmarConstrucao, portasGarfo, validarGarfo, adicionarGarfo,
-    iniciarGarfo, toggleGarfoGate, confirmarGarfo, cancelarGarfo, salvar, carregar,
+    clicarHex, toggleGate, confirmarConstrucao, portasBif, validarBif, adicionarBif,
+    iniciarBif, toggleBifGate, confirmarBif, cancelarBif, salvar, carregar,
     fecharModal, render
   };
 }

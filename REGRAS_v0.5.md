@@ -17,19 +17,19 @@ não na borda.
 Como a borda é compartilhada, o portal de um hexágono é o mesmo do vizinho:
 o trilho encaixa sozinho, sem régua.
 
-Existem só **três formas** de peça:
+Existem **quatro formas** de peça:
 
 | Peça | Desenho | Uso de portais |
 |---|---|---|
 | **RETA** | portal → portal **oposto** | entra 1, sai 1 |
 | **CURVA 60°** | portal → portal **vizinho** (lado a lado) | entra 1, sai 1 |
 | **CURVA 120°** | portal → portal **saltando um** | entra 1, sai 1 |
-| **GARFO** | portal → **dois** portais | entra 1, sai 2 |
+| **BIFURCAÇÃO** | **um** portal de entrada + **dois** de saída | entra 1, sai 2 |
 
 **Um hexágono nunca recebe mais de uma peça.** Um portal pode ser usado por **duas peças
 diferentes**, uma de cada lado — nunca duas do mesmo lado.
 
-O garfo é a única peça que faz a rede ramificar. Ele é **caro** (ver §3).
+A **bifurcação** é a única peça que faz a rede ramificar. Ela é **cara** (ver §3).
 
 ## 1b. O MAPA — Bacia do Corvo
 
@@ -42,8 +42,9 @@ O garfo é a única peça que faz a rede ramificar. Ele é **caro** (ver §3).
 - **O VAU DO CORVO** — único hexágono de **planície no meio da linha do rio**, encravado
   entre serra de um lado e água do outro. É o gargalo: passar por ali custa **1** em vez de 3.
   E é **cidade cinza**: quem urbanizar o Vau ganha um centro de carga no meio do mapa.
-- **12 cidades**: 2 de cada cor (azul, preto, amarelo, vermelho, roxo) + 2 cinzas
-  (Passo Alto, no leste, e o Vau). Cada cidade colorida traz **2 cubos impressos**.
+- **14 cidades**: 2 de cada cor (azul, preto, amarelo, vermelho, roxo) + 4 cinzas
+  (Passo Alto, no leste; Aldeia Nova, no noroeste; Pedra Lisa, no sudeste; e o Vau).
+  Cada cidade colorida traz **2 cubos impressos**.
 
 ---
 
@@ -104,19 +105,20 @@ hexágono vazio. A rede nunca pode ser fechada num laço sem saída — senão n
 
 ---
 
-## 3. O GARFO E O DINHEIRO
+## 3. A BIFURCAÇÃO E O DINHEIRO
 
-O **GARFO** não sai de uma face isolada. Ele é comprado:
+A **bifurcação** ocupa o hexágono inteiro e faz o trilho dividir em dois: são
+**3 portais**, um de entrada e dois de saída.
 
-> **Gaste 2 formas do kit** (quaisquer, inclusive iguais) **e pague o terreno** do hexágono.
-> O garfo ocupa o hexágono inteiro e faz o trilho dividir em dois.
+> Para desenhar uma bifurcação num hexágono vazio: **gaste 2 formas do kit**
+> (quaisquer, inclusive iguais) **e pague o terreno** do hexágono.
+> Para transformar uma peça de 2 portais: **selecione-a e use Fazer bifurcação**.
+> A peça antiga é apagada (o custo pago e a obra usada voltam para você) e você
+> desenha a bifurcação do zero, com **3 portais**, gastando **2 formas** e **1 ação**.
+> Se cancelar, a peça original volta exatamente como estava.
 
-Assim o garfo é decisão, não sorte: com 3 formas no kit, abrir um garfo é
+Assim a bifurcação é decisão, não sorte: com 3 formas no kit, abrir uma bifurcação é
 **entregar o turno inteiro** para ganhar duas frentes. É a jogada que ganha jogo.
-
-**Garfo sobre peça existente:** selecione uma peça de 2 portais e use **Adicionar garfo**.
-Os 2 portais originais ficam onde estão; escolhe-se **1 novo portal** apontando para um
-hexágono vazio. Custa **+1 forma** (2 no total, como um garfo normal) e **1 ação**.
 
 **Custos de construção** (por hexágono atravessado, em milhares):
 
@@ -174,8 +176,8 @@ de círculo verde do Railways.)*
 **Título:** a qualquer momento, +5 mil e **−1 PV no fim**, e **−1 mil de dividendo
 por turno**. Sem dinheiro para o dividendo? Emita outro título.
 
-**Fim do jogo:** quando **6 cidades** estiverem abandonadas (solo: 5).
-Joga-se mais 1 turno completo e para.
+**Fim do jogo:** quando **5 cidades** estiverem abandonadas em 2 jogadores
+(**4 no solo**). Joga-se mais 1 turno completo e para.
 
 **Pontuação:** posição na trilha de renda **− 1 por título**. Mais PV vence.
 Empate: mais cidades com ligação; depois, mais dinheiro.
@@ -185,7 +187,7 @@ Empate: mais cidades com ligação; depois, mais dinheiro.
 ## 6. SOLO
 
 Mesma coisa, sem disputa de bônus: você marca todos os bônus de primeira entrega.
-O jogo acaba como no modo normal: **5 cidades abandonadas** e mais 1 turno. Metas:
+O jogo acaba com **4 cidades abandonadas** e mais 1 turno. Metas:
 
 - 18 PV — *Maquinista*
 - 26 PV — *Chefe de Estação*
@@ -209,7 +211,7 @@ Começa no nível 1. Sobe 1 nível por ação.
 ## 8. EM ABERTO (a decidir com testes)
 
 - Leilão de primeiro jogador (o original tem; em 2 jogadores pode ser cruel ou ótimo).
-- Se o garfo deve custar 2 formas **ou** 1 forma + 3 mil.
+- Se o bifurcação deve custar 2 formas **ou** 1 forma + 3 mil.
 - Se o motor deve limitar também quantas peças se desenha por turno.
 - Bônus de cidade: 3/4 fixos ou escalando com a distância até o centro.
 

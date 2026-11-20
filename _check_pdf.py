@@ -8,6 +8,6 @@ for i, p in enumerate(d):
     print("   inicio:", t.splitlines()[0][:70] if t.strip() else "(vazio)")
     print("   fim   :", t.splitlines()[-1][:70] if t.strip() else "")
 full = "".join(p.get_text() for p in d)
-for termo in ["Bacia do Corvo", "GARFO", "Vau do Corvo", "rerrolar", "TÍTULOS", "R$"]:
+for termo in ["Bacia do Corvo", "BIFURCAÇÃO", "Vau do Corvo", "rerrolar", "TÍTULOS", "R$"]:
     print(f"contem {termo!r}:", termo in full)
 print("mojibake:", any(m in full for m in ("Ã", "â€", "Â°")))

@@ -1104,14 +1104,21 @@
 <text x="33.85" y="72.72" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#111">P</text>
 <rect x="36.30" y="69.77" width="3.7" height="3.7" fill="#fff" stroke="#111" stroke-width="0.45"/>
 <text x="38.15" y="72.72" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#111">M</text>
+<path d="M 30.00,75.96 L 24.00,65.57 L 12.00,65.57 L 6.00,75.96 L 12.00,86.35 L 24.00,86.35 Z" fill="#ececec" stroke="#111" stroke-width="1.0"/>
+<path d="M 30.00,75.96 L 24.00,65.57 L 12.00,65.57 L 6.00,75.96 L 12.00,86.35 L 24.00,86.35 Z" fill="url(#hachura)" stroke="none"/>
+<text x="18.00" y="73.06" font-size="2.3" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#111">ALDEIA</text>
+<text x="18.00" y="75.66" font-size="2.3" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#111">NOVA</text>
+<text x="18.00" y="78.66" font-size="2.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#666">cinza · urbanizar</text>
 <path d="M 156.00,86.35 L 150.00,75.96 L 138.00,75.96 L 132.00,86.35 L 138.00,96.75 L 150.00,96.75 Z" fill="#ececec" stroke="#111" stroke-width="1.0"/>
 <path d="M 156.00,86.35 L 150.00,75.96 L 138.00,75.96 L 132.00,86.35 L 138.00,96.75 L 150.00,96.75 Z" fill="url(#hachura)" stroke="none"/>
-<text x="144.00" y="84.35" font-size="2.3" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#666">cinza</text>
-<text x="144.00" y="87.55" font-size="2.3" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#666">urbanizar</text>
+<text x="144.00" y="83.45" font-size="2.3" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#111">PASSO</text>
+<text x="144.00" y="86.05" font-size="2.3" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#111">ALTO</text>
+<text x="144.00" y="89.05" font-size="2.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#666">cinza · urbanizar</text>
 <path d="M 102.00,96.75 L 96.00,86.35 L 84.00,86.35 L 78.00,96.75 L 84.00,107.14 L 96.00,107.14 Z" fill="#ececec" stroke="#111" stroke-width="1.0"/>
 <path d="M 102.00,96.75 L 96.00,86.35 L 84.00,86.35 L 78.00,96.75 L 84.00,107.14 L 96.00,107.14 Z" fill="url(#hachura)" stroke="none"/>
-<text x="90.00" y="94.75" font-size="2.3" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#666">cinza</text>
-<text x="90.00" y="97.95" font-size="2.3" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#666">urbanizar</text>
+<text x="90.00" y="93.85" font-size="2.3" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#111">VAU</text>
+<text x="90.00" y="96.45" font-size="2.3" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#111">DO CORVO</text>
+<text x="90.00" y="99.45" font-size="2.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#666">cinza · urbanizar</text>
 <path d="M 174.00,96.75 L 168.00,86.35 L 156.00,86.35 L 150.00,96.75 L 156.00,107.14 L 168.00,107.14 Z" fill="#faf7ef" stroke="#111" stroke-width="1.0"/>
 <circle cx="162.00" cy="90.75" r="2.2" fill="none" stroke="#111" stroke-width="0.5"/>
 <text x="162.00" y="91.65" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#111">V</text>
@@ -1138,6 +1145,11 @@
 <text x="123.85" y="124.68" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#111">V</text>
 <rect x="126.30" y="121.73" width="3.7" height="3.7" fill="#fff" stroke="#111" stroke-width="0.45"/>
 <text x="128.15" y="124.68" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#111">M</text>
+<path d="M 174.00,117.53 L 168.00,107.14 L 156.00,107.14 L 150.00,117.53 L 156.00,127.92 L 168.00,127.92 Z" fill="#ececec" stroke="#111" stroke-width="1.0"/>
+<path d="M 174.00,117.53 L 168.00,107.14 L 156.00,107.14 L 150.00,117.53 L 156.00,127.92 L 168.00,127.92 Z" fill="url(#hachura)" stroke="none"/>
+<text x="162.00" y="114.63" font-size="2.3" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#111">PEDRA</text>
+<text x="162.00" y="117.23" font-size="2.3" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#111">LISA</text>
+<text x="162.00" y="120.23" font-size="2.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#666">cinza · urbanizar</text>
 <path d="M 84.00,148.71 L 78.00,138.32 L 66.00,138.32 L 60.00,148.71 L 66.00,159.10 L 78.00,159.10 Z" fill="#faf7ef" stroke="#111" stroke-width="1.0"/>
 <circle cx="72.00" cy="142.71" r="2.2" fill="none" stroke="#111" stroke-width="0.5"/>
 <text x="72.00" y="143.61" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#111">V</text>
@@ -1261,42 +1273,48 @@
 <rect x="211.6" y="61.5" width="3.2" height="3.2" fill="none" stroke="#111" stroke-width="0.4"/>
 <rect x="215.3" y="61.5" width="3.2" height="3.2" fill="none" stroke="#111" stroke-width="0.4"/>
 <text x="182.00" y="72.00" font-size="3.0" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#111">PRIMEIRA ENTREGA  (+3 cinza · +4 demais)</text>
-<text x="182.00" y="77.00" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">PORTO NORTE</text>
-<text x="244.00" y="77.00" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">+4</text>
-<line x1="252.0" y1="77.7" x2="277.0" y2="77.7" stroke="#bbb" stroke-width="0.3"/>
-<text x="182.00" y="81.30" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">FOZ DO CORVO</text>
-<text x="244.00" y="81.30" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">+4</text>
-<line x1="252.0" y1="82.0" x2="277.0" y2="82.0" stroke="#bbb" stroke-width="0.3"/>
-<text x="182.00" y="85.60" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">PASSO ALTO</text>
-<text x="244.00" y="85.60" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">+3</text>
-<line x1="252.0" y1="86.3" x2="277.0" y2="86.3" stroke="#bbb" stroke-width="0.3"/>
-<text x="182.00" y="89.90" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">SERRA NEGRA</text>
-<text x="244.00" y="89.90" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">+4</text>
-<line x1="252.0" y1="90.60000000000001" x2="277.0" y2="90.60000000000001" stroke="#bbb" stroke-width="0.3"/>
-<text x="182.00" y="94.20" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">ESTANCIA SUL</text>
-<text x="244.00" y="94.20" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">+4</text>
-<line x1="252.0" y1="94.9" x2="277.0" y2="94.9" stroke="#bbb" stroke-width="0.3"/>
-<text x="182.00" y="98.50" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">PONTE VELHA</text>
-<text x="244.00" y="98.50" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">+4</text>
-<line x1="252.0" y1="99.2" x2="277.0" y2="99.2" stroke="#bbb" stroke-width="0.3"/>
-<text x="182.00" y="102.80" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">CURRAL</text>
-<text x="244.00" y="102.80" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">+4</text>
-<line x1="252.0" y1="103.5" x2="277.0" y2="103.5" stroke="#bbb" stroke-width="0.3"/>
-<text x="182.00" y="107.10" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">BARRA FUNDA</text>
-<text x="244.00" y="107.10" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">+4</text>
-<line x1="252.0" y1="107.8" x2="277.0" y2="107.8" stroke="#bbb" stroke-width="0.3"/>
-<text x="182.00" y="111.40" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">COSTA VERDE</text>
-<text x="244.00" y="111.40" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">+4</text>
-<line x1="252.0" y1="112.10000000000001" x2="277.0" y2="112.10000000000001" stroke="#bbb" stroke-width="0.3"/>
-<text x="182.00" y="115.70" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">VILA FERRO</text>
-<text x="244.00" y="115.70" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">+4</text>
-<line x1="252.0" y1="116.39999999999999" x2="277.0" y2="116.39999999999999" stroke="#bbb" stroke-width="0.3"/>
-<text x="182.00" y="120.00" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">BOCA DO MATO</text>
-<text x="244.00" y="120.00" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">+4</text>
-<line x1="252.0" y1="120.7" x2="277.0" y2="120.7" stroke="#bbb" stroke-width="0.3"/>
-<text x="182.00" y="124.30" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">VAU DO CORVO</text>
-<text x="244.00" y="124.30" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">+3</text>
-<line x1="252.0" y1="125.0" x2="277.0" y2="125.0" stroke="#bbb" stroke-width="0.3"/>
+<text x="182.00" y="76.50" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">PORTO NORTE</text>
+<text x="244.00" y="76.50" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">+4</text>
+<line x1="252.0" y1="77.2" x2="277.0" y2="77.2" stroke="#bbb" stroke-width="0.3"/>
+<text x="182.00" y="80.20" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">FOZ DO CORVO</text>
+<text x="244.00" y="80.20" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">+4</text>
+<line x1="252.0" y1="80.9" x2="277.0" y2="80.9" stroke="#bbb" stroke-width="0.3"/>
+<text x="182.00" y="83.90" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">PASSO ALTO</text>
+<text x="244.00" y="83.90" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">+3</text>
+<line x1="252.0" y1="84.60000000000001" x2="277.0" y2="84.60000000000001" stroke="#bbb" stroke-width="0.3"/>
+<text x="182.00" y="87.60" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">SERRA NEGRA</text>
+<text x="244.00" y="87.60" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">+4</text>
+<line x1="252.0" y1="88.3" x2="277.0" y2="88.3" stroke="#bbb" stroke-width="0.3"/>
+<text x="182.00" y="91.30" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">ESTANCIA SUL</text>
+<text x="244.00" y="91.30" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">+4</text>
+<line x1="252.0" y1="92.0" x2="277.0" y2="92.0" stroke="#bbb" stroke-width="0.3"/>
+<text x="182.00" y="95.00" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">PONTE VELHA</text>
+<text x="244.00" y="95.00" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">+4</text>
+<line x1="252.0" y1="95.7" x2="277.0" y2="95.7" stroke="#bbb" stroke-width="0.3"/>
+<text x="182.00" y="98.70" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">CURRAL</text>
+<text x="244.00" y="98.70" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">+4</text>
+<line x1="252.0" y1="99.4" x2="277.0" y2="99.4" stroke="#bbb" stroke-width="0.3"/>
+<text x="182.00" y="102.40" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">BARRA FUNDA</text>
+<text x="244.00" y="102.40" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">+4</text>
+<line x1="252.0" y1="103.10000000000001" x2="277.0" y2="103.10000000000001" stroke="#bbb" stroke-width="0.3"/>
+<text x="182.00" y="106.10" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">COSTA VERDE</text>
+<text x="244.00" y="106.10" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">+4</text>
+<line x1="252.0" y1="106.8" x2="277.0" y2="106.8" stroke="#bbb" stroke-width="0.3"/>
+<text x="182.00" y="109.80" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">VILA FERRO</text>
+<text x="244.00" y="109.80" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">+4</text>
+<line x1="252.0" y1="110.50000000000001" x2="277.0" y2="110.50000000000001" stroke="#bbb" stroke-width="0.3"/>
+<text x="182.00" y="113.50" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">BOCA DO MATO</text>
+<text x="244.00" y="113.50" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">+4</text>
+<line x1="252.0" y1="114.2" x2="277.0" y2="114.2" stroke="#bbb" stroke-width="0.3"/>
+<text x="182.00" y="117.20" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">VAU DO CORVO</text>
+<text x="244.00" y="117.20" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">+3</text>
+<line x1="252.0" y1="117.9" x2="277.0" y2="117.9" stroke="#bbb" stroke-width="0.3"/>
+<text x="182.00" y="120.90" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">ALDEIA NOVA</text>
+<text x="244.00" y="120.90" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">+3</text>
+<line x1="252.0" y1="121.60000000000001" x2="277.0" y2="121.60000000000001" stroke="#bbb" stroke-width="0.3"/>
+<text x="182.00" y="124.60" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">PEDRA LISA</text>
+<text x="244.00" y="124.60" font-size="2.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#111">+3</text>
+<line x1="252.0" y1="125.3" x2="277.0" y2="125.3" stroke="#bbb" stroke-width="0.3"/>
 <text x="182.00" y="129.00" font-size="3.2" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#111">SEU TURNO</text>
 <text x="182.00" y="133.60" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#555">role 3d6  ·  rerrolar: 1 mil por dado</text>
 <text x="182.00" y="137.80" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#555">3 ações, na ordem que quiser:</text>
@@ -1314,12 +1332,12 @@
 <rect x="199.0" y="173.6" width="4" height="4" fill="none" stroke="#111" stroke-width="0.45"/>
 <rect x="205.0" y="173.6" width="4" height="4" fill="none" stroke="#111" stroke-width="0.45"/>
 <text x="182.00" y="181.00" font-size="2.4" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#666">Vau do Corvo: travessia livre, sem obra</text>
-<text x="182.00" y="186.00" font-size="2.8" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#111">GARFO: gaste 2 formas do kit.</text>
+<text x="182.00" y="186.00" font-size="2.8" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#111">BIFURCAÇÃO: 2 formas do kit.</text>
 <text x="182.00" y="190.00" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#555">entra por 1 portal, sai por 2.</text>
 <text x="182.00" y="195.00" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#555">O trilho cruza a borda em ângulo reto;</text>
 <text x="182.00" y="199.00" font-size="2.5" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#555">a curva é feita no miolo do hexágono.</text>
 <rect x="6" y="160.0" width="168" height="36" fill="none" stroke="#ddd" stroke-width="0.3"/>
-<text x="9.00" y="165.50" font-size="2.9" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#111">AS TRÊS FORMAS — sempre de portal a portal</text>
+<text x="9.00" y="165.50" font-size="2.9" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#111">AS QUATRO FORMAS — sempre de portal a portal</text>
 <path d="M 31.20,173.00 L 27.60,166.76 L 20.40,166.76 L 16.80,173.00 L 20.40,179.24 L 27.60,179.24 Z" fill="#fff" stroke="#999" stroke-width="0.3"/>
 <line x1="28.97" y1="169.15" x2="29.82" y2="170.62" stroke="#111" stroke-width="0.55"/>
 <line x1="28.11" y1="169.65" x2="29.84" y2="168.65" stroke="#111" stroke-width="0.25" stroke-linecap="round"/>
@@ -1407,7 +1425,7 @@
 <line x1="160.11" y1="176.35" x2="161.84" y2="177.35" stroke="#111" stroke-width="0.25" stroke-linecap="round"/>
 <path d="M 156.00,166.76 L 156.00,173.00 L 161.40,169.88" fill="none" stroke="#b3261e" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 156.00,166.76 L 156.00,173.00 L 150.60,169.88" fill="none" stroke="#b3261e" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
-<text x="156.00" y="183.40" font-size="2.9" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#111">GARFO</text>
+<text x="156.00" y="183.40" font-size="2.9" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="#111">BIFURCAÇÃO</text>
 <text x="156.00" y="186.60" font-size="2.2" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="normal" fill="#666">1 entra · 2 saem</text>
 <defs><pattern id="hachura" width="1.8" height="1.8" patternTransform="rotate(45)" patternUnits="userSpaceOnUse"><line x1="0" y1="0" x2="0" y2="1.8" stroke="#999" stroke-width="0.45"/></pattern></defs>
 </svg>

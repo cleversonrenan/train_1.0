@@ -72,7 +72,7 @@ def exemplo(centros, modo):
     g2, _ = gate(x1, y1, 2)
     g5, _ = gate(x1, y1, 5)
     rail([(g2[0] - 6, g2[1] - 5), (x1, y1), (g5[0] + 6, g5[1] + 5)])
-    # GARFO no hexágono da direita: entra portão 2, sai 4 e 0
+    # BIFURCAÇÃO no hexágono da direita: entra portão 2, sai 4 e 0
     ga, _ = gate(x2, y2, 2)
     gb, _ = gate(x2, y2, 4)
     gc, _ = gate(x2, y2, 0)

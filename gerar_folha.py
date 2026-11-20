@@ -20,9 +20,9 @@ CAP_SW = 0.42
 MAPA = [row.split() for row in [
     ".  4  10 .  ~  .  .  11 ^",
     ".  1  .  .  ~  .  .  ^  ^",
-    ".  .  .  .  ~  .  .  3  ^",
+    "13 .  .  .  ~  .  .  3  ^",
     ".  .  ^  ^  12 ^  ^  .  5",
-    ".  6  .  .  ~  .  7  .  .",
+    ".  6  .  .  ~  .  7  .  14",
     "~  .  .  8  ~  2  .  9  .",
 ]]
 
@@ -40,6 +40,8 @@ CIDADES = {
     10: ("VILA FERRO",   "P", ["A", "X"], False),
     11: ("BOCA DO MATO", "M", ["P", "V"], False),
     12: ("VAU DO CORVO", "?", [],          True),
+    13: ("ALDEIA NOVA",  "?", [],          True),
+    14: ("PEDRA LISA",   "?", [],          True),
 }
 
 
@@ -133,8 +135,13 @@ for r in range(ROWS):
             f'stroke="#111" stroke-width="1.0"/>')
         if cinza:
             add(f'<path d="{hexpath(x, y)}" fill="url(#hachura)" stroke="none"/>')
-            txt(x, y - 2.0, "cinza", size=2.3, fill="#666")
-            txt(x, y + 1.2, "urbanizar", size=2.3, fill="#666")
+            partes = nome.split()
+            if len(partes) == 1:
+                txt(x, y - 2.0, nome, size=2.4, weight="bold")
+            else:
+                txt(x, y - 2.9, partes[0], size=2.3, weight="bold")
+                txt(x, y - 0.3, " ".join(partes[1:]), size=2.3, weight="bold")
+            txt(x, y + 2.7, "cinza · urbanizar", size=2.0, fill="#666")
         else:
             add(f'<circle cx="{x:.2f}" cy="{y-6.0:.2f}" r="2.2" fill="none" stroke="#111" stroke-width="0.5"/>')
             txt(x, y - 5.1, cor, size=2.5, weight="bold")
@@ -187,7 +194,7 @@ for i in range(10):
 txt(PX, 72, "PRIMEIRA ENTREGA  (+3 cinza · +4 demais)", size=3.0, anchor="start", weight="bold")
 for i, idx in enumerate(sorted(CIDADES)):
     nome, cor, cubos, cinza = CIDADES[idx]
-    y = 77 + i * 4.3
+    y = 76.5 + i * 3.7
     txt(PX, y, nome, size=2.5, anchor="start")
     txt(PX + 62, y, "+3" if cinza else "+4", size=2.5)
     add(f'<line x1="{PX+70}" y1="{y+0.7}" x2="{PX+95}" y2="{y+0.7}" stroke="#bbb" stroke-width="0.3"/>')
@@ -214,7 +221,7 @@ for i, (rot, yy) in enumerate([("2 PONTES", 172.4), ("2 TÚNEIS", 176.6)]):
 
 txt(PX, 181.0, "Vau do Corvo: travessia livre, sem obra", size=2.4, anchor="start", fill="#666")
 
-txt(PX, 186, "GARFO: gaste 2 formas do kit.", size=2.8, anchor="start", weight="bold")
+txt(PX, 186, "BIFURCAÇÃO: 2 formas do kit.", size=2.8, anchor="start", weight="bold")
 txt(PX, 190, "entra por 1 portal, sai por 2.", size=2.5, anchor="start", fill="#555")
 txt(PX, 195, "O trilho cruza a borda em ângulo reto;", size=2.5, anchor="start", fill="#555")
 txt(PX, 199, "a curva é feita no miolo do hexágono.", size=2.5, anchor="start", fill="#555")
@@ -222,7 +229,7 @@ txt(PX, 199, "a curva é feita no miolo do hexágono.", size=2.5, anchor="start"
 # ---------------- legenda (rodapé)
 LY = 172.0
 add(f'<rect x="6" y="{LY-12}" width="168" height="36" fill="none" stroke="#ddd" stroke-width="0.3"/>')
-txt(9, LY - 6.5, "AS TRÊS FORMAS — sempre de portal a portal", size=2.9, anchor="start", weight="bold")
+txt(9, LY - 6.5, "AS QUATRO FORMAS — sempre de portal a portal", size=2.9, anchor="start", weight="bold")
 
 
 def mini(cx, cy, entrada, saidas, rotulo, sub, r=7.2):
@@ -244,7 +251,7 @@ def mini(cx, cy, entrada, saidas, rotulo, sub, r=7.2):
 mini(24, LY + 1, 1, [4], "RETA", "portal oposto")
 mini(70, LY + 1, 1, [2], "CURVA 60°", "portal vizinho")
 mini(116, LY + 1, 1, [3], "CURVA 120°", "salta um portal")
-mini(156, LY + 1, 1, [0, 2], "GARFO", "1 entra · 2 saem")
+mini(156, LY + 1, 1, [0, 2], "BIFURCAÇÃO", "1 entra · 2 saem")
 
 add('<defs><pattern id="hachura" width="1.8" height="1.8" patternTransform="rotate(45)" '
     'patternUnits="userSpaceOnUse"><line x1="0" y1="0" x2="0" y2="1.8" stroke="#999" '
