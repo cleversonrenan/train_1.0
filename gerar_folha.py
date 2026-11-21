@@ -176,8 +176,8 @@ for i in range(5):
 txt(PX, 42, "TRILHA DE RENDA", size=3.2, anchor="start", weight="bold")
 rx0, rx1, ry = PX + 1, PX + 104, 49.0
 add(f'<line x1="{rx0}" y1="{ry}" x2="{rx1}" y2="{ry}" stroke="#111" stroke-width="0.5"/>')
-VALORES = {1: 3, 2: 4, 4: 6, 6: 8, 8: 10, 10: 12, 13: 14, 16: 16,
-           20: 18, 24: 20, 28: 22, 32: 20, 36: 15, 40: 10}
+VALORES = {1: 3, 2: 4, 4: 6, 6: 7, 8: 8, 10: 9, 13: 10, 16: 11,
+           20: 12, 24: 13, 28: 13, 32: 12, 36: 10, 40: 8}
 for p in range(1, 41):
     x = rx0 + (rx1 - rx0) * (p - 1) / 39
     h = 2.6 if p in VALORES else 1.4
